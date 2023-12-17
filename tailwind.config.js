@@ -13,6 +13,9 @@ export default {
       primary:{
         navbarBackground : "#FAFAFF",
         blueText : "#000571",
+      },
+      secondary:{
+        detailsBackground : "#E6E7FFCC"
       }
      }
     },

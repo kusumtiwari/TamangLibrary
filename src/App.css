@@ -1,5 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Kameron&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 
+.alice-carousel__dots-item:nth-child(2) {
+    width: 20px; /* Adjust the width of the wide dot */
+    /* Add any additional styles for the wide dot */
+  }

@@ -35,7 +35,7 @@ const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const handleMenuClick = () => setIsOpen(!isOpen);
   return (
-    <div className="bg-primary-navbarBackground py-3 flex flex-wrap justify-between px-4 md:px-0">
+    <div className="bg-primary-navbarBackground py-3 flex flex-wrap justify-between px-4 md:px-0 sticky top-0 z-20">
         <div className="md:hidden">
         <Logo/>
         </div>

@@ -49,7 +49,7 @@ const Herosection: React.FC = () => {
         setIsRightbtnClicked(true);
     }
     return(
-        <div className='my-12 carousel-container relative'>
+        <div className='my-12 carousel-container relative h-[75vh]'>
         <AliceCarousel
         autoPlay
         autoPlayInterval={1500}
