@@ -5,26 +5,26 @@ import { Link } from "react-router-dom";
 const Navlink: React.FC = () => {
   return (
     <>
-      <li className="cursor-pointer text-lg text-primary-blueText hover:bg-primary-blueText hover:text-white rounded py-2 px-3 ">
+      <li className="cursor-pointer text-lg text-primary-blueText hover:bg-primary-blueText hover:text-white rounded py-2 px-2 font-kameron">
       <Link to="/about">About</Link>
       </li>
-      <li className="cursor-pointer text-lg text-primary-blueText  hover:bg-primary-blueText hover:text-white rounded py-2 px-3">
+      <li className="cursor-pointer text-lg text-primary-blueText  hover:bg-primary-blueText hover:text-white rounded py-2 px-2 font-kameron">
         Publication
       </li>
-      <li className="cursor-pointer text-lg text-primary-blueText  hover:bg-primary-blueText hover:text-white rounded py-2 px-3">
+      <li className="cursor-pointer text-lg text-primary-blueText  hover:bg-primary-blueText hover:text-white rounded py-2 px-2 font-kameron">
         Project
       </li>
       <div className="hidden md:block">
       <Logo />
       </div>
     
-      <li className="cursor-pointer text-lg text-primary-blueText  hover:bg-primary-blueText hover:text-white rounded py-2 px-3">
+      <li className="cursor-pointer text-lg text-primary-blueText  hover:bg-primary-blueText hover:text-white rounded py-2 px-2 font-kameron">
         Event
       </li>
-      <li className="cursor-pointer text-lg text-primary-blueText  hover:bg-primary-blueText hover:text-white rounded py-2 px-3">
+      <li className="cursor-pointer text-lg text-primary-blueText  hover:bg-primary-blueText hover:text-white rounded py-2 px-2 font-kameron">
         Notice
       </li>
-      <li className="cursor-pointer text-lg text-primary-blueText  hover:bg-primary-blueText hover:text-white rounded py-2 px-3">
+      <li className="cursor-pointer text-lg text-primary-blueText  hover:bg-primary-blueText hover:text-white rounded py-2 px-2 font-kameron">
         Contact
       </li>
     </>
@@ -35,7 +35,7 @@ const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const handleMenuClick = () => setIsOpen(!isOpen);
   return (
-    <div className="bg-primary-navbarBackground py-3 flex flex-wrap justify-between px-4 md:px-0 sticky top-0 z-20">
+    <div className="bg-primary-navbarBackground py-3 flex flex-wrap justify-between px-6 md:px-36 sticky top-0 z-20 items-center">
         <div className="md:hidden">
         <Logo/>
         </div>
