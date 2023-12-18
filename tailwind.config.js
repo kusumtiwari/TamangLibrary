@@ -8,6 +8,8 @@ export default {
     extend: {
       fontFamily: {
         'kameron': ['Kameron', 'sans-serif'],
+        'playfair' : ['Playfair Display', 'sans-serif'],
+        'slabo' : ['Slabo 27px', 'sans-serif']
       },
      colors:{
       primary:{

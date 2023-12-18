@@ -1,12 +1,12 @@
 import Logo from "./Logo";
-import { useState, useEffect, useRef } from "react";
+import { useState} from "react";
 import { RxHamburgerMenu, RxCross2 } from "react-icons/rx";
-
+import { Link } from "react-router-dom";
 const Navlink: React.FC = () => {
   return (
     <>
       <li className="cursor-pointer text-lg text-primary-blueText hover:bg-primary-blueText hover:text-white rounded py-2 px-3 ">
-        About
+      <Link to="/about">About</Link>
       </li>
       <li className="cursor-pointer text-lg text-primary-blueText  hover:bg-primary-blueText hover:text-white rounded py-2 px-3">
         Publication

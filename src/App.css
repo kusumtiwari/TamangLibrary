@@ -1,11 +1,44 @@
 @import url('https://fonts.googleapis.com/css2?family=Kameron&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Slabo+27px&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* 
 
+.carousel-item {
+  width: 20rem;
+  height: 20rem;
+  object-fit: cover;
+}
 
-.alice-carousel__dots-item:nth-child(2) {
-    width: 20px; /* Adjust the width of the wide dot */
-    /* Add any additional styles for the wide dot */
-  }
+.carousel-container {
+  max-width: 1080px;
+  position: relative;
+  display: flex;
+  gap: 20px;
+}
+
+.carousel-container::after,
+.carousel-container::before {
+  content: "";
+  position: absolute;
+  background-color: white;
+  width: calc(100% + 30px);
+  height: 3rem;
+}
+
+.carousel-container::before {
+  top: 0;
+  left: -10px;
+  right: -10px;
+  border-radius: 0 0 100% 100%;
+}
+
+.carousel-container::after {
+  bottom: 0;
+  left: -10px;
+  right: -10px;
+  border-radius: 100% 100% 0 0;
+} */
