@@ -1,12 +1,12 @@
 import Logo from "./Logo";
-import { useState} from "react";
+import { useState } from "react";
 import { RxHamburgerMenu, RxCross2 } from "react-icons/rx";
 import { Link } from "react-router-dom";
 const Navlink: React.FC = () => {
   return (
     <>
       <li className="cursor-pointer text-lg text-primary-blueText hover:bg-primary-blueText hover:text-white rounded py-2 px-2 font-kameron">
-      <Link to="/about">About</Link>
+        <Link to="/about">About</Link>
       </li>
       <li className="cursor-pointer text-lg text-primary-blueText  hover:bg-primary-blueText hover:text-white rounded py-2 px-2 font-kameron">
         Publication
@@ -15,9 +15,9 @@ const Navlink: React.FC = () => {
         Project
       </li>
       <div className="hidden md:block">
-      <Logo />
+        <Logo />
       </div>
-    
+
       <li className="cursor-pointer text-lg text-primary-blueText  hover:bg-primary-blueText hover:text-white rounded py-2 px-2 font-kameron">
         Event
       </li>
@@ -36,19 +36,19 @@ const Navbar: React.FC = () => {
   const handleMenuClick = () => setIsOpen(!isOpen);
   return (
     <div className="bg-primary-navbarBackground py-3 flex flex-wrap justify-between px-6 md:px-36 sticky top-0 z-20 items-center">
-        <div className="md:hidden">
-        <Logo/>
-        </div>
-        <div className="md:hidden cursor-pointer my-auto" onClick={handleMenuClick}>
+      <div className="md:hidden">
+        <Logo />
+      </div>
+      <div
+        className="md:hidden cursor-pointer my-auto"
+        onClick={handleMenuClick}
+      >
         {isOpen ? (
-          <RxCross2
-          className="h-8 w-8 transition duration-500 ease-in-out opacity-100 hover:opacity-60"/>
+          <RxCross2 className="h-8 w-8 transition duration-500 ease-in-out opacity-100 hover:opacity-60" />
         ) : (
-          <RxHamburgerMenu
-          className="h-8 w-8 transition duration-500 ease-in-out opacity-60 hover:opacity-100"
-          />
+          <RxHamburgerMenu className="h-8 w-8 transition duration-500 ease-in-out opacity-60 hover:opacity-100" />
         )}
-        </div>
+      </div>
       <ul className="hidden md:flex justify-around items-center flex-1">
         <Navlink />
       </ul>
