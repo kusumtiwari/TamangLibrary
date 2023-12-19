@@ -7,7 +7,7 @@ const AboutPage : React.FC = () => {
     return(
         <Routes>
             <Route path="/" element={<AboutIndex />}></Route>
-            <Route path="/:itemName" element={<OurTeamDetails/>}></Route>
+            <Route path=":itemName" element={<OurTeamDetails/>}></Route>
         </Routes>
     )
 }

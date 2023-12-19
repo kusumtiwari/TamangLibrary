@@ -2,7 +2,7 @@ import { createContext, ReactNode, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 
 interface UserContextValue {
-  handleAboutPageNavigation: (name: string) => void;
+  handleAboutPageNavigation: (name: string, position: string, quote:string, biography:string ) => void;
 }
 
 export const UserContext = createContext<UserContextValue | undefined>(
@@ -12,9 +12,9 @@ export const UserContext = createContext<UserContextValue | undefined>(
 export const UserProvider = ({ children }: { children: ReactNode }) => {
   const navigate = useNavigate();
 
-  const handleAboutPageNavigation = useCallback((name: string) => {
+  const handleAboutPageNavigation = useCallback((name: string, position: string, quote:string, biography:string) => {
     const itemName = name.replace(/ /g, "-").toLowerCase();
-    navigate(`/${itemName}`, { state: { name } });
+    navigate(`/about/${itemName}`, { state: { name, position,quote,biography } });
   }, [navigate]);
 
   const contextValue: UserContextValue = {
