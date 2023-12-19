@@ -7,7 +7,7 @@ const RoutesFile: React.FC = () => {
   return (
     <Routes>
       <Route path="/" element={<LandingPage />}></Route>
-      <Route path="/about" element={<AboutPage />}></Route>
+      <Route path="/about/*" element={<AboutPage />}></Route>
       <Route path="/notices" element={<NoticesPage />}></Route>
     </Routes>
   );

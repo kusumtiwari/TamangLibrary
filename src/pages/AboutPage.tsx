@@ -1,16 +1,14 @@
-import Intro from "../components/Aboutpage/Intro";
-import CompanyInfo from "../components/Aboutpage/CompanyInfo";
-import LegacyLandmarks from "../components/Aboutpage/LegacyLandmarks";
-import OurTeam from "../components/Aboutpage/OurTeam";
-const AboutPage: React.FC = () => {
-  return(
-  <div>
-  <Intro />
-  <CompanyInfo />
-  <LegacyLandmarks />
-  <OurTeam />
-  </div>
-  )
-  
-};
+import AboutIndex from "../components/Aboutpage/AboutIndex";
+import { Route } from "react-router-dom";
+import { Routes } from "react-router-dom";
+import OurTeamDetails from "../components/Aboutpage/OurTeamDetails";
+
+const AboutPage : React.FC = () => {
+    return(
+        <Routes>
+            <Route path="/" element={<AboutIndex />}></Route>
+            <Route path="/:itemName" element={<OurTeamDetails/>}></Route>
+        </Routes>
+    )
+}
 export default AboutPage;

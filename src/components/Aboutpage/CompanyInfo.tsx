@@ -1,5 +1,3 @@
-import { PiUsersThreeBold } from "react-icons/pi";
-import { SlCalender } from "react-icons/sl";
 
 interface CompanyDetails {
     icon : string,
