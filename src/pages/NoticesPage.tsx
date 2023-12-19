@@ -2,6 +2,8 @@ import { useCollectionData } from "react-firebase-hooks/firestore";
 import { collection, query, orderBy } from "firebase/firestore";
 import { db } from "../../firebase";
 import dayjs from "dayjs";
+import LoadingSpinner from "../common/LoadingSpinner";
+import ErrorPage from "../common/ErrorPage";
 
 const NoticesPage: React.FC = () => {
   const noticesQuery = query(
@@ -13,7 +15,7 @@ const NoticesPage: React.FC = () => {
   });
 
   if (loading) {
-    return <p>Loading...</p>;
+    return <LoadingSpinner />;
   }
 
   if (!loading && error) {
