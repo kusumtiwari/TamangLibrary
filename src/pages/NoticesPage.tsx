@@ -1,9 +1,10 @@
-import { useCollectionData } from "react-firebase-hooks/firestore";
-import { collection, query, orderBy } from "firebase/firestore";
-import { db } from "../../firebase";
 import dayjs from "dayjs";
-import LoadingSpinner from "../common/LoadingSpinner";
+import { db } from "../../firebase";
+import { collection, query, orderBy } from "firebase/firestore";
+import { useCollectionData } from "react-firebase-hooks/firestore";
+
 import ErrorPage from "../common/ErrorPage";
+import LoadingSpinner from "../common/LoadingSpinner";
 
 const NoticesPage: React.FC = () => {
   const noticesQuery = query(

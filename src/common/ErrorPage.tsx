@@ -1,14 +1,6 @@
 const ErrorPage: React.FC = () => {
   return (
     <>
-      {/*
-            This example requires updating your template:
-    
-            ```
-            <html class="h-full">
-            <body class="h-full">
-            ```
-          */}
       <main
         className="min-h-full bg-cover bg-top sm:bg-top"
         style={{
@@ -28,8 +20,8 @@ const ErrorPage: React.FC = () => {
           </p>
           <div className="mt-6">
             <a
-              href="#"
-              className="inline-flex items-center rounded-md border border-transparent bg-white bg-opacity-75 px-4 py-2 text-sm font-medium text-black text-opacity-75 sm:bg-opacity-25 sm:hover:bg-opacity-50"
+              href="/"
+              className="inline-flex items-center rounded-md border border-transparent bg-white bg-opacity-75 px-4 py-2 text-sm font-medium text-black text-opacity-75"
             >
               Go back home
             </a>
