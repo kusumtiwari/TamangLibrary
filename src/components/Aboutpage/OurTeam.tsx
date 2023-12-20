@@ -62,9 +62,9 @@ const OurTeam: React.FC = () => {
   const contextValue = useContext(UserContext);
   const handleAboutPageNavigation = contextValue?.handleAboutPageNavigation;
   console.log(handleAboutPageNavigation);
-  const handleClick = (name: string, position:string, quote:string, bio:string) => {
+  const handleClick = (name: string, position:string, quote:string, bio:string, id:number) => {
     if (handleAboutPageNavigation) {
-      handleAboutPageNavigation(name,position,quote,bio);
+      handleAboutPageNavigation(name,position,quote,bio,id);
     } else {
       console.error("handleAboutPageNavigation is undefined");
     }
@@ -80,7 +80,7 @@ const OurTeam: React.FC = () => {
             <div
               className="uppercase w-[100%] md:w-[45%] lg:w-[32%] mb-14 cursor-pointer"
               key={items.id}
-              onClick={() => handleClick(items.name, items.position, items.quote, items.biography)}
+              onClick={() => handleClick(items.name, items.position, items.quote, items.biography,items.id)}
             >
               <img
                 src={items.image}
