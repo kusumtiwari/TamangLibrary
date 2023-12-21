@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 
 import "react-alice-carousel/lib/alice-carousel.css";
 
@@ -15,6 +15,7 @@ import ViewlessBtn from "../../common/ViewlessBtn";
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
 import { MdArrowBackIos, MdArrowForwardIos } from "react-icons/md";
+import { UserContext } from "../../context/Context";
 
 interface UpcomingProjects {
   budget: number;
@@ -26,6 +27,16 @@ interface UpcomingProjects {
   title: string;
 }
 const UpcomingProjects: React.FC = () => {
+  const contextValue = useContext(UserContext);
+  const handleProjectPageNavigation = contextValue?.handleProjectPageNavigation;
+
+  const handleClick = (obj: UpcomingProjects) => {
+    if (handleProjectPageNavigation) {
+      handleProjectPageNavigation(obj);
+    } else {
+      console.error("handleProjectPageNavigation is undefined");
+    }
+  };
   const [isViewMoreBtnClicked, setIsViewMoreBtnClicked] =
     useState<Boolean>(false);
   const [isLeftbtnClicked, setIsLeftbtnClicked] = useState<Boolean>(false);
@@ -57,13 +68,14 @@ const UpcomingProjects: React.FC = () => {
   if (!loading && error) {
     return <p>{JSON.stringify(error, null, 2)}</p>;
   }
+
   return (
-    <div className="my-12 py-12 px-4 md:px-8 lg:px-12">
+    <div className="my-12 py-12 px-4 md:px-8">
       <h1 className="uppercase text-2xl md:text-4xl lg:text-5xl font-thin py-12 text-center">
         Upcoming Projects
       </h1>
       <div>
-      {!isViewMoreBtnClicked ? (
+        {!isViewMoreBtnClicked ? (
           <AliceCarousel
             disableDotsControls
             infinite
@@ -102,13 +114,21 @@ const UpcomingProjects: React.FC = () => {
               return (
                 <div
                   key={index}
-                  className="flex flex-col justify-between items-center text-primary-blueText w-[95vw] md:w-[45vw]"
+                  className="flex flex-col justify-between items-center text-primary-blueText w-[95vw] md:w-[50vw]"
                 >
-                  <div className="w-[90%] md:w-[60%] h-[50vh]">
+                  <div
+                    className="w-[90%] md:w-[60%] h-[50vh] cursor-pointer flex relative"
+                    onClick={() => handleClick(item)}
+                  >
+                    <img
+                      src="/Union.png"
+                      alt="blue-text"
+                      className="h-[60%] absolute bottom-0"
+                    />
                     <img
                       src={item.image}
                       alt="ongoing-project"
-                      className="w-full h-full"
+                      className="w-full h-full absolute left-[5%] bottom-[5%]"
                     />
                   </div>
                   <div className="w-[95%] md:w-[60%] pt-12">
@@ -128,11 +148,19 @@ const UpcomingProjects: React.FC = () => {
                   key={index}
                   className="flex flex-col justify-between items-center text-primary-blueText w-[95vw]"
                 >
-                  <div className="w-[80%] md:w-[60%] h-[55vh]">
+                  <div
+                    className="w-[80%] md:w-[60%] h-[55vh] cursor-pointer relative"
+                    onClick={() => handleClick(item)}
+                  >
+                    <img
+                      src="/Union.png"
+                      alt="blue-line"
+                      className="absolute bottom-0"
+                    />
                     <img
                       src={item.image}
                       alt="ongoing-project"
-                      className="w-full h-full"
+                      className="w-full h-full absolute left-[2%] bottom-[4%]"
                     />
                   </div>
                   <div className="w-[80%] md:w-[60%] pb-12 py-6">

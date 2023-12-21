@@ -5,21 +5,31 @@ import LoadingSpinner from "../../common/LoadingSpinner";
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
 import { MdArrowBackIos, MdArrowForwardIos } from "react-icons/md";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import ViewmoreBtn from "../../common/ViewmoreBtn";
 import ViewlessBtn from "../../common/ViewlessBtn";
 import { Timestamp } from "firebase/firestore/lite";
 
+import { UserContext } from "../../context/Context";
 interface OnGoingProjects {
-    budget : number,
-    description: string,
-    endDate : Timestamp,
-    image: string,
-    startDate : Timestamp,
-    status : string,
-    title: string,
+  budget: number;
+  description: string;
+  endDate: Timestamp;
+  image: string;
+  startDate: Timestamp;
+  status: string;
+  title: string;
 }
 const OnGoingProjects: React.FC = () => {
+  const contextValue = useContext(UserContext);
+  const handleProjectPageNavigation = contextValue?.handleProjectPageNavigation;
+  const handleClick = (obj: OnGoingProjects) => {
+    if (handleProjectPageNavigation) {
+      handleProjectPageNavigation(obj);
+    } else {
+      console.error("handleProjectPageNavigation is undefined");
+    }
+  };
   const [isViewMoreBtnClicked, setIsViewMoreBtnClicked] =
     useState<Boolean>(false);
   const [isLeftbtnClicked, setIsLeftbtnClicked] = useState<Boolean>(false);
@@ -51,6 +61,7 @@ const OnGoingProjects: React.FC = () => {
   if (!loading && error) {
     return <p>{JSON.stringify(error, null, 2)}</p>;
   }
+  const maxLength: number = 800;
   return (
     <div className="text-primary-blueText my-12">
       <h1 className="uppercase text-2xl md:text-4xl lg:text-5xl font-thin py-12 text-center">
@@ -91,13 +102,16 @@ const OnGoingProjects: React.FC = () => {
               );
             }}
           >
-            {projects?.map((item, index: number) => {
+            {projects?.map((item: OnGoingProjects, index: number) => {
               return (
                 <div
                   key={index}
-                  className="flex flex-col justify-between items-center text-primary-blueText"
+                  className="flex flex-col justify-between items-center text-primary-blueText cursor-pointer"
                 >
-                  <div className="w-[60%] h-[50vh]">
+                  <div
+                    className="w-[95%] md:w-[60%] h-[60vh]"
+                    onClick={() => handleClick(item)}
+                  >
                     <img
                       src={item.image}
                       alt="ongoing-project"
@@ -109,7 +123,19 @@ const OnGoingProjects: React.FC = () => {
                       {item.title}
                     </h1>
                     <p className="w-[100%] text-justify font-playfair text-xl font-semibold text-black">
-                      {item.description}
+                      {item.description.length > maxLength ? (
+                        <>
+                          {item.description.slice(0, maxLength)}
+                          <span
+                            className="text-primary-blueText underline cursor-pointer pl-2"
+                            onClick={() => handleClick(item)}
+                          >
+                            Read More
+                          </span>
+                        </>
+                      ) : (
+                        item.description
+                      )}
                     </p>
                   </div>
                 </div>
@@ -118,13 +144,16 @@ const OnGoingProjects: React.FC = () => {
           </AliceCarousel>
         ) : (
           <>
-            {projects?.map((item, index: number) => {
+            {projects?.map((item: OnGoingProjects, index: number) => {
               return (
                 <div
                   key={index}
                   className="flex flex-col justify-between items-center text-primary-blueText"
                 >
-                  <div className="w-[60%] h-[50vh]">
+                  <div
+                    className="w-[60%] h-[50vh]"
+                    onClick={() => handleClick(item)}
+                  >
                     <img
                       src={item.image}
                       alt="ongoing-project"
@@ -136,7 +165,19 @@ const OnGoingProjects: React.FC = () => {
                       {item.title}
                     </h1>
                     <p className="w-[100%] text-justify font-playfair text-xl font-semibold text-black">
-                      {item.description}
+                      {item.description.length > maxLength ? (
+                        <>
+                          {item.description.slice(0, maxLength)}
+                          <span
+                            className="text-primary-blueText underline cursor-pointer pl-2"
+                            onClick={() => handleClick(item)}
+                          >
+                            Read More
+                          </span>
+                        </>
+                      ) : (
+                        item.description
+                      )}
                     </p>
                   </div>
                 </div>

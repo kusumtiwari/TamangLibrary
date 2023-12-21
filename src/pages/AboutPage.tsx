@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
-import AboutIndex from "../components/Aboutpage/AboutIndex";
-import OurTeamDetails from "../components/Aboutpage/OurTeamDetails";
+import AboutIndex from "../components/aboutpage/AboutIndex";
+import OurTeamDetails from "../components/aboutpage/OurTeamDetails";
 
 const AboutPage: React.FC = () => {
   return (

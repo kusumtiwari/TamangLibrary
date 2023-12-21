@@ -13,36 +13,22 @@ import ViewmoreBtn from "../../common/ViewmoreBtn";
 import ViewlessBtn from "../../common/ViewlessBtn";
 import { UserContext } from "../../context/Context";
 
-interface OnCompletedProjects {
-  budget: number;
+interface UpcomingEvents {
+  dateAndTime: Timestamp;
   description: string;
-  endDate: Timestamp;
   image: string;
-  startDate: Timestamp;
-  status: string;
+  location: string;
   title: string;
 }
-const CompletedProjects: React.FC = () => {
-  const contextValue = useContext(UserContext);
-  const handleProjectPageNavigation = contextValue?.handleProjectPageNavigation;
-  const handleClick = (obj: OnCompletedProjects) => {
-    if (handleProjectPageNavigation) {
-      handleProjectPageNavigation(obj);
-    } else {
-      console.error("handleProjectPageNavigation is undefined");
-    }
-  };
-  const matchesMedium = useMediaQuery("(min-width: 768px)");
+
+const UpcomingEvents: React.FC = () => {
   const [isViewMoreBtnClicked, setIsViewMoreBtnClicked] =
     useState<Boolean>(false);
-
+  const matchesMedium = useMediaQuery("(min-width: 768px)");
   const onViewBtnClick = () => {
     setIsViewMoreBtnClicked(!isViewMoreBtnClicked);
   };
-  const projectsQuery = query(
-    collection(db, "projects"),
-    where("status", "==", "COMPLETED")
-  );
+  const projectsQuery = query(collection(db, "upcomingEvents"));
   const [projects, loading, error] = useCollectionData(projectsQuery, {
     snapshotListenOptions: { includeMetadataChanges: true },
   });
@@ -54,15 +40,16 @@ const CompletedProjects: React.FC = () => {
     return <p>{JSON.stringify(error, null, 2)}</p>;
   }
   const maxLength: number = 800;
-  const firstTwoProjects = projects ? projects.slice(0, 2) : [];
+  const firstThreeProjects = projects ? projects.slice(0, 3) : [];
   return (
-    <div className="text-primary-blueText my-12 bg-secondary-detailsBackground w-full font-playfair">
-      <h1 className="uppercase text-2xl md:text-4xl lg:text-5xl font-thin py-12 text-center">
-        Completed Projects
+    <div className="my-12">
+      <h1 className="uppercase text-2xl md:text-4xl lg:text-5xl font-thin py-12 text-center text-primary-blueText font-playfair">
+        Upcoming Events
       </h1>
+
       <div className="py-12">
         {!isViewMoreBtnClicked
-          ? firstTwoProjects?.map((items: any, index: number) => {
+          ? firstThreeProjects?.map((items: any, index: number) => {
               return (
                 <div
                   className={`flex items-center py-8 flex-col lg:flex-row justify-between w-[100%] px-4 md:px-12 ${
@@ -72,10 +59,7 @@ const CompletedProjects: React.FC = () => {
                   }`}
                   key={index}
                 >
-                  <div
-                    className="w-[95%] md:w-[60%] lg:w-[40%] h-[45vh] my-auto relative"
-                    onClick={() => handleClick(items)}
-                  >
+                  <div className="w-[95%] md:w-[60%] lg:w-[40%] h-[45vh] my-auto relative">
                     <img
                       src="/Union.png"
                       alt="blue-line"
@@ -88,37 +72,19 @@ const CompletedProjects: React.FC = () => {
                     />
                   </div>
                   <div className="w-[95%] md:w-[75%] lg:w-[50%] playfair-display pt-6 lg:pt-0 flex flex-col justify-center">
-                    <h1 className="text-primary-blue text-2xl">
-                      Project Title:{" "}
-                      <span className="text-black">{items.title}</span>
+                    <h1 className="text-primary-blue text-2xl text-primary-blueText">
+                      {items.title}
                     </h1>
                     <h1 className="text-primary-blue text-2xl">
-                      Duration:{" "}
-                      <span className="text-black">
-                        {" "}
-                        {dayjs
-                          .unix(items.startDate.seconds)
-                          .format("DD/MM/YYYY")}
-                      </span>
-                      <span className="text-black"> - </span>
-                      <span className="text-black">
-                        {dayjs.unix(items.endDate.seconds).format("DD/MM/YYYY")}
-                      </span>
-                    </h1>
-                    <h1 className="text-primary-blue text-2xl">
-                      Budget:
-                      <span className="text-black pl-1">
-                        NRS {items.budget}
-                      </span>
+                      {dayjs
+                        .unix(items.dateAndTime.seconds)
+                        .format("dddd | Do MMMM, YYYY | hh:mmA")}
                     </h1>
                     <p className="py-8 text-justify text-black font-semibold">
                       {items.description.length > maxLength ? (
                         <>
                           {items.description.slice(0, maxLength)}
-                          <span
-                            className="text-primary-blueText underline cursor-pointer pl-2"
-                            onClick={() => handleClick(items)}
-                          >
+                          <span className="text-primary-blueText underline cursor-pointer pl-2">
                             Read More
                           </span>
                         </>
@@ -140,10 +106,7 @@ const CompletedProjects: React.FC = () => {
                   }`}
                   key={index}
                 >
-                  <div
-                    className="w-[95%] md:w-[60%] lg:w-[40%] h-[45vh] my-auto relative"
-                    onClick={() => handleClick(items)}
-                  >
+                  <div className="w-[95%] md:w-[60%] lg:w-[40%] h-[45vh] my-auto relative">
                     <img
                       src="/Union.png"
                       alt="blue-line"
@@ -156,37 +119,19 @@ const CompletedProjects: React.FC = () => {
                     />
                   </div>
                   <div className="w-[95%] md:w-[75%] lg:w-[50%] playfair-display pt-6 lg:pt-0">
-                    <h1 className="text-primary-blue text-2xl">
-                      Project Title:{" "}
-                      <span className="text-black">{items.title}</span>
+                    <h1 className="text-primary-blue text-2xl text-primary-blueText">
+                      {items.title}
                     </h1>
                     <h1 className="text-primary-blue text-2xl">
-                      Duration:{" "}
-                      <span className="text-black">
-                        {" "}
-                        {dayjs
-                          .unix(items.startDate.seconds)
-                          .format("DD/MM/YYYY")}
-                      </span>
-                      <span className="text-black"> - </span>
-                      <span className="text-black">
-                        {dayjs.unix(items.endDate.seconds).format("DD/MM/YYYY")}
-                      </span>
-                    </h1>
-                    <h1 className="text-primary-blue text-2xl">
-                      Budget:
-                      <span className="text-black pl-1">
-                        NRS {items.budget}
-                      </span>
+                      {dayjs
+                        .unix(items.dateAndTime.seconds)
+                        .format("dddd | Do MMMM, YYYY | hh:mmA")}
                     </h1>
                     <p className="py-8 text-justify text-black font-semibold">
                       {items.description.length > maxLength ? (
                         <>
                           {items.description.slice(0, maxLength)}
-                          <span
-                            className="text-primary-blueText underline cursor-pointer pl-2"
-                            onClick={() => handleClick(items)}
-                          >
+                          <span className="text-primary-blueText underline cursor-pointer pl-2">
                             Read More
                           </span>
                         </>
@@ -205,4 +150,5 @@ const CompletedProjects: React.FC = () => {
     </div>
   );
 };
-export default CompletedProjects;
+
+export default UpcomingEvents;
