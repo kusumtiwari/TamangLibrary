@@ -9,10 +9,10 @@ const Navlink: React.FC = () => {
         <Link to="/about">About</Link>
       </li>
       <li className="cursor-pointer text-lg text-primary-blueText  hover:bg-primary-blueText hover:text-white rounded py-2 px-2 font-kameron">
-        Publication
+        <Link to="/publications">Publication</Link>
       </li>
       <li className="cursor-pointer text-lg text-primary-blueText  hover:bg-primary-blueText hover:text-white rounded py-2 px-2 font-kameron">
-      <Link to="/projects">Projects</Link>
+        <Link to="/projects">Projects</Link>
       </li>
       <div className="hidden md:block">
         <Logo />
