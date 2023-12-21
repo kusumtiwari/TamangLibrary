@@ -2,7 +2,6 @@ import dayjs from "dayjs";
 import { db } from "../../firebase";
 import { collection, query, orderBy } from "firebase/firestore";
 import { useCollectionData } from "react-firebase-hooks/firestore";
-
 import ErrorPage from "../common/ErrorPage";
 import LoadingSpinner from "../common/LoadingSpinner";
 
