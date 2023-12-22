@@ -65,7 +65,7 @@ const UpcomingEvents: React.FC = () => {
                 >
                   {item.title}
                 </h1>
-                <div className="text-black py-6 w-[100%] md:w-[80%] text-lg">
+                <div className="text-black py-6 w-[100%] md:w-[80%] text-lg text-justify">
                   {item.description.length > maxLength ? (
                     <>
                       <div
@@ -73,7 +73,10 @@ const UpcomingEvents: React.FC = () => {
                           __html: item.description.slice(0, maxLength),
                         }}
                       ></div>
-                      <span className="text-primary-blueText underline cursor-pointer pl-2">
+                      <span
+                        className="text-primary-blueText underline cursor-pointer pl-2"
+                        onClick={() => handleClick(item, "Upcoming")}
+                      >
                         Read More
                       </span>
                     </>

@@ -1,5 +1,5 @@
 import { IoNewspaperOutline } from "react-icons/io5";
-import AliceCarousel from 'react-alice-carousel';
+import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
 
 interface BookPublication {
@@ -33,7 +33,7 @@ const myBookPubication: BookPublication[] = [
 
 const LibraryPublication: React.FC = () => {
   return (
-    <div className="my-12" >
+    <div className="my-12">
       <h1 className="uppercase text-primary-blueText text-2xl md:text-4xl lg:text-5xl text-center">
         Library Publication
       </h1>
@@ -43,31 +43,42 @@ const LibraryPublication: React.FC = () => {
           <h1 className="text-3xl">LATEST</h1>
         </div>
         <AliceCarousel
-  animationType="fadeout"
-  animationDuration={800}
-  disableButtonsControls
-  infinite
-  mouseTracking
->
-  {myBookPubication.map((item) => {
-    return (
-      <div key={item.id} className="flex justify-between items-center text-primary-blueText flex-col-reverse lg:flex-row">
-        <div className="">
-          <h1 className="uppercase text-2xl text-center lg:text-justify py-4 md:py-0 md:text-3xl">{item.title}</h1>
-          <div className="flex uppercase py-6">
-            <h1 className="pr-3 text-black text-base">Author:</h1>
-            <h1 className="text-sm font-bold">{item.author}</h1>
-          </div>
-          <h1 className="pb-4">{item.date}</h1>
-          <p className="leading-[1.5] lg:w-[80%] text-base">{item.description}</p>
-        </div>
-        <div className="h-[28vh] w-[40%]">
-          <img src={item.image} alt="Publication image" className="h-full w-full"/>
-        </div>
-      </div>
-    );
-  })}
-</AliceCarousel>
+          animationType="fadeout"
+          animationDuration={800}
+          disableButtonsControls
+          infinite
+          mouseTracking
+        >
+          {myBookPubication.map((item) => {
+            return (
+              <div
+                key={item.id}
+                className="flex justify-between items-center text-primary-blueText flex-col-reverse lg:flex-row"
+              >
+                <div className="">
+                  <h1 className="uppercase text-2xl text-center lg:text-justify py-4 md:py-0 md:text-3xl">
+                    {item.title}
+                  </h1>
+                  <div className="flex uppercase py-6">
+                    <h1 className="pr-3 text-black text-base">Author:</h1>
+                    <h1 className="text-sm font-bold">{item.author}</h1>
+                  </div>
+                  <h1 className="pb-4 text-black">{item.date}</h1>
+                  <p className="leading-[1.5] lg:w-[80%] text-base text-black text-justify">
+                    {item.description}
+                  </p>
+                </div>
+                <div className="h-[28vh] w-[40%]">
+                  <img
+                    src={item.image}
+                    alt="Publication image"
+                    className="h-full w-full"
+                  />
+                </div>
+              </div>
+            );
+          })}
+        </AliceCarousel>
       </div>
     </div>
   );

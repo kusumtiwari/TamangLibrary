@@ -130,17 +130,23 @@ const NewArrivals: React.FC = () => {
         {myNewArrivals.map((items) => {
           return (
             <div key={items.id} className="lg:ml-10">
-              <img src={items.image} alt="newarrival-book" className="my-8 w-[75%] md:w-[55%]" />
+              <img
+                src={items.image}
+                alt="newarrival-book"
+                className="my-8 w-[75%] md:w-[55%]"
+              />
               <div className="flex items-center text-xl uppercase">
-                <IoBookOutline className="w-8 h-8"/>
+                <IoBookOutline className="w-8 h-8" />
                 <h1 className="ml-2">{items.title}</h1>
               </div>
               <div className="flex items-center py-5 text-xl uppercase">
-                <TiPen className="w-8 h-8"/>
+                <TiPen className="w-8 h-8" />
                 <h1 className="ml-2">{items.author}</h1>
               </div>
               <h1 className="text-xl font-bold">NPR {items.price}</h1>
-              <h1 className="w-[95%] md:w-[90%] py-5">{items.description}</h1>
+              <h1 className="w-[95%] md:w-[90%] py-5 text-justify">
+                {items.description}
+              </h1>
               <div className="flex mb-8">
                 <div className="flex">
                   {Array.from({ length: Number(items.rating) }).map(
