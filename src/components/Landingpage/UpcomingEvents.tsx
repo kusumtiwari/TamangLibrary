@@ -39,7 +39,7 @@ const UpcomingEvents: React.FC = () => {
       snapshotListenOptions: { includeMetadataChanges: true },
     });
   return (
-    <div className="my-16 px-4 md:px-8">
+    <div className="my-16 px-4 md:px-8 overflow-hidden">
       <h1 className="uppercase text-primary-blueText text-2xl md:text-4xl lg:text-5xl text-center bg-secondary-detailsBackground py-16 my-8">
         Upcoming Events
       </h1>

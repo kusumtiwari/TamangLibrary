@@ -28,7 +28,7 @@ const TestimonialsImages: React.FC<TestimonialsImagesProps> = ({
   onTestimonialChange,
   selectedTestimonial,
 }) => {
-    const matchesMedium = useMediaQuery("(min-width: 768px)");
+  const matchesMedium = useMediaQuery("(min-width: 768px)");
   const testimonialToFlash = _.cloneDeep(myTestimonials);
   const selectedTestimonialItem = testimonialToFlash[selectedTestimonial];
   if (selectedTestimonial !== 2 && matchesMedium) {
@@ -46,18 +46,22 @@ const TestimonialsImages: React.FC<TestimonialsImagesProps> = ({
         {testimonialToFlash.map((items, index) => {
           return (
             <div
-            key={items.id}
-            className={`rounded-full border-2 ${
-              matchesMedium
-                ? index === 2
-                  ? "opacity-100 w-36 h-36 border-primary-blueText"
-                  : "opacity-20 w-16 h-16"
-                : "opacity-100 w-24 h-24 border-primary-blueText"
-            }`}
+              key={items.id}
+              className={`rounded-full border-2 cursor-pointer ${
+                matchesMedium
+                  ? index === 2
+                    ? "opacity-100 w-36 h-36 border-primary-blueText"
+                    : "opacity-20 w-20 h-20"
+                  : "opacity-100 w-24 h-24 border-primary-blueText"
+              }`}
               onMouseOver={() => onTestimonialChange(index)}
               onClick={() => onTestimonialChange(index)}
             >
-              <img src={items.image} alt="testimonial-image" className="w-full h-full"/>
+              <img
+                src={items.image}
+                alt="testimonial-image"
+                className="w-full h-full"
+              />
             </div>
           );
         })}

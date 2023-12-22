@@ -12,7 +12,7 @@ const EventDetailsPage: React.FC = () => {
   const status = state.eventType;
   return (
     <div>
-      <div className="relative h-[95vh] w-[100vw] overflow-hidden">
+      <div className="relative h-[95vh] w-[100%] overflow-hidden">
         <div className="bg-[url('../../public/ProjectDetailsBg.png')] bg-cover bg-no-repeat bg-center w-full h-[70vh] flex items-center justify-center">
           <h1 className="w-[100%] text-center uppercase text-white text-3xl md:text-5xl font-kameron">
             {status} Events

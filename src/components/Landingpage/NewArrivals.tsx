@@ -130,11 +130,13 @@ const NewArrivals: React.FC = () => {
         {myNewArrivals.map((items) => {
           return (
             <div key={items.id} className="lg:ml-10">
-              <img
-                src={items.image}
-                alt="newarrival-book"
-                className="my-8 w-[75%] md:w-[55%]"
-              />
+              <div className="w-[80%] md:w-[65%] lg:w-[55%] h-[50vh]">
+                <img
+                  src={items.image}
+                  alt="newarrival-book"
+                  className="my-8 w-full"
+                />
+              </div>
               <div className="flex items-center text-xl uppercase">
                 <IoBookOutline className="w-8 h-8" />
                 <h1 className="ml-2">{items.title}</h1>

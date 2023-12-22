@@ -31,7 +31,6 @@ const PublicationPage: React.FC = () => {
     indexOfFirstItem,
     indexOfLastItem
   );
-
   const pageNumbers = [];
   for (
     let i = 1;
@@ -108,5 +107,4 @@ const PublicationPage: React.FC = () => {
     </div>
   );
 };
-
 export default PublicationPage;
