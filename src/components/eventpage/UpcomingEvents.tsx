@@ -6,7 +6,7 @@ import { Timestamp } from "firebase/firestore/lite";
 import LoadingSpinner from "../../common/LoadingSpinner";
 
 import { db } from "../../../firebase";
-import { collection, query, where } from "firebase/firestore";
+import { collection, query } from "firebase/firestore";
 import { useCollectionData } from "react-firebase-hooks/firestore";
 
 import ViewmoreBtn from "../../common/ViewmoreBtn";

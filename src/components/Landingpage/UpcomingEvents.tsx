@@ -1,3 +1,5 @@
+import { useContext } from "react";
+
 import { LuClock } from "react-icons/lu";
 import { SlCalender } from "react-icons/sl";
 import { MdOutlineLocationOn } from "react-icons/md";
@@ -9,6 +11,8 @@ import { useCollectionData } from "react-firebase-hooks/firestore";
 import dayjs from "dayjs";
 import LoadingSpinner from "../../common/LoadingSpinner";
 
+import { UserContext } from "../../context/Context";
+
 interface UpcomingEvents {
   id: number;
   image: string;
@@ -18,13 +22,23 @@ interface UpcomingEvents {
   dateAndTime: Timestamp;
 }
 
+const maxLength = 300;
 const UpcomingEvents: React.FC = () => {
+  const contextValue = useContext(UserContext);
+  const handleEventPageNavigation = contextValue?.handleEventPageNavigation;
+  const handleClick = (obj: UpcomingEvents, event: string) => {
+    if (handleEventPageNavigation) {
+      handleEventPageNavigation(obj, event);
+    } else {
+      console.error("handleEventPageNavigation is undefined");
+    }
+  };
   const data = collection(db, "upcomingEvents");
   const [upcomingEvents, upcomingEventsLoading, upcomingEventsError] =
     useCollectionData(data, {
       snapshotListenOptions: { includeMetadataChanges: true },
     });
- return (
+  return (
     <div className="my-16 px-4 md:px-8">
       <h1 className="uppercase text-primary-blueText text-2xl md:text-4xl lg:text-5xl text-center bg-secondary-detailsBackground py-16 my-8">
         Upcoming Events
@@ -39,16 +53,38 @@ const UpcomingEvents: React.FC = () => {
 
           return (
             <div
-              className="flex items-center text-primary-blueText my-24 overflow-hidden flex-col-reverse md:flex-row"
+              className={`flex items-center text-primary-blueText my-24 overflow-hidden flex-col-reverse md:flex-row ${
+                index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+              }`}
               key={index}
             >
               <div className="w-[95%] md:w-[50%] md:pl-12">
-                <h1 className="text-2xl md:text-3xl mt-8 md:mt-0">
+                <h1
+                  className="text-2xl md:text-3xl mt-8 md:mt-0 cursor-pointer"
+                  onClick={() => handleClick(item, "Upcoming")}
+                >
                   {item.title}
                 </h1>
-                <p className="text-black py-6 w-[100%] md:w-[80%] text-lg">
-                  {item.description}
-                </p>
+                <div className="text-black py-6 w-[100%] md:w-[80%] text-lg">
+                  {item.description.length > maxLength ? (
+                    <>
+                      <div
+                        dangerouslySetInnerHTML={{
+                          __html: item.description.slice(0, maxLength),
+                        }}
+                      ></div>
+                      <span className="text-primary-blueText underline cursor-pointer pl-2">
+                        Read More
+                      </span>
+                    </>
+                  ) : (
+                    <div
+                      dangerouslySetInnerHTML={{
+                        __html: item.description,
+                      }}
+                    ></div>
+                  )}
+                </div>
                 <div className="flex items-center">
                   <MdOutlineLocationOn className="mr-2 " />
                   <p>{item.location}</p>
@@ -65,11 +101,12 @@ const UpcomingEvents: React.FC = () => {
                   </p>
                 </div>
               </div>
-              <div className="w-[95%] md:w-[45%] lg:w-[42%] h-[50vh]">
+              <div className="w-[95%] md:w-[45%] h-[50vh]">
                 <img
                   src={item.image}
                   alt="upcoming-event"
-                  className="w-full h-full"
+                  className="w-full h-full cursor-pointer object-cover"
+                  onClick={() => handleClick(item, "Upcoming")}
                 />
               </div>
             </div>
