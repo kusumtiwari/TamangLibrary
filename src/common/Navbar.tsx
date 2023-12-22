@@ -3,29 +3,47 @@ import { useState } from "react";
 import { RxHamburgerMenu, RxCross2 } from "react-icons/rx";
 import { Link } from "react-router-dom";
 const Navlink: React.FC = () => {
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth", // Optional: Adds smooth scrolling effect
+    });
+  };
   return (
     <>
       <li className="cursor-pointer text-lg text-primary-blueText hover:bg-primary-blueText hover:text-white rounded py-2 px-2 font-kameron">
-        <Link to="/about">About</Link>
+        <Link to="/about" onClick={scrollToTop}>
+          About
+        </Link>
       </li>
       <li className="cursor-pointer text-lg text-primary-blueText  hover:bg-primary-blueText hover:text-white rounded py-2 px-2 font-kameron">
-        <Link to="/publications">Publication</Link>
+        <Link to="/publications" onClick={scrollToTop}>
+          Publication
+        </Link>
       </li>
       <li className="cursor-pointer text-lg text-primary-blueText  hover:bg-primary-blueText hover:text-white rounded py-2 px-2 font-kameron">
-        <Link to="/projects">Projects</Link>
+        <Link to="/projects" onClick={scrollToTop}>
+          Projects
+        </Link>
       </li>
-      <div className="hidden md:block">
+      <div className="hidden md:block" onClick={scrollToTop}>
         <Logo />
       </div>
 
       <li className="cursor-pointer text-lg text-primary-blueText  hover:bg-primary-blueText hover:text-white rounded py-2 px-2 font-kameron">
-        <Link to="/events">Events</Link>
+        <Link to="/events" onClick={scrollToTop}>
+          Events
+        </Link>
       </li>
       <li className="cursor-pointer text-lg text-primary-blueText  hover:bg-primary-blueText hover:text-white rounded py-2 px-2 font-kameron">
-        <Link to="/notices">Notice</Link>
+        <Link to="/notices" onClick={scrollToTop}>
+          Notice
+        </Link>
       </li>
       <li className="cursor-pointer text-lg text-primary-blueText  hover:bg-primary-blueText hover:text-white rounded py-2 px-2 font-kameron">
-        Contact
+        <Link to="/contact" onClick={scrollToTop}>
+          Contact
+        </Link>
       </li>
     </>
   );
