@@ -6,7 +6,7 @@ import { Timestamp } from "firebase/firestore/lite";
 import LoadingSpinner from "../../common/LoadingSpinner";
 
 import { db } from "../../../firebase";
-import { collection, query, where } from "firebase/firestore";
+import { collection, query } from "firebase/firestore";
 import { useCollectionData } from "react-firebase-hooks/firestore";
 
 import ViewmoreBtn from "../../common/ViewmoreBtn";
@@ -21,6 +21,15 @@ interface PastEvents {
   title: string;
 }
 const PastEvents: React.FC = () => {
+  const contextValue = useContext(UserContext);
+  const handleEventPageNavigation = contextValue?.handleEventPageNavigation;
+  const handleClick = (obj: PastEvents, event: string) => {
+    if (handleEventPageNavigation) {
+      handleEventPageNavigation(obj, event);
+    } else {
+      console.error("handleEventPageNavigation is undefined");
+    }
+  };
   const [isViewMoreBtnClicked, setIsViewMoreBtnClicked] =
     useState<Boolean>(false);
   const matchesMedium = useMediaQuery("(min-width: 768px)");
@@ -55,14 +64,15 @@ const PastEvents: React.FC = () => {
                 >
                   <div className="w-[100%] h-[45vh] relative">
                     <img
-                      src="/Union.png"
+                      src="/Blueline-2.png"
                       alt="blue-line"
-                      className="absolute bottom-0 right-0"
+                      className="absolute bottom-1 left-[80%]"
                     />
                     <img
                       src={items.image}
                       alt="completed-project"
                       className="w-full h-full absolute bottom-[6%] left-[3%]"
+                      onClick={() => handleClick(items, "past")}
                     />
                   </div>
                   <div className="w-[100%] playfair-display pt-6 lg:pt-0 flex flex-col justify-center">
@@ -74,18 +84,26 @@ const PastEvents: React.FC = () => {
                         .unix(items.dateAndTime.seconds)
                         .format("dddd | Do MMMM, YYYY | hh:mmA")}
                     </h1>
-                    <p className="py-8 text-justify text-black font-semibold">
+                    <div className="py-8 text-justify text-black font-semibold">
                       {items.description.length > maxLength ? (
                         <>
-                          {items.description.slice(0, maxLength)}
+                          <div
+                            dangerouslySetInnerHTML={{
+                              __html: items.description.slice(0, maxLength),
+                            }}
+                          ></div>
                           <span className="text-primary-blueText underline cursor-pointer pl-2">
                             Read More
                           </span>
                         </>
                       ) : (
-                        items.description
+                        <div
+                          dangerouslySetInnerHTML={{
+                            __html: items.description,
+                          }}
+                        ></div>
                       )}
-                    </p>
+                    </div>
                   </div>
                 </div>
               );
@@ -98,14 +116,15 @@ const PastEvents: React.FC = () => {
                 >
                   <div className="w-[95%] md:w-[60%] lg:w-[40%] h-[45vh] my-auto relative">
                     <img
-                      src="/Union.png"
+                      src="/Blueline-2.png"
                       alt="blue-line"
-                      className="absolute bottom-0"
+                      className="absolute bottom-1 left-[86%]"
                     />
                     <img
                       src={items.image}
                       alt="completed-project"
-                      className="w-full h-full absolute bottom-[5%] left-[3%]"
+                      className="w-full h-full absolute bottom-[5%]"
+                      onClick={() => handleClick(items, "past")}
                     />
                   </div>
                   <div className="w-[95%] md:w-[75%] lg:w-[50%] playfair-display pt-6 lg:pt-0">
@@ -117,18 +136,26 @@ const PastEvents: React.FC = () => {
                         .unix(items.dateAndTime.seconds)
                         .format("dddd | Do MMMM, YYYY | hh:mmA")}
                     </h1>
-                    <p className="py-8 text-justify text-black font-semibold">
+                    <div className="py-8 text-justify text-black font-semibold">
                       {items.description.length > maxLength ? (
                         <>
-                          {items.description.slice(0, maxLength)}
+                          <div
+                            dangerouslySetInnerHTML={{
+                              __html: items.description.slice(0, maxLength),
+                            }}
+                          ></div>
                           <span className="text-primary-blueText underline cursor-pointer pl-2">
                             Read More
                           </span>
                         </>
                       ) : (
-                        items.description
+                        <div
+                          dangerouslySetInnerHTML={{
+                            __html: items.description,
+                          }}
+                        ></div>
                       )}
-                    </p>
+                    </div>
                   </div>
                 </div>
               );

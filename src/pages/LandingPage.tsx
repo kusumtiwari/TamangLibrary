@@ -1,12 +1,12 @@
-import Herosection from "../components/landingpage/Herosection";
-import Welcome from "../components/landingpage/Welcome";
-import LibraryPublication from "../components/landingpage/LibraryPublication";
-import LibraryDetails from "../components/landingpage/LibraryDetails";
-import OurCollection from "../components/landingpage/OurCollection";
-import UpcomingEvents from "../components/landingpage/UpcomingEvents";
-import NewArrivals from "../components/landingpage/NewArrivals";
-import OngoingProjects from "../components/landingpage/OngoingProjects";
-import Testimonials from "../components/landingpage/Testimonials";
+import Herosection from "../components/Landingpage/Herosection";
+import Welcome from "../components/Landingpage/Welcome";
+import LibraryPublication from "../components/Landingpage/LibraryPublication";
+import LibraryDetails from "../components/Landingpage/LibraryDetails";
+import OurCollection from "../components/Landingpage/OurCollection";
+import UpcomingEvents from "../components/Landingpage/UpcomingEvents";
+import NewArrivals from "../components/Landingpage/NewArrivals";
+import OngoingProjects from "../components/Landingpage/OngoingProjects";
+import Testimonials from "../components/Landingpage/Testimonials";
 const LandingPage: React.FC = () => {
   return (
     <div className="">

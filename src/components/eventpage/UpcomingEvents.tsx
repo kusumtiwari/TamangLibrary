@@ -22,6 +22,15 @@ interface UpcomingEvents {
 }
 
 const UpcomingEvents: React.FC = () => {
+  const contextValue = useContext(UserContext);
+  const handleEventPageNavigation = contextValue?.handleEventPageNavigation;
+  const handleClick = (obj: UpcomingEvents, event: string) => {
+    if (handleEventPageNavigation) {
+      handleEventPageNavigation(obj, event);
+    } else {
+      console.error("handleEventPageNavigation is undefined");
+    }
+  };
   const [isViewMoreBtnClicked, setIsViewMoreBtnClicked] =
     useState<Boolean>(false);
   const matchesMedium = useMediaQuery("(min-width: 768px)");
@@ -69,6 +78,7 @@ const UpcomingEvents: React.FC = () => {
                       src={items.image}
                       alt="completed-project"
                       className="w-full h-full absolute bottom-[6%] left-[3%]"
+                      onClick={() => handleClick(items, "Upcoming")}
                     />
                   </div>
                   <div className="w-[95%] md:w-[75%] lg:w-[50%] playfair-display pt-6 lg:pt-0 flex flex-col justify-center">
@@ -80,18 +90,26 @@ const UpcomingEvents: React.FC = () => {
                         .unix(items.dateAndTime.seconds)
                         .format("dddd | Do MMMM, YYYY | hh:mmA")}
                     </h1>
-                    <p className="py-8 text-justify text-black font-semibold">
+                    <div className="py-8 text-justify text-black font-semibold">
                       {items.description.length > maxLength ? (
                         <>
-                          {items.description.slice(0, maxLength)}
+                          <div
+                            dangerouslySetInnerHTML={{
+                              __html: items.description.slice(0, maxLength),
+                            }}
+                          ></div>
                           <span className="text-primary-blueText underline cursor-pointer pl-2">
                             Read More
                           </span>
                         </>
                       ) : (
-                        items.description
+                        <div
+                          dangerouslySetInnerHTML={{
+                            __html: items.description,
+                          }}
+                        ></div>
                       )}
-                    </p>
+                    </div>
                   </div>
                 </div>
               );
@@ -116,6 +134,7 @@ const UpcomingEvents: React.FC = () => {
                       src={items.image}
                       alt="completed-project"
                       className="w-full h-full absolute bottom-[5%] left-[3%]"
+                      onClick={() => handleClick(items, "Upcoming")}
                     />
                   </div>
                   <div className="w-[95%] md:w-[75%] lg:w-[50%] playfair-display pt-6 lg:pt-0">
@@ -127,18 +146,26 @@ const UpcomingEvents: React.FC = () => {
                         .unix(items.dateAndTime.seconds)
                         .format("dddd | Do MMMM, YYYY | hh:mmA")}
                     </h1>
-                    <p className="py-8 text-justify text-black font-semibold">
+                    <div className="py-8 text-justify text-black font-semibold">
                       {items.description.length > maxLength ? (
                         <>
-                          {items.description.slice(0, maxLength)}
+                          <div
+                            dangerouslySetInnerHTML={{
+                              __html: items.description.slice(0, maxLength),
+                            }}
+                          ></div>
                           <span className="text-primary-blueText underline cursor-pointer pl-2">
                             Read More
                           </span>
                         </>
                       ) : (
-                        items.description
+                        <div
+                          dangerouslySetInnerHTML={{
+                            __html: items.description,
+                          }}
+                        ></div>
                       )}
-                    </p>
+                    </div>
                   </div>
                 </div>
               );
