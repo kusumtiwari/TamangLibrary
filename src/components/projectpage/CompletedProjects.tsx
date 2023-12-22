@@ -73,7 +73,7 @@ const CompletedProjects: React.FC = () => {
                   key={index}
                 >
                   <div
-                    className="w-[95%] md:w-[60%] lg:w-[40%] h-[45vh] my-auto relative"
+                    className="w-[95%] md:w-[60%] lg:w-[40%] h-[45vh] my-auto relative object-cover"
                     onClick={() => handleClick(items)}
                   >
                     <img
@@ -161,7 +161,7 @@ const CompletedProjects: React.FC = () => {
                     <img
                       src={items.image}
                       alt="completed-project"
-                      className="w-full h-full absolute bottom-[5%] left-[3%]"
+                      className="w-full h-full absolute bottom-[5%] left-[3%] object-cover"
                     />
                   </div>
                   <div className="w-[95%] md:w-[75%] lg:w-[50%] playfair-display pt-6 lg:pt-0">
@@ -188,7 +188,7 @@ const CompletedProjects: React.FC = () => {
                         NRS {items.budget}
                       </span>
                     </h1>
-                    <p className="py-8 text-justify text-black font-semibold">
+                    <div className="py-8 text-justify text-black font-semibold">
                       {items.description.length > maxLength ? (
                         <>
                           <div
@@ -210,7 +210,7 @@ const CompletedProjects: React.FC = () => {
                           }}
                         ></div>
                       )}
-                    </p>
+                    </div>
                   </div>
                 </div>
               );

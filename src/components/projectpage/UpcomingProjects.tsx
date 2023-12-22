@@ -128,7 +128,7 @@ const UpcomingProjects: React.FC = () => {
                     <img
                       src={item.image}
                       alt="ongoing-project"
-                      className="w-full h-full absolute left-[5%] bottom-[5%]"
+                      className="w-full h-full absolute left-[5%] bottom-[5%] object-cover"
                     />
                   </div>
                   <div className="w-[95%] md:w-[60%] pt-12">
@@ -160,7 +160,7 @@ const UpcomingProjects: React.FC = () => {
                     <img
                       src={item.image}
                       alt="ongoing-project"
-                      className="w-full h-full absolute left-[2%] bottom-[4%]"
+                      className="w-full h-full absolute left-[2%] bottom-[4%] object-cover"
                     />
                   </div>
                   <div className="w-[80%] md:w-[60%] pb-12 py-6">

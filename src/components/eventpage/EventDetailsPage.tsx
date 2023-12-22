@@ -42,7 +42,11 @@ const EventDetailsPage: React.FC = () => {
             <div dangerouslySetInnerHTML={{ __html: description }}></div>
           </div>
         </div>
-        <img src={image} alt="project-image" className="my-6 h-[50vh]" />
+        <img
+          src={image}
+          alt="project-image"
+          className="my-6 h-[50vh] object-cover"
+        />
       </div>
       <Sponsers />
     </div>

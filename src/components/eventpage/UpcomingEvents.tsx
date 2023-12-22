@@ -77,7 +77,7 @@ const UpcomingEvents: React.FC = () => {
                     <img
                       src={items.image}
                       alt="completed-project"
-                      className="w-full h-full absolute bottom-[6%] left-[3%]"
+                      className="w-full h-full absolute bottom-[6%] left-[3%] object-cover"
                       onClick={() => handleClick(items, "Upcoming")}
                     />
                   </div>
@@ -133,7 +133,7 @@ const UpcomingEvents: React.FC = () => {
                     <img
                       src={items.image}
                       alt="completed-project"
-                      className="w-full h-full absolute bottom-[5%] left-[3%]"
+                      className="w-full h-full absolute bottom-[5%] left-[3%] object-cover"
                       onClick={() => handleClick(items, "Upcoming")}
                     />
                   </div>

@@ -66,12 +66,12 @@ const PastEvents: React.FC = () => {
                     <img
                       src="/Blueline-2.png"
                       alt="blue-line"
-                      className="absolute bottom-1 left-[80%]"
+                      className="absolute bottom-0 left-[76%]"
                     />
                     <img
                       src={items.image}
                       alt="completed-project"
-                      className="w-full h-full absolute bottom-[6%] left-[3%]"
+                      className="w-full h-full absolute bottom-2 object-cover"
                       onClick={() => handleClick(items, "past")}
                     />
                   </div>
@@ -118,12 +118,12 @@ const PastEvents: React.FC = () => {
                     <img
                       src="/Blueline-2.png"
                       alt="blue-line"
-                      className="absolute bottom-1 left-[86%]"
+                      className="absolute bottom-0 left-[76%]"
                     />
                     <img
                       src={items.image}
                       alt="completed-project"
-                      className="w-full h-full absolute bottom-[5%]"
+                      className="w-full h-full absolute bottom-2 object-cover"
                       onClick={() => handleClick(items, "past")}
                     />
                   </div>
