@@ -52,14 +52,15 @@ const PublicationPage: React.FC = () => {
             className="h-full w-[90%] md:w-[60%] py-4 px-6 rounded-3xl border border-primary-blueText rounder-md focus:border-
             focus:outline-none"
             value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
+            onChange={(e) => {
+              setSearchQuery(e.target.value);
+              setCurrentPage(1);
+            }}
           />
           <button
             className="text-white bg-primary-blueText h-full px-6 absolute right-[5%] md:right-[20%] rounded-r-3xl"
             type="submit"
-            onClick={(e) => {
-              e.preventDefault();
-            }}
+            onClick={(e) => e.preventDefault()}
           >
             Search
           </button>
