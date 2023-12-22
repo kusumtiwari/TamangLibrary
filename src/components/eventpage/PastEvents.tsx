@@ -38,7 +38,7 @@ const PastEvents: React.FC = () => {
   if (!loading && error) {
     return <p>{JSON.stringify(error, null, 2)}</p>;
   }
-  const maxLength: number = 800;
+  const maxLength: number = 500;
   const firstSixProjects = projects ? projects.slice(0, 6) : [];
   return (
     <div>
@@ -50,18 +50,14 @@ const PastEvents: React.FC = () => {
           ? firstSixProjects?.map((items: any, index: number) => {
               return (
                 <div
-                  className={`flex py-8 flex-col justify-between w-[100%] lg:w-[30%] px-4 md:px-12 ${
-                    matchesMedium && index % 2 == 0
-                      ? "flex-row"
-                      : "lg:flex-row-reverse"
-                  }`}
+                  className={`flex py-8 flex-col justify-between w-[100%] lg:w-[30%] px-4 md:px-12 `}
                   key={index}
                 >
                   <div className="w-[100%] h-[45vh] relative">
                     <img
                       src="/Union.png"
                       alt="blue-line"
-                      className="absolute bottom-0"
+                      className="absolute bottom-0 right-0"
                     />
                     <img
                       src={items.image}
