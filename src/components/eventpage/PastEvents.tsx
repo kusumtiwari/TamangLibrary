@@ -59,7 +59,7 @@ const PastEvents: React.FC = () => {
           ? firstSixProjects?.map((items: any, index: number) => {
               return (
                 <div
-                  className={`flex py-8 flex-col justify-between w-[100%] lg:w-[30%] px-4 md:px-12 `}
+                  className={`flex py-8 flex-col justify-between w-[100%] lg:w-[33%] px-4 md:px-12 `}
                   key={index}
                 >
                   <div className="w-[100%] h-[45vh] relative">

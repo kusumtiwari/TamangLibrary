@@ -165,7 +165,7 @@ const NewArrivals: React.FC = () => {
                     (item, index) => (
                       <LiaStarSolid
                         key={index}
-                        className="text-gray-600 h-5 w-5"
+                        className="text-gray-300 h-5 w-5"
                       />
                     )
                   )}
