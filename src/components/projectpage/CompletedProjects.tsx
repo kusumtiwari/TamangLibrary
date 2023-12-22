@@ -114,7 +114,12 @@ const CompletedProjects: React.FC = () => {
                     <p className="py-8 text-justify text-black font-semibold">
                       {items.description.length > maxLength ? (
                         <>
-                          {items.description.slice(0, maxLength)}
+                          <div
+                            dangerouslySetInnerHTML={{
+                              __html: items.description.slice(0, maxLength),
+                            }}
+                          ></div>
+                          {/* {items.description.slice(0, maxLength)} */}
                           <span
                             className="text-primary-blueText underline cursor-pointer pl-2"
                             onClick={() => handleClick(items)}
@@ -123,7 +128,11 @@ const CompletedProjects: React.FC = () => {
                           </span>
                         </>
                       ) : (
-                        items.description
+                        <div
+                          dangerouslySetInnerHTML={{
+                            __html: items.description,
+                          }}
+                        ></div>
                       )}
                     </p>
                   </div>
