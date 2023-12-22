@@ -132,7 +132,10 @@ const UpcomingProjects: React.FC = () => {
                     />
                   </div>
                   <div className="w-[95%] md:w-[60%] pt-12">
-                    <p className="w-[100%] text-justify font-playfair text-xl font-semibold text-black">
+                    <p
+                      className="w-[100%] text-justify font-playfair text-xl font-semibold text-black cursor-pointer"
+                      onClick={() => handleClick(item)}
+                    >
                       {item.title}
                     </p>
                   </div>
@@ -164,7 +167,10 @@ const UpcomingProjects: React.FC = () => {
                     />
                   </div>
                   <div className="w-[80%] md:w-[60%] pb-12 py-6">
-                    <p className="w-[100%] font-playfair text-xl font-semibold text-black">
+                    <p
+                      className="w-[100%] font-playfair text-xl font-semibold text-black cursor-pointer"
+                      onClick={() => handleClick(item)}
+                    >
                       {item.title}
                     </p>
                   </div>

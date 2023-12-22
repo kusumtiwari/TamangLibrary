@@ -76,7 +76,10 @@ const PastEvents: React.FC = () => {
                     />
                   </div>
                   <div className="w-[100%] playfair-display pt-6 lg:pt-0 flex flex-col justify-center">
-                    <h1 className="text-primary-blue text-2xl text-primary-blueText">
+                    <h1
+                      className="text-primary-blue text-2xl text-primary-blueText cursor-pointer"
+                      onClick={() => handleClick(items, "past")}
+                    >
                       {items.title}
                     </h1>
                     <h1 className="text-primary-blue text-2xl">
@@ -128,7 +131,10 @@ const PastEvents: React.FC = () => {
                     />
                   </div>
                   <div className="w-[95%] md:w-[75%] lg:w-[50%] playfair-display pt-6 lg:pt-0">
-                    <h1 className="text-primary-blue text-2xl text-primary-blueText">
+                    <h1
+                      className="text-primary-blue text-2xl text-primary-blueText cursor-pointer"
+                      onClick={() => handleClick(items, "past")}
+                    >
                       {items.title}
                     </h1>
                     <h1 className="text-primary-blue text-2xl">

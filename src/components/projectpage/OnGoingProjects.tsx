@@ -119,7 +119,10 @@ const OnGoingProjects: React.FC = () => {
                     />
                   </div>
                   <div className="w-[60%] pt-12">
-                    <h1 className="text-black font-bold text-2xl md:text-4xl font-playfair text-center pb-8">
+                    <h1
+                      className="text-black font-bold text-2xl md:text-4xl font-playfair text-center pb-8 cursor-pointer"
+                      onClick={() => handleClick(item)}
+                    >
                       {item.title}
                     </h1>
                     <p className="w-[100%] text-justify font-playfair text-xl font-semibold text-black">
@@ -161,7 +164,10 @@ const OnGoingProjects: React.FC = () => {
                     />
                   </div>
                   <div className="w-[60%] pt-12">
-                    <h1 className="text-black font-bold text-2xl md:text-4xl font-playfair text-center pb-8">
+                    <h1
+                      className="text-black font-bold text-2xl md:text-4xl font-playfair text-center pb-8 cursor-pointer"
+                      onClick={() => handleClick(item)}
+                    >
                       {item.title}
                     </h1>
                     <p className="w-[100%] text-justify font-playfair text-xl font-semibold text-black">

@@ -111,7 +111,7 @@ const CompletedProjects: React.FC = () => {
                         NRS {items.budget}
                       </span>
                     </h1>
-                    <p className="py-8 text-justify text-black font-semibold">
+                    <div className="py-8 text-justify text-black font-semibold">
                       {items.description.length > maxLength ? (
                         <>
                           <div
@@ -134,7 +134,7 @@ const CompletedProjects: React.FC = () => {
                           }}
                         ></div>
                       )}
-                    </p>
+                    </div>
                   </div>
                 </div>
               );

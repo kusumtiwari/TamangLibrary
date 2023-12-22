@@ -36,7 +36,6 @@ const ProjectIndex = () => {
   if (!loading && error) {
     return <p>{JSON.stringify(error, null, 2)}</p>;
   }
-  console.log(projects);
   return (
     <>
       <div className="relative w-full h-[70vh] bg-[url('../../public/Project-page/Project-header.png')] bg-cover bg-no-repeat bg-center">
