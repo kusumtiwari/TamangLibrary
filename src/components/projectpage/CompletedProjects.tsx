@@ -84,7 +84,7 @@ const CompletedProjects: React.FC = () => {
                     <img
                       src={items.image}
                       alt="completed-project"
-                      className="w-full h-full absolute bottom-[6%] left-[3%]"
+                      className="w-full h-full absolute bottom-[6%] left-[3%] cursor-pointer"
                     />
                   </div>
                   <div className="w-[95%] md:w-[75%] lg:w-[50%] playfair-display pt-6 lg:pt-0 flex flex-col justify-center">

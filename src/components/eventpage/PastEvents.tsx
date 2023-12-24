@@ -71,7 +71,7 @@ const PastEvents: React.FC = () => {
                     <img
                       src={items.image}
                       alt="completed-project"
-                      className="w-full h-full absolute bottom-2 object-cover"
+                      className="w-full h-full absolute bottom-2 object-cover cursor-pointer"
                       onClick={() => handleClick(items, "past")}
                     />
                   </div>
