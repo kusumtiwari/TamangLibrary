@@ -53,7 +53,7 @@ const CompletedProjects: React.FC = () => {
   if (!loading && error) {
     return <p>{JSON.stringify(error, null, 2)}</p>;
   }
-  const maxLength: number = 800;
+  const maxLength: number = 300;
   const firstTwoProjects = projects ? projects.slice(0, 2) : [];
   return (
     <div className="text-primary-blueText my-12 bg-secondary-detailsBackground w-full font-playfair">
@@ -121,7 +121,7 @@ const CompletedProjects: React.FC = () => {
                           ></div>
 
                           <span
-                            className="text-primary-blueText underline cursor-pointer pl-2"
+                            className="text-primary-blueText underline cursor-pointer"
                             onClick={() => handleClick(items)}
                           >
                             Read More

@@ -95,7 +95,10 @@ const PastEvents: React.FC = () => {
                               __html: items.description.slice(0, maxLength),
                             }}
                           ></div>
-                          <span className="text-primary-blueText underline cursor-pointer pl-2">
+                          <span
+                            className="text-primary-blueText underline cursor-pointer"
+                            onClick={() => handleClick(items, "past")}
+                          >
                             Read More
                           </span>
                         </>
@@ -145,7 +148,10 @@ const PastEvents: React.FC = () => {
                               __html: items.description.slice(0, maxLength),
                             }}
                           ></div>
-                          <span className="text-primary-blueText underline cursor-pointer pl-2">
+                          <span
+                            className="text-primary-blueText underline cursor-pointer"
+                            onClick={() => handleClick(items, "past")}
+                          >
                             Read More
                           </span>
                         </>
@@ -162,7 +168,7 @@ const PastEvents: React.FC = () => {
               );
             })}
       </div>
-      <div onClick={onViewBtnClick} className="py-4">
+      <div onClick={onViewBtnClick} className="pb-12">
         {isViewMoreBtnClicked ? <ViewlessBtn /> : <ViewmoreBtn />}
       </div>
     </div>
