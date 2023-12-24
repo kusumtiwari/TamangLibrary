@@ -7,6 +7,7 @@ import EventPage from "./pages/EventPage";
 import ProjectPage from "./pages/ProjectPage";
 import PublicationPage from "./pages/PublicationPage";
 import ContactPage from "./pages/ContactPage";
+import OurCollection from "./components/Landingpage/OurCollection";
 const RoutesFile: React.FC = () => {
   return (
     <Routes>
@@ -18,6 +19,7 @@ const RoutesFile: React.FC = () => {
       <Route path="/publications" element={<PublicationPage />}></Route>
       <Route path="/events/*" element={<EventPage />}></Route>
       <Route path="/contact" element={<ContactPage />}></Route>
+      <Route path="/collection" element={<OurCollection />}></Route>
     </Routes>
   );
 };

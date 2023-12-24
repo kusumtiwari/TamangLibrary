@@ -66,7 +66,7 @@ const PastEvents: React.FC = () => {
                     <img
                       src="/Blueline-2.png"
                       alt="blue-line"
-                      className="absolute bottom-0 left-[76%]"
+                      className="absolute bottom-0 left-[79%]"
                     />
                     <img
                       src={items.image}
@@ -162,7 +162,7 @@ const PastEvents: React.FC = () => {
               );
             })}
       </div>
-      <div onClick={onViewBtnClick} className="py-8">
+      <div onClick={onViewBtnClick} className="py-4">
         {isViewMoreBtnClicked ? <ViewlessBtn /> : <ViewmoreBtn />}
       </div>
     </div>

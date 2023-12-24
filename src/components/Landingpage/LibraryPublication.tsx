@@ -42,13 +42,7 @@ const LibraryPublication: React.FC = () => {
           <IoNewspaperOutline className="text-3xl mr-5 " />
           <h1 className="text-3xl">LATEST</h1>
         </div>
-        <AliceCarousel
-          animationType="fadeout"
-          animationDuration={800}
-          disableButtonsControls
-          infinite
-          mouseTracking
-        >
+        <AliceCarousel disableButtonsControls infinite mouseTracking>
           {myBookPubication.map((item) => {
             return (
               <div

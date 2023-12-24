@@ -3,7 +3,15 @@ import { IoLocationOutline, IoCallOutline } from "react-icons/io5";
 import { RiFacebookCircleLine } from "react-icons/ri";
 import { FaInstagram } from "react-icons/fa";
 import { MdOutlineCopyright } from "react-icons/md";
+import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 const Footer: React.FC = () => {
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth", // Optional: Adds smooth scrolling effect
+    });
+  };
   return (
     <>
       <div className="bg-secondary-detailsBackground py-16 px-8 md:px-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
@@ -26,18 +34,46 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        <div className="lg:mx-auto">
-          <p className="md:text-xl py-2">Home</p>
-          <p className="md:text-xl py-2">Project</p>
-          <p className="md:text-xl py-2">Publication</p>
-          <p className="md:text-xl py-2">Collection</p>
+        <div className="lg:mx-auto cursor-pointer">
+          <p className="md:text-xl py-2">
+            <Link to="/" onClick={scrollToTop}>
+              Home
+            </Link>
+          </p>
+          <p className="md:text-xl py-2">
+            <Link to="/projects" onClick={scrollToTop}>
+              Projects
+            </Link>
+          </p>
+          <p className="md:text-xl py-2">
+            <Link to="/publications" onClick={scrollToTop}>
+              Publication
+            </Link>
+          </p>
+          <p className="md:text-xl py-2">
+            <Link to="/collection" onClick={scrollToTop}>
+              Collection
+            </Link>
+          </p>
         </div>
 
-        <div className="lg:mx-auto">
-          <p className="md:text-xl py-2">About</p>
+        <div className="lg:mx-auto cursor-pointer">
+          <p className="md:text-xl py-2">
+            <Link to="/about" onClick={scrollToTop}>
+              About
+            </Link>
+          </p>
           <p className="md:text-xl py-2">Gallery</p>
-          <p className="md:text-xl py-2">Event</p>
-          <p className="md:text-xl py-2">Contact</p>
+          <p className="md:text-xl py-2">
+            <Link to="/events" onClick={scrollToTop}>
+              Events
+            </Link>
+          </p>
+          <p className="md:text-xl py-2">
+            <Link to="/contact" onClick={scrollToTop}>
+              Contact
+            </Link>
+          </p>
         </div>
 
         <div className="">
