@@ -20,7 +20,7 @@ const ProjectDetailsPage: React.FC = () => {
             {status} Projects
           </h1>
         </div>
-        <div className="absolute left-[10%] top-[50%] bg-white w-[80%] p-4 lg:p-12 md:p   -12 font-kameron text-xl md:text-2xl text-primary-blueText border-2 border-primary-blueText">
+        <div className="absolute left-[10%] top-[60%] bg-white w-[80%] p-4 lg:p-12 md:p   -12 font-kameron text-xl md:text-2xl text-primary-blueText border-2 border-primary-blueText">
           <h1>
             Project Title : <span className="text-black pl-1">{title}</span>
           </h1>

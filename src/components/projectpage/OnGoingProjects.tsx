@@ -118,7 +118,7 @@ const OnGoingProjects: React.FC = () => {
                       className="w-full h-full"
                     />
                   </div>
-                  <div className="w-[60%] pt-12">
+                  <div className="w-[90%] md:w-[60%] pt-12">
                     <h1
                       className="text-black font-bold text-2xl md:text-4xl font-playfair text-center pb-8 cursor-pointer"
                       onClick={() => handleClick(item)}
@@ -163,7 +163,7 @@ const OnGoingProjects: React.FC = () => {
                       className="w-full h-full"
                     />
                   </div>
-                  <div className="w-[60%] pt-12">
+                  <div className="w-[100%] md:w-[60%] pt-12">
                     <h1
                       className="text-black font-bold text-2xl md:text-4xl font-playfair text-center pb-8 cursor-pointer"
                       onClick={() => handleClick(item)}

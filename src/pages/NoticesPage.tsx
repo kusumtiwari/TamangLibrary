@@ -2,10 +2,18 @@ import dayjs from "dayjs";
 import { db } from "../../firebase";
 import { collection, query, orderBy } from "firebase/firestore";
 import { useCollectionData } from "react-firebase-hooks/firestore";
-import ErrorPage from "../common/ErrorPage";
 import LoadingSpinner from "../common/LoadingSpinner";
 
+import { useState } from "react";
+const maxLength: number = 220;
 const NoticesPage: React.FC = () => {
+  const [latestNoticeDescription, setLatestNoticeDescription] = useState(false);
+  const [pastNoticeDescription, setPastNoticeDescription] = useState<boolean[]>(
+    []
+  );
+  const onLatestNoticeReadMoreClick = () => {
+    setLatestNoticeDescription(!latestNoticeDescription);
+  };
   const noticesQuery = query(
     collection(db, "notice"),
     orderBy("dateAndTime", "desc")
@@ -23,7 +31,18 @@ const NoticesPage: React.FC = () => {
   }
 
   const latestNotice = notices && notices.length > 0 ? notices[0] : null;
+  const pastNoticeLength: number = notices.length - 1;
+  const pastNotices = Array.from({ length: pastNoticeLength }, () => false);
 
+  const onPastNoticeReadMoreClick = (index: number) => {
+    const updatedpastNotices = [...pastNotices];
+    if (pastNoticeDescription[index]) {
+      updatedpastNotices[index] = false;
+    } else {
+      updatedpastNotices[index] = true;
+    }
+    setPastNoticeDescription(updatedpastNotices);
+  };
   return (
     <div className="">
       <div className="h-96 bg-gradient-to-r from-purple-500 to-blue-500 flex flex-col items-center justify-center">
@@ -34,7 +53,6 @@ const NoticesPage: React.FC = () => {
           Your source for important updates and notices
         </div>
       </div>
-
       {latestNotice && (
         <>
           <div className="mt-12 relative h-[30vh]">
@@ -53,10 +71,37 @@ const NoticesPage: React.FC = () => {
           <h2 className="text-center text-xl font-bold text-primary-blueText text-uppercase pt-8">
             {latestNotice.title.toUpperCase()}
           </h2>
-          <div
-            dangerouslySetInnerHTML={{ __html: latestNotice.description }}
-            className="p-16 text-justify"
-          ></div>
+          <div className="p-16 text-justify">
+            {latestNotice.description.length > maxLength ? (
+              <>
+                {latestNoticeDescription ? (
+                  <div
+                    dangerouslySetInnerHTML={{
+                      __html: latestNotice.description,
+                    }}
+                  ></div>
+                ) : (
+                  <div
+                    dangerouslySetInnerHTML={{
+                      __html: latestNotice.description.slice(0, maxLength),
+                    }}
+                  ></div>
+                )}
+                <span
+                  className="text-primary-blueText underline cursor-pointer pl-2"
+                  onClick={onLatestNoticeReadMoreClick}
+                >
+                  {latestNoticeDescription ? "Show less" : "Read more"}
+                </span>
+              </>
+            ) : (
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: latestNotice.description,
+                }}
+              ></div>
+            )}
+          </div>
         </>
       )}
 
@@ -79,13 +124,39 @@ const NoticesPage: React.FC = () => {
           <h2 className="text-center text-xl font-bold text-primary-blueText text-uppercase pt-8">
             {notice.title.toUpperCase()}
           </h2>
-          <div
-            dangerouslySetInnerHTML={{ __html: notice.description }}
-            className="p-16 text-justify"
-          ></div>
+          <div className="p-16 text-justify">
+            {notice.description.length > maxLength ? (
+              <>
+                {pastNoticeDescription[index] ? (
+                  <div
+                    dangerouslySetInnerHTML={{
+                      __html: notice.description,
+                    }}
+                  ></div>
+                ) : (
+                  <div
+                    dangerouslySetInnerHTML={{
+                      __html: notice.description.slice(0, maxLength),
+                    }}
+                  ></div>
+                )}
+                <span
+                  className="text-primary-blueText underline cursor-pointer pl-2"
+                  onClick={() => onPastNoticeReadMoreClick(index)}
+                >
+                  {pastNoticeDescription[index] ? "Show less" : "Read more"}
+                </span>
+              </>
+            ) : (
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: notice.description,
+                }}
+              ></div>
+            )}
+          </div>
         </div>
       ))}
-
       <div className="h-32"></div>
     </div>
   );
