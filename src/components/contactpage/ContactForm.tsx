@@ -1,7 +1,7 @@
 const ContactForm: React.FC = () => {
   return (
     <>
-      <div className="my-24 px-12 py-12 flex flex-col justify-between items-center bg-secondary-detailsBackground">
+      <div className="my-24 py-12 xl:px-24 lg:px-16 md:px-16 flex flex-col justify-between items-center bg-secondary-detailsBackground">
         <h1 className="uppercase font-playfair font-thin text-3xl lg:text-5xl pb-12">
           Contact us
         </h1>
@@ -46,7 +46,7 @@ const ContactForm: React.FC = () => {
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3531.8643541300285!2d85.35946007492358!3d27.72147412486922!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb1bda4a951f0f%3A0x3ddabb234891c3bd!2sBuddha%20Stupa!5e0!3m2!1sen!2snp!4v1703411466028!5m2!1sen!2snp"
           allowFullScreen
           loading="lazy"
-          style={{ width: "100%", height: "50vh" }}
+          style={{ width: "100%", height: "70vh" }}
         ></iframe>
       </div>
     </>

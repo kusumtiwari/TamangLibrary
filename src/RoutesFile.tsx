@@ -7,7 +7,7 @@ import EventPage from "./pages/EventPage";
 import ProjectPage from "./pages/ProjectPage";
 import PublicationPage from "./pages/PublicationPage";
 import ContactPage from "./pages/ContactPage";
-import OurCollection from "./components/Landingpage/OurCollection";
+import OurCollection from "./components/landingpage/OurCollection";
 const RoutesFile: React.FC = () => {
   return (
     <Routes>

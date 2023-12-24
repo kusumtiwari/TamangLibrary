@@ -61,7 +61,9 @@ const UpcomingEvents: React.FC = () => {
               <div className="w-[95%] md:w-[50%] md:pl-12">
                 <h1
                   className="text-2xl md:text-3xl mt-8 md:mt-0 cursor-pointer"
-                  onClick={() => handleClick(item, "Upcoming")}
+                  onClick={() =>
+                    handleClick(item as UpcomingEvents, "Upcoming")
+                  }
                 >
                   {item.title}
                 </h1>
@@ -75,7 +77,9 @@ const UpcomingEvents: React.FC = () => {
                       ></div>
                       <span
                         className="text-primary-blueText underline cursor-pointer pl-2"
-                        onClick={() => handleClick(item, "Upcoming")}
+                        onClick={() =>
+                          handleClick(item as UpcomingEvents, "Upcoming")
+                        }
                       >
                         Read More
                       </span>
@@ -109,7 +113,9 @@ const UpcomingEvents: React.FC = () => {
                   src={item.image}
                   alt="upcoming-event"
                   className="w-full h-full cursor-pointer object-cover"
-                  onClick={() => handleClick(item, "Upcoming")}
+                  onClick={() =>
+                    handleClick(item as UpcomingEvents, "Upcoming")
+                  }
                 />
               </div>
             </div>

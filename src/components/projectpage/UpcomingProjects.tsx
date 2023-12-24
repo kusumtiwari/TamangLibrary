@@ -118,7 +118,7 @@ const UpcomingProjects: React.FC = () => {
                 >
                   <div
                     className="w-[90%] md:w-[60%] h-[50vh] cursor-pointer flex relative"
-                    onClick={() => handleClick(item)}
+                    onClick={() => handleClick(item as UpcomingProjects)}
                   >
                     <img
                       src="/Union.png"
@@ -134,7 +134,7 @@ const UpcomingProjects: React.FC = () => {
                   <div className="w-[95%] md:w-[60%] pt-12">
                     <p
                       className="w-[100%] text-justify font-playfair text-xl font-semibold text-black cursor-pointer"
-                      onClick={() => handleClick(item)}
+                      onClick={() => handleClick(item as UpcomingProjects)}
                     >
                       {item.title}
                     </p>
@@ -153,7 +153,7 @@ const UpcomingProjects: React.FC = () => {
                 >
                   <div
                     className="w-[80%] md:w-[60%] h-[55vh] cursor-pointer relative"
-                    onClick={() => handleClick(item)}
+                    onClick={() => handleClick(item as UpcomingProjects)}
                   >
                     <img
                       src="/Union.png"
@@ -169,7 +169,7 @@ const UpcomingProjects: React.FC = () => {
                   <div className="w-[80%] md:w-[60%] pb-12 py-6">
                     <p
                       className="w-[100%] font-playfair text-xl font-semibold text-black cursor-pointer"
-                      onClick={() => handleClick(item)}
+                      onClick={() => handleClick(item as UpcomingProjects)}
                     >
                       {item.title}
                     </p>

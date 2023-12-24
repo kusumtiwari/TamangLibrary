@@ -4,7 +4,6 @@ import { RiFacebookCircleLine } from "react-icons/ri";
 import { FaInstagram } from "react-icons/fa";
 import { MdOutlineCopyright } from "react-icons/md";
 import { Link } from "react-router-dom";
-import { NavLink } from "react-router-dom";
 const Footer: React.FC = () => {
   const scrollToTop = () => {
     window.scrollTo({

@@ -31,7 +31,7 @@ const NoticesPage: React.FC = () => {
   }
 
   const latestNotice = notices && notices.length > 0 ? notices[0] : null;
-  const pastNoticeLength: number = notices.length - 1;
+  const pastNoticeLength: number = (notices?.length ?? 0) - 1;
   const pastNotices = Array.from({ length: pastNoticeLength }, () => false);
 
   const onPastNoticeReadMoreClick = (index: number) => {

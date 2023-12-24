@@ -12,10 +12,10 @@ const ProjectIndex = () => {
   const [searchValue, setSearchValue] = useState("");
   const inputRef = useRef<HTMLInputElement>(null);
 
-  const handleSearch = (e) => {
-    e.preventDefault();
-    setSearchValue(inputRef.current.value.trim());
-  };
+  // const handleSearch = (e) => {
+  //   e.preventDefault();
+  //   setSearchValue(inputRef.current.value.trim());
+  // };
   const projectsRef = collection(db, "projects");
 
   const queryRef = searchValue
@@ -25,7 +25,7 @@ const ProjectIndex = () => {
       )
     : projectsRef;
 
-  const [projects, loading, error] = useCollectionData(queryRef, {
+  const [_projects, loading, error] = useCollectionData(queryRef, {
     snapshotListenOptions: { includeMetadataChanges: true },
   });
 

@@ -152,7 +152,7 @@ const NewArrivals: React.FC = () => {
               <div className="flex mb-8">
                 <div className="flex">
                   {Array.from({ length: Number(items.rating) }).map(
-                    (item, index) => (
+                    (_item, index) => (
                       <LiaStarSolid
                         key={index}
                         className="text-primary-blueText h-5 w-5"
@@ -162,7 +162,7 @@ const NewArrivals: React.FC = () => {
                 </div>
                 <div className="flex">
                   {Array.from({ length: Number(5 - items.rating) }).map(
-                    (item, index) => (
+                    (_item, index) => (
                       <LiaStarSolid
                         key={index}
                         className="text-gray-300 h-5 w-5"

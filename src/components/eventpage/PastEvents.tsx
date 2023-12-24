@@ -1,5 +1,4 @@
 import { useState, useContext } from "react";
-import { useMediaQuery } from "@react-hook/media-query";
 import dayjs from "dayjs";
 import "react-alice-carousel/lib/alice-carousel.css";
 import { Timestamp } from "firebase/firestore/lite";
@@ -32,7 +31,7 @@ const PastEvents: React.FC = () => {
   };
   const [isViewMoreBtnClicked, setIsViewMoreBtnClicked] =
     useState<Boolean>(false);
-  const matchesMedium = useMediaQuery("(min-width: 768px)");
+  // const matchesMedium = useMediaQuery("(min-width: 768px)");
   const onViewBtnClick = () => {
     setIsViewMoreBtnClicked(!isViewMoreBtnClicked);
   };
