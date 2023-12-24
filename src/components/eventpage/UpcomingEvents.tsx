@@ -91,7 +91,7 @@ const UpcomingEvents: React.FC = () => {
                     <h1 className="text-primary-blue text-2xl">
                       {dayjs
                         .unix(items.dateAndTime.seconds)
-                        .format("dddd | Do MMMM, YYYY | hh:mmA")}
+                        .format("dddd | D MMMM, YYYY | hh:mmA")}
                     </h1>
                     <div className="py-8 text-justify text-black font-semibold">
                       {items.description.length > maxLength ? (
@@ -150,7 +150,7 @@ const UpcomingEvents: React.FC = () => {
                     <h1 className="text-primary-blue text-2xl">
                       {dayjs
                         .unix(items.dateAndTime.seconds)
-                        .format("dddd | Do MMMM, YYYY | hh:mmA")}
+                        .format("dddd | D MMMM, YYYY | hh:mmA")}
                     </h1>
                     <div className="py-8 text-justify text-black font-semibold">
                       {items.description.length > maxLength ? (
