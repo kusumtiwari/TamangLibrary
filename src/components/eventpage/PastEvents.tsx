@@ -63,7 +63,7 @@ const PastEvents: React.FC = () => {
                 >
                   <div className="w-[100%] h-[45vh] relative">
                     <img
-                      src="/Blueline-2.png"
+                      src="/img/common/Blueline-2.png"
                       alt="blue-line"
                       className="absolute bottom-0 left-[79%]"
                     />

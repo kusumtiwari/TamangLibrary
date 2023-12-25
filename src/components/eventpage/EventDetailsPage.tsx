@@ -18,7 +18,7 @@ const EventDetailsPage: React.FC = () => {
             {status} Events
           </h1>
         </div>
-        <div className="absolute left-[10%] top-[50%] bg-white w-[80%] py-12 px-8 font-kameron text-xl md:text-2xl text-primary-blueText border-2 border-primary-blueText">
+        <div className="absolute left-[10%] top-[60%] bg-white w-[80%] py-12 px-8 font-kameron text-xl md:text-2xl text-primary-blueText border-2 border-primary-blueText">
           <h1>
             Event : <span className="text-black pl-1">{title}</span>
           </h1>

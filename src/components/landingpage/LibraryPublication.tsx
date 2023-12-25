@@ -13,7 +13,7 @@ interface BookPublication {
 const myBookPubication: BookPublication[] = [
   {
     id: 1,
-    image: "/LibraryPubBook.png",
+    image: "/img/LibraryPubBook.png",
     title: "language preservation practise in nepal",
     author: "Amrit Yonjan, Krishna Prasad Dahal",
     date: "October 2023",
@@ -22,7 +22,7 @@ const myBookPubication: BookPublication[] = [
   },
   {
     id: 2,
-    image: "/LibraryPubBook.png",
+    image: "/img/LibraryPubBook.png",
     title: "National Wide Recognized",
     author: "George Washington",
     date: "Septemper 2020",

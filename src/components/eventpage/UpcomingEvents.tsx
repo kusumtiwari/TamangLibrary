@@ -70,7 +70,7 @@ const UpcomingEvents: React.FC = () => {
                 >
                   <div className="w-[95%] md:w-[60%] lg:w-[40%] h-[45vh] my-auto relative">
                     <img
-                      src="/Union.png"
+                      src="/img/common/Union.png"
                       alt="blue-line"
                       className="absolute bottom-0"
                     />
@@ -129,7 +129,7 @@ const UpcomingEvents: React.FC = () => {
                 >
                   <div className="w-[95%] md:w-[60%] lg:w-[40%] h-[45vh] my-auto relative">
                     <img
-                      src="/Union.png"
+                      src="/img/common/Union.png"
                       alt="blue-line"
                       className="absolute bottom-0"
                     />

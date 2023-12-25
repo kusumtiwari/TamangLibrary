@@ -1,13 +1,13 @@
-import { useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom";
 const Logo: React.FC = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const handleLogoClick = () => {
-    navigate('/');
+    navigate("/");
   };
-    return(
-  <div className="cursor-pointer" onClick={handleLogoClick}>
-    <img src="/Logo.png" alt="logo" />
-  </div>
-    )
-}
+  return (
+    <div className="cursor-pointer" onClick={handleLogoClick}>
+      <img src="/img/common/Logo.png" alt="logo" />
+    </div>
+  );
+};
 export default Logo;

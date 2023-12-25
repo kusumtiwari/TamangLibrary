@@ -38,7 +38,7 @@ const ProjectIndex = () => {
   }
   return (
     <>
-      <div className="relative w-full h-[70vh] bg-[url('../../public/Project-page/Project-header.png')] bg-cover bg-no-repeat bg-center">
+      <div className="relative w-full h-[70vh] bg-[url('../../public/img/common/Project-header.png')] bg-cover bg-no-repeat bg-center">
         <form className="relative top-[80%] flex items-center justify-center h-[8vh] ">
           <input
             type="text"

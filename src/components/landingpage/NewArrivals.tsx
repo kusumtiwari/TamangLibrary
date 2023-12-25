@@ -19,7 +19,7 @@ interface NewArrivals {
 const myNewArrivals: NewArrivals[] = [
   {
     id: 1,
-    image: "/Newarrivals/book1.png",
+    image: "/img/Newarrivals/book1.png",
     title: "raniban",
     author: "Krishna Murari gautam",
     price: 500,
@@ -29,7 +29,7 @@ const myNewArrivals: NewArrivals[] = [
   },
   {
     id: 2,
-    image: "/Newarrivals/book2.png",
+    image: "/img/Newarrivals/book2.png",
     title: "Palpasa Cafe",
     author: "Narayan Wagle, Shyam Kumar Rai",
     price: 800,
@@ -39,7 +39,7 @@ const myNewArrivals: NewArrivals[] = [
   },
   {
     id: 3,
-    image: "/Newarrivals/book3.png",
+    image: "/img/Newarrivals/book3.png",
     title: "Ritu bichar",
     author: "lekhnath paudyal",
     price: 1500,
@@ -49,7 +49,7 @@ const myNewArrivals: NewArrivals[] = [
   },
   {
     id: 4,
-    image: "/Newarrivals/book1.png",
+    image: "/img/Newarrivals/book1.png",
     title: "raniban",
     author: "Krishna Murari gautam",
     price: 500,
@@ -59,7 +59,7 @@ const myNewArrivals: NewArrivals[] = [
   },
   {
     id: 5,
-    image: "/Newarrivals/book2.png",
+    image: "/img/Newarrivals/book2.png",
     title: "Palpasa Cafe",
     author: "Narayan Wagle, Shyam Kumar Rai",
     price: 800,

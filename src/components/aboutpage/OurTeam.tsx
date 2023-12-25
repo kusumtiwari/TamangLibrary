@@ -13,7 +13,7 @@ interface Teams {
 const myTeams: Teams[] = [
   {
     id: 1,
-    image: "/Team-members/Team-member1.png",
+    image: "/img/Team-members/Team-member1.png",
     name: "Saroj Tamang",
     position: "co - Founder and director",
     quote:
@@ -23,7 +23,7 @@ const myTeams: Teams[] = [
   },
   {
     id: 2,
-    image: "/Team-members/Team-member2.png",
+    image: "/img/Team-members/Team-member2.png",
     name: "Raj Kumar Thapa",
     position: "Chief Executive Officer (CEO)",
     quote: "Never stop believing in cats",
@@ -32,7 +32,7 @@ const myTeams: Teams[] = [
   },
   {
     id: 3,
-    image: "/Team-members/Team-member3.png",
+    image: "/img/Team-members/Team-member3.png",
     name: "Reena Adhikari",
     position: "Chief Operation Officer (COO)",
     quote: "are you in touch with your deepest and darkest of what",
@@ -41,7 +41,7 @@ const myTeams: Teams[] = [
   },
   {
     id: 4,
-    image: "/Team-members/Team-member1.png",
+    image: "/img/Team-members/Team-member1.png",
     name: "Shyam Kumar",
     position: "co - Founder and director",
     quote: "young alive religious and beautiful",
@@ -50,7 +50,7 @@ const myTeams: Teams[] = [
   },
   {
     id: 5,
-    image: "/Team-members/Team-member2.png",
+    image: "/img/Team-members/Team-member2.png",
     name: "Ashish Gurung",
     position: "Manager",
     quote: "good food good mood it is",
@@ -62,9 +62,15 @@ const OurTeam: React.FC = () => {
   const contextValue = useContext(UserContext);
   const handleAboutPageNavigation = contextValue?.handleAboutPageNavigation;
   console.log(handleAboutPageNavigation);
-  const handleClick = (name: string, position:string, quote:string, bio:string, id:number) => {
+  const handleClick = (
+    name: string,
+    position: string,
+    quote: string,
+    bio: string,
+    id: number
+  ) => {
     if (handleAboutPageNavigation) {
-      handleAboutPageNavigation(name,position,quote,bio,id);
+      handleAboutPageNavigation(name, position, quote, bio, id);
     } else {
       console.error("handleAboutPageNavigation is undefined");
     }
@@ -80,7 +86,15 @@ const OurTeam: React.FC = () => {
             <div
               className="uppercase w-[100%] md:w-[45%] lg:w-[32%] mb-14 cursor-pointer"
               key={items.id}
-              onClick={() => handleClick(items.name, items.position, items.quote, items.biography,items.id)}
+              onClick={() =>
+                handleClick(
+                  items.name,
+                  items.position,
+                  items.quote,
+                  items.biography,
+                  items.id
+                )
+              }
             >
               <img
                 src={items.image}

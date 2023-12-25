@@ -13,28 +13,28 @@ const myScopeInfo: ScopeInfo[] = [
   {
     id: 1,
     title: "free education",
-    image: "/herosection/image1.png",
+    image: "/img/herosection/image1.png",
     description:
       "Lorem ipsum dolor sit amet consectetur. Adipiscing sollicitudin odio aliquam eget in in non. Nec congue consectetur congue aliquam tellus. Enim netus enim lorem ut porta vitae. Lorem ipsum dolor sit amet consectetur. Adipiscing sollicitudin odio aliquam eget in in non. Nec congue consectetur congue aliquam tellus. Enim netus enim lorem ut porta vitae. Learn more",
   },
   {
     id: 2,
     title: "Language presrvation",
-    image: "/herosection/image2.png",
+    image: "/img/herosection/image2.png",
     description:
       "The Tamang Library is committed to preserving, celebrating, and promoting the rich cultural heritage and language of the different community in Nepal. research opportunities. Our mission is to serve as a hub for Nepali cultural resources, fostering a sense of identity Our mission is to serve as a hub for Nepali cultural resources, fostering a sense of identity",
   },
   {
     id: 3,
     title: "free membership",
-    image: "/herosection/image2.png",
+    image: "/img/herosection/image2.png",
     description:
       "The Tamang Library is committed to preserving, celebrating, and promoting the rich cultural heritage and language of the different community in Nepal. Our mission is to serve as a hub for Nepali cultural resources, fostering a sense of identity and pride among Nepalese people and providing valuable educational and research opportunities. The Tamang Library is committed to preserving, celebrating, and promoting the rich cultural heritage and language of the different community in Nepal. Our mission is to serve as a hub for Nepali cultural resources, fostering a sense of identity and pride among Nepalese people and providing valuable educational and research opportunities. Our mission is to serve as a hub for Nepali cultural resources, fostering a sense of identity and pride among Nepalese people and providing valuable educational and research opportunities.",
   },
   {
     id: 4,
     title: "documentation",
-    image: "/herosection/image1.png",
+    image: "/img/herosection/image1.png",
     description:
       "Lorem ipsum dolor sit amet consectetur. Adipiscing sollicitudin odio aliquam eget in in non. Nec congue consectetur congue aliquam tellus. Enim netus enim lorem ut porta vitae. Lorem ipsum dolor sit amet consectetur. Adipiscing sollicitudin odio aliquam eget in in non. Nec congue consectetur congue aliquam tellus. Enim netus enim lore. Lorem ipsum dolor sit amet consectetur. Adipiscing sollicitudin odio aliquam eget in in non. Nec congue consectetur congue aliquam tellus. Enim netus enim lore.",
   },

@@ -69,9 +69,21 @@ const LibraryDetails: React.FC = () => {
         })}
       </div>
       <div className="flex my-8 md:my-0 md:flex-col">
-        <img src="/LibraryDetailsimg3.png" alt="library-detail" className="my-6"/>
-        <img src="/LibraryDetailsimg1.png" alt="library-detail" className="mb-3"/>
-        <img src="/LibraryDetailsimg2.png" alt="library-detail" className="mb-3"/>
+        <img
+          src="/img/LibraryDetailsImage/LibraryDetailsimg3.png"
+          alt="library-detail"
+          className="my-6"
+        />
+        <img
+          src="/img/LibraryDetailsImage/LibraryDetailsimg1.png"
+          alt="library-detail"
+          className="mb-3"
+        />
+        <img
+          src="/img/LibraryDetailsImage/LibraryDetailsimg2.png"
+          alt="library-detail"
+          className="mb-3"
+        />
       </div>
 
       <div className="grid grid-cols-1 gap-2 md:w-[40%]">
