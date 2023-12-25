@@ -13,7 +13,7 @@ const ProjectDetailsPage: React.FC = () => {
   const image = state.image;
 
   return (
-    <div>
+    <>
       <div className="relative h-[90vh] w-[100%]">
         <div className="bg-[url('../../public/img/common/ProjectDetailsBg.png')] bg-cover bg-no-repeat bg-center w-full h-[70vh] flex items-center justify-center">
           <h1 className="w-[100%] text-center uppercase text-white text-3xl md:text-5xl font-kameron">
@@ -57,7 +57,7 @@ const ProjectDetailsPage: React.FC = () => {
         ></div>
       </div>
       <Sponsers />
-    </div>
+    </>
   );
 };
 export default ProjectDetailsPage;

@@ -11,9 +11,9 @@ const EventDetailsPage: React.FC = () => {
   const address = state.location;
   const status = state.eventType;
   return (
-    <div>
+    <>
       <div className="relative h-[90vh] w-[100%] overflow-hidden">
-        <div className="bg-[url('../../public/ProjectDetailsBg.png')] bg-cover bg-no-repeat bg-center w-full h-[70vh] flex items-center justify-center">
+        <div className="bg-[url('../../public/img/common/ProjectDetailsBg.png')] bg-cover bg-no-repeat bg-center w-full h-[70vh] flex items-center justify-center">
           <h1 className="w-[100%] text-center uppercase text-white text-3xl md:text-5xl font-kameron">
             {status} Events
           </h1>
@@ -45,8 +45,9 @@ const EventDetailsPage: React.FC = () => {
           dangerouslySetInnerHTML={{ __html: description }}
         ></div>
       </div>
+
       <Sponsers />
-    </div>
+    </>
   );
 };
 export default EventDetailsPage;

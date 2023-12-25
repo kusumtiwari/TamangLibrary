@@ -43,10 +43,9 @@ const ContactForm: React.FC = () => {
       </div>
       <div className="my-16">
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3531.8643541300285!2d85.35946007492358!3d27.72147412486922!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb1bda4a951f0f%3A0x3ddabb234891c3bd!2sBuddha%20Stupa!5e0!3m2!1sen!2snp!4v1703411466028!5m2!1sen!2snp"
-          allowFullScreen
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3531.8643541300366!2d85.35946007492358!3d27.72147412486922!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb1bda4a951f0f%3A0x3ddabb234891c3bd!2sBuddha%20Stupa!5e0!3m2!1sen!2snp!4v1703488261343!5m2!1sen!2snp"
           loading="lazy"
-          style={{ width: "100%", height: "70vh" }}
+          className="w-full h-[50vh]"
         ></iframe>
       </div>
     </>

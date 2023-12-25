@@ -16,27 +16,27 @@ const responsive = {
 const mySponsers: Sponsers[] = [
   {
     id: 1,
-    image: "/Sponsers/Sponsers3.png",
+    image: "/img/Sponsers/Sponsers3.png",
   },
   {
     id: 2,
-    image: "/Sponsers/Sponsers2.png",
+    image: "/img/Sponsers/Sponsers2.png",
   },
   {
     id: 3,
-    image: "/Sponsers/Sponsers1.png",
+    image: "/img/Sponsers/Sponsers1.png",
   },
   {
     id: 4,
-    image: "/Sponsers/Sponsers4.png",
+    image: "/img/Sponsers/Sponsers4.png",
   },
   {
     id: 5,
-    image: "/Sponsers/Sponsers1.png",
+    image: "/img/Sponsers/Sponsers1.png",
   },
   {
-    id: 2,
-    image: "/Sponsers/Sponsers2.png",
+    id: 6,
+    image: "/img/Sponsers/Sponsers2.png",
   },
 ];
 
@@ -54,7 +54,7 @@ const Sponsers: React.FC = () => {
     setIsRightbtnClicked(true);
   };
   return (
-    <div className="my-8 mb-32 overflow-hidden">
+    <div className="my-8 mb-32 overflow-hidden w-full">
       <h1 className="uppercase text-2xl md:text-4xl lg:text-5xl text-center py-12 text-primary-blueText">
         Sponsored
       </h1>
