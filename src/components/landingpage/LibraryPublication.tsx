@@ -58,7 +58,10 @@ const LibraryPublication: React.FC = () => {
                     <h1 className="text-sm font-bold">{item.author}</h1>
                   </div>
                   <h1 className="pb-4 text-black">{item.date}</h1>
-                  <p className="leading-[1.5] lg:w-[80%] text-base text-black text-justify">
+                  <p
+                    className="leading-[1.5] lg:w-[80%] text-base text-black text-justify"
+                    style={{ lineHeight: "32px" }}
+                  >
                     {item.description}
                   </p>
                 </div>

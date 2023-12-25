@@ -22,7 +22,7 @@ interface UpcomingEvents {
   dateAndTime: Timestamp;
 }
 
-const maxLength = 300;
+const maxLength = 200;
 const UpcomingEvents: React.FC = () => {
   const contextValue = useContext(UserContext);
   const handleEventPageNavigation = contextValue?.handleEventPageNavigation;
@@ -58,7 +58,7 @@ const UpcomingEvents: React.FC = () => {
               }`}
               key={index}
             >
-              <div className="w-[95%] md:w-[50%] md:pl-12">
+              <div className="w-[95%] md:w-[50%] md:pl-12 h-[55vh]">
                 <h1
                   className="text-2xl md:text-3xl mt-8 md:mt-0 cursor-pointer"
                   onClick={() =>
@@ -76,7 +76,7 @@ const UpcomingEvents: React.FC = () => {
                         }}
                       ></div>
                       <span
-                        className="text-primary-blueText underline cursor-pointer pl-2"
+                        className="text-primary-blueText underline cursor-pointer"
                         onClick={() =>
                           handleClick(item as UpcomingEvents, "Upcoming")
                         }
@@ -108,7 +108,7 @@ const UpcomingEvents: React.FC = () => {
                   </p>
                 </div>
               </div>
-              <div className="w-[95%] md:w-[45%] h-[50vh]">
+              <div className="w-[95%] md:w-[45%] h-[55vh]">
                 <img
                   src={item.image}
                   alt="upcoming-event"

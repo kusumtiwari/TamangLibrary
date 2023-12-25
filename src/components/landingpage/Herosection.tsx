@@ -101,6 +101,11 @@ const Herosection: React.FC = () => {
           );
         })}
       </AliceCarousel>
+      <img
+        src="/img/common/decorater2.png"
+        alt="decorater"
+        className="absolute top-[91%] right-0 w-26 h-26"
+      />
     </div>
   );
 };

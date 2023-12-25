@@ -61,7 +61,6 @@ const myTeams: Teams[] = [
 const OurTeam: React.FC = () => {
   const contextValue = useContext(UserContext);
   const handleAboutPageNavigation = contextValue?.handleAboutPageNavigation;
-  console.log(handleAboutPageNavigation);
   const handleClick = (
     name: string,
     position: string,
@@ -76,7 +75,7 @@ const OurTeam: React.FC = () => {
     }
   };
   return (
-    <div className="text-primary-blueText flex flex-col justify-center items-center">
+    <div className="text-primary-blueText flex flex-col justify-center items-center w-full">
       <h1 className="uppercase text-2xl md:text-4xl lg:text-5xl font-thin py-12 text-center mb-8">
         Our Teams
       </h1>
@@ -99,7 +98,7 @@ const OurTeam: React.FC = () => {
               <img
                 src={items.image}
                 alt="team-member"
-                className="w-[90%] md:w-[75%] lg:w-[60%] h-[45vh]"
+                className="w-[90%] md:w-[75%] lg:w-[70%] h-[45vh]"
               />
               <h1 className="py-2 font-semibold text-2xl mt-3">{items.name}</h1>
               <h1 className="text-base">{items.position}</h1>
