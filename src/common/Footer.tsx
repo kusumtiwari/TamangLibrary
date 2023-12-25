@@ -108,7 +108,7 @@ const Footer: React.FC = () => {
           <p className="text-base text-primary-blueText mr-2">
             Designed and developed by
           </p>
-          <img src="/one-window-logo.png" alt="company-logo" />
+          <img src="/img/one-window-logo.png" alt="company-logo" />
         </div>
       </div>
     </>

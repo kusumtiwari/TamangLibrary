@@ -95,7 +95,6 @@ const OnGoingProjects: React.FC = () => {
             {/* TODO: need to fix */}
 
             {projects?.map((item, index: number) => {
-              console.log(item);
               return (
                 <div
                   key={index}
