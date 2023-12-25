@@ -1,23 +1,6 @@
 import { createContext, ReactNode, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
-import { Timestamp } from "firebase/firestore";
-interface ProjectObject {
-  budget: number;
-  description: string;
-  endDate: Timestamp;
-  image: string;
-  startDate: Timestamp;
-  status: string;
-  title: string;
-}
-
-interface EventObject {
-  dateAndTime: Timestamp;
-  description: string;
-  image: string;
-  location: string;
-  title: string;
-}
+import { DocumentData, collection, query, where } from "firebase/firestore";
 
 interface UserContextValue {
   handleAboutPageNavigation: (
@@ -27,9 +10,9 @@ interface UserContextValue {
     biography: string,
     id: number
   ) => void;
-  handleProjectPageNavigation: (myProjectContents: ProjectObject) => void;
+  handleProjectPageNavigation: (myProjectContents: DocumentData) => void;
   handleEventPageNavigation: (
-    myEventContents: EventObject,
+    myEventContents: DocumentData,
     eventType: string
   ) => void;
 }
@@ -57,15 +40,14 @@ export const UserProvider = ({ children }: { children: ReactNode }) => {
     },
     [navigate]
   );
-
-  const handleProjectPageNavigation = (myProjectContents: ProjectObject) => {
+  const handleProjectPageNavigation = (myProjectContents: DocumentData) => {
     const itemName = myProjectContents.title.replace(/ /g, "-").toLowerCase();
     navigate(`/projects/${itemName}`, { state: myProjectContents });
     window.scrollTo(0, 0);
   };
 
   const handleEventPageNavigation = (
-    myEventContents: EventObject,
+    myEventContents: DocumentData,
     eventType: string
   ) => {
     const itemName = myEventContents.title.replace(/ /g, "-").toLowerCase();
