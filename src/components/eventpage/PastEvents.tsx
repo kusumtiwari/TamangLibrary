@@ -1,37 +1,20 @@
 import { useState, useContext } from "react";
 import dayjs from "dayjs";
 import "react-alice-carousel/lib/alice-carousel.css";
-import { Timestamp } from "firebase/firestore/lite";
 import LoadingSpinner from "../../common/LoadingSpinner";
 
 import { db } from "../../../firebase";
-import { collection, query } from "firebase/firestore";
+import { DocumentData, collection, query } from "firebase/firestore";
 import { useCollectionData } from "react-firebase-hooks/firestore";
 
 import ViewmoreBtn from "../../common/ViewmoreBtn";
 import ViewlessBtn from "../../common/ViewlessBtn";
 import { UserContext } from "../../context/Context";
-
-interface PastEvents {
-  dateAndTime: Timestamp;
-  description: string;
-  image: string;
-  location: string;
-  title: string;
-}
 const PastEvents: React.FC = () => {
   const contextValue = useContext(UserContext);
   const handleEventPageNavigation = contextValue?.handleEventPageNavigation;
-  const handleClick = (obj: PastEvents, event: string) => {
-    if (handleEventPageNavigation) {
-      handleEventPageNavigation(obj, event);
-    } else {
-      console.error("handleEventPageNavigation is undefined");
-    }
-  };
   const [isViewMoreBtnClicked, setIsViewMoreBtnClicked] =
     useState<Boolean>(false);
-  // const matchesMedium = useMediaQuery("(min-width: 768px)");
   const onViewBtnClick = () => {
     setIsViewMoreBtnClicked(!isViewMoreBtnClicked);
   };
@@ -48,6 +31,13 @@ const PastEvents: React.FC = () => {
   }
   const maxLength: number = 500;
   const firstSixProjects = projects ? projects.slice(0, 6) : [];
+  const handleClick = (obj: DocumentData, event: string) => {
+    if (handleEventPageNavigation) {
+      handleEventPageNavigation(obj, event);
+    } else {
+      console.error("handleEventPageNavigation is undefined");
+    }
+  };
   return (
     <div>
       <h1 className="uppercase text-2xl md:text-4xl lg:text-5xl font-thin py-12 text-center text-primary-blueText font-playfair">
@@ -55,7 +45,7 @@ const PastEvents: React.FC = () => {
       </h1>
       <div className="py-12 px-8 flex flex-wrap">
         {!isViewMoreBtnClicked
-          ? firstSixProjects?.map((items: any, index: number) => {
+          ? firstSixProjects?.map((items: DocumentData, index: number) => {
               return (
                 <div
                   className={`flex py-8 flex-col justify-between w-[100%] lg:w-[33%] px-4 md:px-12 `}
@@ -113,7 +103,7 @@ const PastEvents: React.FC = () => {
                 </div>
               );
             })
-          : projects?.map((items: any, index: number) => {
+          : projects?.map((items: DocumentData, index: number) => {
               return (
                 <div
                   className={`flex items-center flex-col lg:flex-row justify-between px-4 md:px-12 py-12   }`}

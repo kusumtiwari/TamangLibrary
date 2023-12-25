@@ -1,5 +1,5 @@
 import { db } from "../../../firebase";
-import { collection, query, where } from "firebase/firestore";
+import { DocumentData, collection, query, where } from "firebase/firestore";
 import { useCollectionData } from "react-firebase-hooks/firestore";
 import LoadingSpinner from "../../common/LoadingSpinner";
 import AliceCarousel from "react-alice-carousel";
@@ -8,22 +8,12 @@ import { MdArrowBackIos, MdArrowForwardIos } from "react-icons/md";
 import { useState, useContext } from "react";
 import ViewmoreBtn from "../../common/ViewmoreBtn";
 import ViewlessBtn from "../../common/ViewlessBtn";
-import { Timestamp } from "firebase/firestore/lite";
 
 import { UserContext } from "../../context/Context";
-interface OnGoingProjects {
-  budget: number;
-  description: string;
-  endDate: Timestamp;
-  image: string;
-  startDate: Timestamp;
-  status: string;
-  title: string;
-}
 const OnGoingProjects: React.FC = () => {
   const contextValue = useContext(UserContext);
   const handleProjectPageNavigation = contextValue?.handleProjectPageNavigation;
-  const handleClick = (obj: OnGoingProjects) => {
+  const handleClick = (obj: DocumentData) => {
     if (handleProjectPageNavigation) {
       handleProjectPageNavigation(obj);
     } else {
@@ -103,8 +93,9 @@ const OnGoingProjects: React.FC = () => {
             }}
           >
             {/* TODO: need to fix */}
-            {/* @ts-ignore */}
-            {projects?.map((item: OnGoingProjects, index: number) => {
+
+            {projects?.map((item, index: number) => {
+              console.log(item);
               return (
                 <div
                   key={index}

@@ -2,30 +2,20 @@ import { useState, useContext } from "react";
 import { useMediaQuery } from "@react-hook/media-query";
 import dayjs from "dayjs";
 import "react-alice-carousel/lib/alice-carousel.css";
-import { Timestamp } from "firebase/firestore/lite";
 import LoadingSpinner from "../../common/LoadingSpinner";
 
 import { db } from "../../../firebase";
-import { collection, query, where } from "firebase/firestore";
+import { DocumentData, collection, query, where } from "firebase/firestore";
 import { useCollectionData } from "react-firebase-hooks/firestore";
 
 import ViewmoreBtn from "../../common/ViewmoreBtn";
 import ViewlessBtn from "../../common/ViewlessBtn";
 import { UserContext } from "../../context/Context";
 
-interface OnCompletedProjects {
-  budget: number;
-  description: string;
-  endDate: Timestamp;
-  image: string;
-  startDate: Timestamp;
-  status: string;
-  title: string;
-}
 const CompletedProjects: React.FC = () => {
   const contextValue = useContext(UserContext);
   const handleProjectPageNavigation = contextValue?.handleProjectPageNavigation;
-  const handleClick = (obj: OnCompletedProjects) => {
+  const handleClick = (obj: DocumentData) => {
     if (handleProjectPageNavigation) {
       handleProjectPageNavigation(obj);
     } else {
@@ -77,7 +67,7 @@ const CompletedProjects: React.FC = () => {
                     onClick={() => handleClick(items)}
                   >
                     <img
-                      src="/Union.png"
+                      src="/img/common/Union.png"
                       alt="blue-line"
                       className="absolute bottom-0"
                     />
@@ -154,7 +144,7 @@ const CompletedProjects: React.FC = () => {
                     onClick={() => handleClick(items)}
                   >
                     <img
-                      src="/Union.png"
+                      src="/img/common/Union.png"
                       alt="blue-line"
                       className="absolute bottom-0"
                     />

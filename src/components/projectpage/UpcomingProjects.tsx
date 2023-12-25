@@ -2,11 +2,10 @@ import { useState, useContext } from "react";
 
 import "react-alice-carousel/lib/alice-carousel.css";
 
-import { Timestamp } from "firebase/firestore/lite";
 import LoadingSpinner from "../../common/LoadingSpinner";
 
 import { db } from "../../../firebase";
-import { collection, query, where } from "firebase/firestore";
+import { DocumentData, collection, query, where } from "firebase/firestore";
 import { useCollectionData } from "react-firebase-hooks/firestore";
 
 import ViewmoreBtn from "../../common/ViewmoreBtn";
@@ -17,20 +16,11 @@ import "react-alice-carousel/lib/alice-carousel.css";
 import { MdArrowBackIos, MdArrowForwardIos } from "react-icons/md";
 import { UserContext } from "../../context/Context";
 
-interface UpcomingProjects {
-  budget: number;
-  description: string;
-  endDate: Timestamp;
-  image: string;
-  startDate: Timestamp;
-  status: string;
-  title: string;
-}
 const UpcomingProjects: React.FC = () => {
   const contextValue = useContext(UserContext);
   const handleProjectPageNavigation = contextValue?.handleProjectPageNavigation;
 
-  const handleClick = (obj: UpcomingProjects) => {
+  const handleClick = (obj: DocumentData) => {
     if (handleProjectPageNavigation) {
       handleProjectPageNavigation(obj);
     } else {
@@ -118,10 +108,10 @@ const UpcomingProjects: React.FC = () => {
                 >
                   <div
                     className="w-[90%] md:w-[60%] h-[50vh] cursor-pointer flex relative"
-                    onClick={() => handleClick(item as UpcomingProjects)}
+                    onClick={() => handleClick(item)}
                   >
                     <img
-                      src="/Union.png"
+                      src="/img/common/Union.png"
                       alt="blue-text"
                       className="h-[60%] absolute bottom-0"
                     />
@@ -134,7 +124,7 @@ const UpcomingProjects: React.FC = () => {
                   <div className="w-[95%] md:w-[60%] pt-12">
                     <p
                       className="w-[100%] text-justify font-playfair text-xl font-semibold text-black cursor-pointer"
-                      onClick={() => handleClick(item as UpcomingProjects)}
+                      onClick={() => handleClick(item)}
                     >
                       {item.title}
                     </p>
@@ -153,10 +143,10 @@ const UpcomingProjects: React.FC = () => {
                 >
                   <div
                     className="w-[80%] md:w-[60%] h-[55vh] cursor-pointer relative"
-                    onClick={() => handleClick(item as UpcomingProjects)}
+                    onClick={() => handleClick(item)}
                   >
                     <img
-                      src="/Union.png"
+                      src="/img/common/Union.png"
                       alt="blue-line"
                       className="absolute bottom-0"
                     />
@@ -169,7 +159,7 @@ const UpcomingProjects: React.FC = () => {
                   <div className="w-[80%] md:w-[60%] pb-12 py-6">
                     <p
                       className="w-[100%] font-playfair text-xl font-semibold text-black cursor-pointer"
-                      onClick={() => handleClick(item as UpcomingProjects)}
+                      onClick={() => handleClick(item)}
                     >
                       {item.title}
                     </p>

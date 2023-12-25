@@ -2,29 +2,28 @@ import { useState, useContext } from "react";
 import { useMediaQuery } from "@react-hook/media-query";
 import dayjs from "dayjs";
 import "react-alice-carousel/lib/alice-carousel.css";
-import { Timestamp } from "firebase/firestore/lite";
 import LoadingSpinner from "../../common/LoadingSpinner";
 
 import { db } from "../../../firebase";
-import { collection, query } from "firebase/firestore";
+import { DocumentData, collection, query } from "firebase/firestore";
 import { useCollectionData } from "react-firebase-hooks/firestore";
 
 import ViewmoreBtn from "../../common/ViewmoreBtn";
 import ViewlessBtn from "../../common/ViewlessBtn";
 import { UserContext } from "../../context/Context";
 
-interface UpcomingEvents {
-  dateAndTime: Timestamp;
-  description: string;
-  image: string;
-  location: string;
-  title: string;
-}
+// interface UpcomingEvents {
+//   dateAndTime: Timestamp;
+//   description: string;
+//   image: string;
+//   location: string;
+//   title: string;
+// }
 
 const UpcomingEvents: React.FC = () => {
   const contextValue = useContext(UserContext);
   const handleEventPageNavigation = contextValue?.handleEventPageNavigation;
-  const handleClick = (obj: UpcomingEvents, event: string) => {
+  const handleClick = (obj: DocumentData, event: string) => {
     if (handleEventPageNavigation) {
       handleEventPageNavigation(obj, event);
     } else {
@@ -58,7 +57,7 @@ const UpcomingEvents: React.FC = () => {
 
       <div className="py-12">
         {!isViewMoreBtnClicked
-          ? firstThreeProjects?.map((items: any, index: number) => {
+          ? firstThreeProjects?.map((items, index: number) => {
               return (
                 <div
                   className={`flex items-center py-8 flex-col lg:flex-row justify-between w-[100%] px-4 md:px-12 ${
@@ -117,7 +116,7 @@ const UpcomingEvents: React.FC = () => {
                 </div>
               );
             })
-          : projects?.map((items: any, index: number) => {
+          : projects?.map((items, index: number) => {
               return (
                 <div
                   className={`flex items-center flex-col lg:flex-row justify-between px-4 md:px-12 py-12 ${
