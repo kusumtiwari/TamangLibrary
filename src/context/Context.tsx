@@ -1,6 +1,6 @@
 import { createContext, ReactNode, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
-import { DocumentData, collection, query, where } from "firebase/firestore";
+import { DocumentData } from "firebase/firestore";
 
 interface UserContextValue {
   handleAboutPageNavigation: (
