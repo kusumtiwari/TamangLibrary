@@ -66,10 +66,16 @@ const OurTeamDetails: React.FC = () => {
         <div className="w-[100%] md:w-[30%]">
           {myMemberImage.map((items) => {
             if (items.id === id) {
-              console.log("matched");
               return (
-                <div className=" mb-8 h-[90%] absolute left-0 md:left-[5%] bottom-[12%] md:bottom-[30%] px-4 md:px-0" key={items.id}>
-                  <img src={items.image} alt="team-member-image" className="w-full"></img>
+                <div
+                  className=" mb-8 h-[90%] absolute left-0 md:left-[5%] bottom-[12%] md:bottom-[30%] px-4 md:px-0"
+                  key={items.id}
+                >
+                  <img
+                    src={items.image}
+                    alt="team-member-image"
+                    className="w-full"
+                  ></img>
                 </div>
               );
             }
@@ -82,10 +88,10 @@ const OurTeamDetails: React.FC = () => {
         </div>
       </div>
       <div className="block md:hidden px-16 mt-12">
-          <img src="/symbol.png" alt="inverted-comma" />
-          <h1 className="py-2 text-xl">{quote}</h1>
-          <img src="/symbol2.png" alt="inverted-comma" className="" />
-        </div>
+        <img src="/symbol.png" alt="inverted-comma" />
+        <h1 className="py-2 text-xl">{quote}</h1>
+        <img src="/symbol2.png" alt="inverted-comma" className="" />
+      </div>
       <div className="flex flex-col w-[100%] px-8 md:px-16">
         <h1 className="font-thin py-12 text-right text-3xl uppercase">
           Biography
@@ -96,7 +102,9 @@ const OurTeamDetails: React.FC = () => {
       </div>
       <div className="text-black flex flex-col justify-end py-12 w-full px-8 md:px-16">
         <div className="w-full md:w-auto md:px-4 flex justify-end">
-          <h1 className="text-primary-blueText text-2xl font-thin uppercase">get in touch</h1>
+          <h1 className="text-primary-blueText text-2xl font-thin uppercase">
+            get in touch
+          </h1>
         </div>
         <div className="w-full md:w-auto md:px-4 flex justify-end">
           <h1 className="text-xl">abc@gmail.com</h1>
