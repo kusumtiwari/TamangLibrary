@@ -14,7 +14,7 @@ const Footer: React.FC = () => {
   return (
     <div className="flex flex-col min-h-[90vh] mt-28">
       <div className="relative flex-1">
-        <div className="absolute top-0 left-0 z-0 bg-[url('../../public/img/common/Footer.png')] bg-cover bg-no-repeat w-full h-[50vh] flex items-center justify-center"></div>
+        <div className="absolute top-0 left-0 z-0 bg-[url('/img/common/Footer.png')] bg-cover bg-no-repeat w-full h-[50vh] flex items-center justify-center"></div>
         <div className="absolute top-36 left-0 z-10 bg-secondary-detailsBackground py-16 px-8 md:px-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           <div className="">
             <h1 className="uppercase text-2xl text-primary-blueText py-2">
