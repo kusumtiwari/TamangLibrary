@@ -58,6 +58,7 @@ const myTeams: Teams[] = [
       "Lorem ipsum dolor sit amet consectetur. Adipiscing sollicitudin odio aliquam eget in in non. Nec congue consectetur congue aliquam tellus. Enim netus enim lorem ut porta vitae. Lorem ipsum dolor sit amet consectetur. Adipiscing sollicitudin odio aliquam eget in in non. Nec congue consectetur congue aliquam tellus. Enim netus enim lorem ut porta vitae. Lorem ipsum dolor sit amet consectetur. Adipiscing sollicitudin odio aliquam eget in in non. Nec congue consectetur congue aliquam tellus. Enim netus enim lorem ut porta vitae. Lorem ipsum dolor sit amet consectetur. Adipiscing sollicitudin odio aliquam eget in in non. Nec congue consectetur congue aliquam tellus. Enim netus enim lorem ut porta vitae. Adipiscing sollicitudin odio aliquam eget in in non. Nec congue consectetur congue aliquam tellus. Enim netus enim lorem ut porta vitae. Nec congue consectetur congue aliquam tellus. Enim netus enim lorem ut porta vitae.Nec congue consectetur congue aliquam tellus. Enim netus enim lorem ut porta vitae.",
   },
 ];
+
 const OurTeam: React.FC = () => {
   const contextValue = useContext(UserContext);
   const handleAboutPageNavigation = contextValue?.handleAboutPageNavigation;
@@ -79,11 +80,11 @@ const OurTeam: React.FC = () => {
       <h1 className="uppercase text-2xl md:text-4xl lg:text-5xl font-thin py-12 text-center mb-8">
         Our Teams
       </h1>
-      <div className="flex flex-wrap items-center justify-center px-6 lg:px-12">
-        {myTeams.map((items) => {
+      <div className="flex flex-wrap items-center justify-center px-6 lg:px-12 relative">
+        {myTeams.map((items, index: number) => {
           return (
             <div
-              className="uppercase w-[100%] md:w-[45%] lg:w-[32%] mb-14 cursor-pointer"
+              className="uppercase w-[100%] md:w-[45%] lg:w-[32%] mb-24 cursor-pointer flex justify-center items-center flex-col"
               key={items.id}
               onClick={() =>
                 handleClick(
@@ -98,7 +99,7 @@ const OurTeam: React.FC = () => {
               <img
                 src={items.image}
                 alt="team-member"
-                className="w-[90%] md:w-[75%] lg:w-[70%] h-[45vh]"
+                className="w-[90%] md:w-[75%] lg:w-[70%] h-[45vh] hover:transform hover:scale-110 ease-in-out duration-300"
               />
               <h1 className="py-2 font-semibold text-2xl mt-3">{items.name}</h1>
               <h1 className="text-base">{items.position}</h1>
