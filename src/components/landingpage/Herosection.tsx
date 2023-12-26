@@ -49,58 +49,60 @@ const Herosection: React.FC = () => {
     setIsRightbtnClicked(true);
   };
   return (
-    <div className="my-12 carousel-container relative h-[75vh] bg-white">
-      <AliceCarousel
-        autoPlay
-        autoPlayInterval={1500}
-        autoWidth
-        mouseTracking
-        controlsStrategy="alternate"
-        disableDotsControls={true}
-        renderPrevButton={() => {
-          return (
-            <button
-              className={`px-1 py-1 mr-10 md:mr-6 lg:mr-0 rounded-md ${
-                isLeftbtnClicked
-                  ? "border border-primary-blueText"
-                  : "bg-gray-300"
-              }  mt-6 absolute right-[13%] `}
-              onClick={onLeftbtnClick}
-            >
-              <MdArrowBackIos className="w-6 h-6 text-primary-blueText ml-1" />
-            </button>
-          );
-        }}
-        renderNextButton={() => {
-          return (
-            <button
-              className={`px-1 py-1 rounded-md ${
-                isRightbtnClicked
-                  ? "border border-primary-blueText"
-                  : "bg-gray-300"
-              } mt-6 absolute right-[9%]`}
-              onClick={onRightbtnClick}
-            >
-              <MdArrowForwardIos className="w-6 h-6 text-primary-blueText" />
-            </button>
-          );
-        }}
-      >
-        {myItems.map((item) => {
-          return (
-            <div
-              className="md:ml-4 lg:ml-8 carousel-item w-[95vw] md:w-[70vw] lg:w-[40vw] h-[60vh] slanted-div"
-              key={item.id}
-            >
-              <img
-                src={item.image}
-                alt="carousel-image"
-                className="w-[95%] h-full"
-              />
-            </div>
-          );
-        })}
-      </AliceCarousel>
+    <div className="my-12 carousel-container h-[75vh] relative">
+      <div className="h-[60vh] rounded-t-lg rounded-b-lg">
+        <AliceCarousel
+          autoPlay
+          autoPlayInterval={1500}
+          autoWidth
+          mouseTracking
+          controlsStrategy="alternate"
+          disableDotsControls={true}
+          renderPrevButton={() => {
+            return (
+              <button
+                className={`px-1 py-1 mr-10 md:mr-6 lg:mr-0 rounded-md ${
+                  isLeftbtnClicked
+                    ? "border border-primary-blueText"
+                    : "bg-gray-300"
+                }  mt-6 absolute right-[13%] `}
+                onClick={onLeftbtnClick}
+              >
+                <MdArrowBackIos className="w-6 h-6 text-primary-blueText ml-1" />
+              </button>
+            );
+          }}
+          renderNextButton={() => {
+            return (
+              <button
+                className={`px-1 py-1 rounded-md ${
+                  isRightbtnClicked
+                    ? "border border-primary-blueText"
+                    : "bg-gray-300"
+                } mt-6 absolute right-[9%]`}
+                onClick={onRightbtnClick}
+              >
+                <MdArrowForwardIos className="w-6 h-6 text-primary-blueText" />
+              </button>
+            );
+          }}
+        >
+          {myItems.map((item) => {
+            return (
+              <div
+                className="md:ml-4 lg:ml-8 carousel-item w-[95vw] md:w-[70vw] lg:w-[40vw] h-[60vh] slanted-div rounded-full"
+                key={item.id}
+              >
+                <img
+                  src={item.image}
+                  alt="carousel-image"
+                  className="w-[95%] h-full"
+                />
+              </div>
+            );
+          })}
+        </AliceCarousel>
+      </div>
       <img
         src="/img/common/decorater2.png"
         alt="decorater"

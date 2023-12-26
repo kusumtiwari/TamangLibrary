@@ -5,28 +5,40 @@ import { useState } from "react";
 interface Collection {
   id: number;
   image: string;
+  category: string;
+  pages: number;
 }
 
 const myCollection: Collection[] = [
   {
     id: 1,
-    image: "/img/Collection-images/collection-img1.png",
+    image: "/img/Collection-images/collectionimage1.png",
+    category: "Novel",
+    pages: 80,
   },
   {
     id: 2,
-    image: "/img/Collection-images/collection-img2.png",
+    image: "/img/Collection-images/collectionimage2.png",
+    category: "history",
+    pages: 100,
   },
   {
     id: 3,
-    image: "/img/Collection-images/collection-img3.png",
+    image: "/img/Collection-images/collectionimage3.png",
+    category: "poem",
+    pages: 400,
   },
   {
     id: 4,
-    image: "/img/Collection-images/collection-img1.png",
+    image: "/img/Collection-images/collectionimage1.png",
+    category: "Novel",
+    pages: 80,
   },
   {
     id: 5,
-    image: "/img/Collection-images/collection-img2.png",
+    image: "/img/Collection-images/collectionimage2.png",
+    category: "history",
+    pages: 100,
   },
 ];
 const responsive = {
@@ -92,13 +104,21 @@ const OurCollection: React.FC = () => {
             return (
               <div
                 key={items.id}
-                className="border border-b-4 border-blue-900 border-l-2 border-r-2 border-transparent"
+                className="border border-b-4 border-blue-900 border-l-2 border-r-2 border-transparent relative"
               >
                 <img
                   src={items.image}
                   alt="collection-image"
-                  className="w-[85%] md:w-[80%]"
+                  className="w-[94%] md:w-[75%] h-[50vh]"
                 />
+                <img
+                  src="/img/Collection-images/Collection-image-blueline.png"
+                  alt="blue-line"
+                  className="absolute bottom-0  h-[30vh] w-[94%] md:w-[75%]"
+                />
+                <div className="border-2 border-black text-black text-base text-center font-semibold uppercase py-3 w-[40%] absolute top-[50%] left-[15%] bg-white">
+                  {items.category} ({items.pages})
+                </div>
               </div>
             );
           })}

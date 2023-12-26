@@ -13,23 +13,23 @@ interface MemberImage {
 const myMemberImage: MemberImage[] = [
   {
     id: 1,
-    image: "/Team-members/Team-member1.png",
+    image: "/img/Team-members/Team-member1.png",
   },
   {
     id: 2,
-    image: "/Team-members/Team-member2.png",
+    image: "/img/Team-members/Team-member2.png",
   },
   {
     id: 3,
-    image: "/Team-members/Team-member3.png",
+    image: "/img/Team-members/Team-member3.png",
   },
   {
     id: 4,
-    image: "/Team-members/Team-member1.png",
+    image: "/img/Team-members/Team-member1.png",
   },
   {
     id: 5,
-    image: "/Team-members/Team-member2.png",
+    image: "/img/Team-members/Team-member2.png",
   },
 ];
 const OurTeamDetails: React.FC = () => {
@@ -82,21 +82,28 @@ const OurTeamDetails: React.FC = () => {
           })}
         </div>
         <div className="md:mt-24 md:h-[24%] hidden md:block">
-          <img src="/symbol.png" alt="inverted-comma" />
+          <img src="/img/common/symbol.png" alt="inverted-comma" />
           <h1 className="py-2 text-xl">{quote}</h1>
-          <img src="/symbol2.png" alt="inverted-comma" className="ml-auto" />
+          <img
+            src="/img/common/symbol2.png"
+            alt="inverted-comma"
+            className="ml-auto"
+          />
         </div>
       </div>
       <div className="block md:hidden px-16 mt-12">
-        <img src="/symbol.png" alt="inverted-comma" />
+        <img src="/img/common/symbol.png" alt="inverted-comma" />
         <h1 className="py-2 text-xl">{quote}</h1>
-        <img src="/symbol2.png" alt="inverted-comma" className="" />
+        <img src="/img/common/symbol2.png" alt="inverted-comma" className="" />
       </div>
       <div className="flex flex-col w-[100%] px-8 md:px-16">
         <h1 className="font-thin py-12 text-right text-3xl uppercase">
           Biography
         </h1>
-        <p className="my-8 w-[100%] text-justify text-black text-lg">
+        <p
+          className="my-8 w-[100%] text-justify text-black text-lg"
+          style={{ lineHeight: "30px" }}
+        >
           {biography}
         </p>
       </div>

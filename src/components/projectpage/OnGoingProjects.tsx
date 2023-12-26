@@ -117,7 +117,10 @@ const OnGoingProjects: React.FC = () => {
                     >
                       {item.title}
                     </h1>
-                    <p className="w-[100%] text-justify font-playfair text-xl font-semibold text-black">
+                    <p
+                      className="w-[100%] text-justify font-playfair text-xl font-semibold text-black"
+                      style={{ lineHeight: "30px" }}
+                    >
                       {item.description.length > maxLength ? (
                         <>
                           {item.description.slice(0, maxLength)}
@@ -164,7 +167,10 @@ const OnGoingProjects: React.FC = () => {
                     >
                       {item.title}
                     </h1>
-                    <p className="w-[100%] text-justify font-playfair text-xl font-semibold text-black">
+                    <p
+                      className="w-[100%] text-justify font-playfair text-xl font-semibold text-black"
+                      style={{ lineHeight: "30px" }}
+                    >
                       {item.description.length > maxLength ? (
                         <>
                           {item.description.slice(0, maxLength)}

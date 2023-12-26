@@ -13,7 +13,7 @@ const Footer: React.FC = () => {
   };
   return (
     <>
-      <div className="bg-secondary-detailsBackground py-16 px-8 md:px-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+      <div className="bg-secondary-detailsBackground py-16 px-8 md:px-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 font-kameron">
         <div className="">
           <h1 className="uppercase text-2xl text-primary-blueText py-2">
             Get in Touch

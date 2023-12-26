@@ -7,17 +7,17 @@ const Intro: React.FC = () => {
         className="w-18 h-20 absolute right-0 top-0"
       />
       <div className="py-12">
-        <h1 className="uppercase text-primary-blueText text-2xl md:text-4xl lg:text-5xl xl-text-6xl font-bold text-center h-[60%] pb-8 leading-10">
+        <h1 className="uppercase text-primary-blueText text-2xl md:text-4xl lg:text-5xl xl-text-6xl font-bold text-center h-[60%] pb-8 leading-10 ml-4 md:ml-0">
           who we are ?
         </h1>
-        <div className="flex justify-between">
+        <div className="flex justify-between relative">
           <img
             src="/img/common/Decorater.png"
             alt="decorater"
-            className="w-30 h-[25vh]"
+            className="w-30 h-[25vh] mt-10 md:mt-0"
           />
           <p
-            className="text-center font-kameron text-base px-12 py-8"
+            className="text-center font-kameron text-base px-4 md:px-12 py-8"
             style={{ lineHeight: "32px" }}
           >
             The Tamang Library is committed to preserving, celebrating, and

@@ -13,11 +13,7 @@ const TestimonialsHeader: React.FC<TestimonialsHeaderProps> = ({
     <div className="pb-2 h-full">
       <div className="h-[95%]">
         <div className="text-center flex justify-center pb-12">
-          <img
-            src="/img/common/symbol.png"
-            alt="symbol"
-            className="rounded-full"
-          />
+          <img src="/img/common/symbol.png" alt="symbol" className="w-8 h-6" />
         </div>
         <h1 className="font-slabo text-center font-semibold">{description}</h1>
         <p className="py-4 text-right">{name}</p>

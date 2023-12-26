@@ -60,7 +60,7 @@ const TestimonialsImages: React.FC<TestimonialsImagesProps> = ({
               <img
                 src={items.image}
                 alt="testimonial-image"
-                className="w-full h-full"
+                className="w-full h-full rounded-full"
               />
             </div>
           );

@@ -22,7 +22,7 @@ interface UpcomingEvents {
   dateAndTime: Timestamp;
 }
 
-const maxLength = 200;
+const maxLength = 150;
 const UpcomingEvents: React.FC = () => {
   const contextValue = useContext(UserContext);
   const handleEventPageNavigation = contextValue?.handleEventPageNavigation;
