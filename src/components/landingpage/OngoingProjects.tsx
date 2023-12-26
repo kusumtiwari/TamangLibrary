@@ -22,7 +22,7 @@ const myOngoingprojects: Ongoingprojects[] = [
 
   {
     id: 2,
-    image: "/img/LibraryDetailsimg1.png",
+    image: "/img/LibraryDetailsImage/LibraryDetailsimg1.png",
     title: "Language preservation practices in nepal",
     description:
       "The study focused on language preservation practices of Nepal in term of legal and constitutional provisions and its implication. Policy formulation is not only sufficient for preserving endangered languages because implementation mechanisms cannot effectively function in developing and under developed nation like Nepal.",
