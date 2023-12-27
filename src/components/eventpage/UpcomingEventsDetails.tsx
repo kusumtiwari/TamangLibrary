@@ -22,7 +22,7 @@ const UpcomingEventDetails: React.FC = () => {
       <div className="h-fit">
         <div className="w-full h-[50vh]">
           <img
-            src="/img/common/PastEventsDetailsBg.png"
+            src="/img/common/UpcomingEventsBg.png"
             alt="upcoming-events-topimage"
             className="w-full h-full"
           />

@@ -55,7 +55,7 @@ const Testimonials: React.FC = () => {
 
   return (
     <div className="my-24">
-      <h1 className="uppercase text-2xl md:text-4xl lg:text-5xl text-center py-16">
+      <h1 className="uppercase text-2xl md:text-4xl lg:text-5xl text-center py-16 text-with-shadow">
         Testimonials
       </h1>
       <div className="px-8 md:px-16 lg:px-24 py-16 bg-secondary-detailsBackground">

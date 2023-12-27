@@ -43,7 +43,7 @@ const OngoingProjects: React.FC = () => {
   };
   return (
     <div className="py-12 text-primary-blueText px-4 md:px-12 lg:px-16 bg-[url('../../img/common/MapOfNepalBg.png')]">
-      <h1 className="uppercase text-2xl md:text-4xl lg:text-5xl text-center py-16">
+      <h1 className="uppercase text-2xl md:text-4xl lg:text-5xl text-center py-16 text-with-shadow">
         ongoing projects
       </h1>
 

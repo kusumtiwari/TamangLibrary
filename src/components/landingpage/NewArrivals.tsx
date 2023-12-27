@@ -90,7 +90,7 @@ const NewArrivals: React.FC = () => {
   };
   return (
     <div className="bg-secondary-detailsBackground text-primary-blueText px-16 py-8">
-      <h1 className="uppercase text-2xl md:text-4xl lg:text-5xl text-center py-12">
+      <h1 className="uppercase text-2xl md:text-4xl lg:text-5xl text-center py-12 text-with-shadow">
         New Arrivals
       </h1>
       <AliceCarousel

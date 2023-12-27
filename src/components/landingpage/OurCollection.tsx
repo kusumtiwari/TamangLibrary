@@ -62,7 +62,7 @@ const OurCollection: React.FC = () => {
   };
   return (
     <div className="my-16 relative h-[90vh]">
-      <h1 className="uppercase text-primary-blueText text-2xl md:text-4xl lg:text-5xl text-center h-[60%]  pt-12 bg-secondary-detailsBackground">
+      <h1 className="uppercase text-primary-blueText text-2xl md:text-4xl lg:text-5xl text-center h-[60%] text-with-shadow pt-12 bg-secondary-detailsBackground">
         Collection
       </h1>
       <div className="bg-transparent lg:mx-6 absolute top-[30%] w-[98%]">
