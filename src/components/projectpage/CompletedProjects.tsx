@@ -141,7 +141,7 @@ const CompletedProjects: React.FC = () => {
                   key={index}
                 >
                   <div
-                    className="w-[95%] md:w-[60%] lg:w-[40%] h-[45vh] my-auto relative"
+                    className="w-[95%] md:w-[60%] lg:w-[40%] h-[45vh] my-auto relative cursor-pointer"
                     onClick={() => handleClick(items)}
                   >
                     <img
@@ -186,14 +186,13 @@ const CompletedProjects: React.FC = () => {
                             dangerouslySetInnerHTML={{
                               __html: items.description.slice(0, maxLength),
                             }}
+                          ></div>
+                          <span
+                            className="text-primary-blueText underline cursor-pointer"
+                            onClick={() => handleClick(items)}
                           >
-                            <span
-                              className="text-primary-blueText underline cursor-pointer"
-                              onClick={() => handleClick(items)}
-                            >
-                              Read More
-                            </span>
-                          </div>
+                            Read More
+                          </span>
                         </div>
                       ) : (
                         <div

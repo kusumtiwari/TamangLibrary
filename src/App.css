@@ -42,3 +42,12 @@
   right: -10px;
   border-radius: 100% 100% 0 0;
 } */
+.text-with-shadow {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Modify the values as needed */
+}
+.thin-font {
+  font-weight: 100; /* Adjust the value to make it thinner */
+}
+.bold-font{
+  font-weight: 900;
+}

@@ -34,7 +34,7 @@ const myBookPubication: BookPublication[] = [
 const LibraryPublication: React.FC = () => {
   return (
     <div className="my-12">
-      <h1 className="uppercase text-primary-blueText text-2xl md:text-4xl lg:text-5xl text-center">
+      <h1 className="uppercase text-primary-blueText text-2xl md:text-4xl lg:text-5xl text-center text-with-shadow font-thin">
         Library Publication
       </h1>
       <div className="bg-secondary-detailsBackground my-20 px-8 md:px-24 pt-4 pb-16">

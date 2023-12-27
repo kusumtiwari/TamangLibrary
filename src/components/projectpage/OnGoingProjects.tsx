@@ -93,8 +93,6 @@ const OnGoingProjects: React.FC = () => {
               );
             }}
           >
-            {/* TODO: need to fix */}
-
             {projects?.map((item, index: number) => {
               return (
                 <div
@@ -102,16 +100,16 @@ const OnGoingProjects: React.FC = () => {
                   className="flex flex-col justify-between items-center text-primary-blueText cursor-pointer"
                 >
                   <div
-                    className="w-[95%] md:w-[60%] h-[60vh]"
+                    className="w-[95%] md:w-[60%] h-[60vh] mt-8"
                     onClick={() => handleClick(item)}
                   >
                     <img
                       src={item.image}
                       alt="ongoing-project"
-                      className="w-full h-full"
+                      className="w-full h-[90%]"
                     />
                   </div>
-                  <div className="w-[90%] md:w-[60%] pt-12">
+                  <div className="w-[90%] md:w-[60%] pt-8">
                     <h1
                       className="text-black font-bold text-2xl md:text-4xl font-playfair text-center pb-8 cursor-pointer"
                       onClick={() => handleClick(item)}
@@ -149,7 +147,7 @@ const OnGoingProjects: React.FC = () => {
               return (
                 <div
                   key={index}
-                  className="flex flex-col justify-between items-center text-primary-blueText"
+                  className="flex flex-col justify-between items-center text-primary-blueText my-16"
                 >
                   <div
                     className="w-[60%] h-[50vh]"

@@ -74,7 +74,7 @@ export const UserProvider = ({ children }: { children: ReactNode }) => {
     eventType: string
   ) => {
     const itemName = myEventContents.title.replace(/ /g, "-").toLowerCase();
-    navigate(`/events/${itemName}`, {
+    navigate(`/events/upcoming-events/${itemName}`, {
       state: { ...myEventContents, eventType },
     });
     window.scrollTo(0, 0);

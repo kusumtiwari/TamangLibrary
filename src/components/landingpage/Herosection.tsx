@@ -109,7 +109,7 @@ const Herosection: React.FC = () => {
       <img
         src="/img/common/decorater2.png"
         alt="decorater"
-        className="absolute top-[91%] right-0 w-26 h-26"
+        className="absolute top-[85%] right-0 w-26 h-26"
       />
     </div>
   );
