@@ -1,7 +1,7 @@
 import dayjs from "dayjs";
 import { useLocation } from "react-router-dom";
 import Sponsers from "../../common/Sponsors";
-const ProjectDetailsPage: React.FC = () => {
+const CompletedProjectDetailsPage: React.FC = () => {
   const location = useLocation();
   const { state } = location;
   const title = state.title;
@@ -60,4 +60,4 @@ const ProjectDetailsPage: React.FC = () => {
     </>
   );
 };
-export default ProjectDetailsPage;
+export default CompletedProjectDetailsPage;

@@ -18,7 +18,8 @@ import { UserContext } from "../../context/Context";
 
 const UpcomingProjects: React.FC = () => {
   const contextValue = useContext(UserContext);
-  const handleProjectPageNavigation = contextValue?.handleProjectPageNavigation;
+  const handleProjectPageNavigation =
+    contextValue?.handleUpComingProjectNavigation;
 
   const handleClick = (obj: DocumentData) => {
     if (handleProjectPageNavigation) {
@@ -60,7 +61,7 @@ const UpcomingProjects: React.FC = () => {
   }
 
   return (
-    <div className="my-12 py-12 px-4 md:px-8">
+    <div className="py-12 px-4 md:px-8">
       <h1 className="uppercase text-2xl md:text-4xl lg:text-5xl font-thin py-12 text-center">
         Upcoming Projects
       </h1>

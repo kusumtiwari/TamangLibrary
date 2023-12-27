@@ -12,10 +12,11 @@ import ViewlessBtn from "../../common/ViewlessBtn";
 import { UserContext } from "../../context/Context";
 const OnGoingProjects: React.FC = () => {
   const contextValue = useContext(UserContext);
-  const handleProjectPageNavigation = contextValue?.handleProjectPageNavigation;
+  const handleOnGoingProjectNavigation =
+    contextValue?.handleOnGoingProjectNavigation;
   const handleClick = (obj: DocumentData) => {
-    if (handleProjectPageNavigation) {
-      handleProjectPageNavigation(obj);
+    if (handleOnGoingProjectNavigation) {
+      handleOnGoingProjectNavigation(obj);
     } else {
       console.error("handleProjectPageNavigation is undefined");
     }

@@ -10,11 +10,13 @@ interface UserContextValue {
     biography: string,
     id: number
   ) => void;
-  handleProjectPageNavigation: (myProjectContents: DocumentData) => void;
+  handleCompletedProjectNavigation: (myProjectContents: DocumentData) => void;
   handleEventPageNavigation: (
     myEventContents: DocumentData,
     eventType: string
   ) => void;
+  handleOnGoingProjectNavigation: (myProjectContents: DocumentData) => void;
+  handleUpComingProjectNavigation: (myProjectContents: DocumentData) => void;
 }
 
 export const UserContext = createContext<UserContextValue | undefined>(
@@ -40,9 +42,30 @@ export const UserProvider = ({ children }: { children: ReactNode }) => {
     },
     [navigate]
   );
-  const handleProjectPageNavigation = (myProjectContents: DocumentData) => {
+
+  const handleCompletedProjectNavigation = (
+    myProjectContents: DocumentData
+  ) => {
     const itemName = myProjectContents.title.replace(/ /g, "-").toLowerCase();
-    navigate(`/projects/${itemName}`, { state: myProjectContents });
+    navigate(`/projects/completed-projects/${itemName}`, {
+      state: myProjectContents,
+    });
+    window.scrollTo(0, 0);
+  };
+
+  const handleOnGoingProjectNavigation = (myProjectContents: DocumentData) => {
+    const itemName = myProjectContents.title.replace(/ /g, "-").toLowerCase();
+    navigate(`/projects/ongoing-projects/${itemName}`, {
+      state: myProjectContents,
+    });
+    window.scrollTo(0, 0);
+  };
+
+  const handleUpComingProjectNavigation = (myProjectContents: DocumentData) => {
+    const itemName = myProjectContents.title.replace(/ /g, "-").toLowerCase();
+    navigate(`/projects/upcoming-projects/${itemName}`, {
+      state: myProjectContents,
+    });
     window.scrollTo(0, 0);
   };
 
@@ -59,8 +82,10 @@ export const UserProvider = ({ children }: { children: ReactNode }) => {
 
   const contextValue: UserContextValue = {
     handleAboutPageNavigation,
-    handleProjectPageNavigation,
+    handleCompletedProjectNavigation,
     handleEventPageNavigation,
+    handleOnGoingProjectNavigation,
+    handleUpComingProjectNavigation,
   };
 
   return (

@@ -14,10 +14,11 @@ import { UserContext } from "../../context/Context";
 
 const CompletedProjects: React.FC = () => {
   const contextValue = useContext(UserContext);
-  const handleProjectPageNavigation = contextValue?.handleProjectPageNavigation;
+  const handleCompletedProjectNavigation =
+    contextValue?.handleCompletedProjectNavigation;
   const handleClick = (obj: DocumentData) => {
-    if (handleProjectPageNavigation) {
-      handleProjectPageNavigation(obj);
+    if (handleCompletedProjectNavigation) {
+      handleCompletedProjectNavigation(obj);
     } else {
       console.error("handleProjectPageNavigation is undefined");
     }
@@ -180,19 +181,20 @@ const CompletedProjects: React.FC = () => {
                     </h1>
                     <div className="py-8 text-justify text-black font-semibold">
                       {items.description.length > maxLength ? (
-                        <>
+                        <div>
                           <div
                             dangerouslySetInnerHTML={{
                               __html: items.description.slice(0, maxLength),
                             }}
-                          ></div>
-                          <span
-                            className="text-primary-blueText underline cursor-pointer pl-2"
-                            onClick={() => handleClick(items)}
                           >
-                            Read More
-                          </span>
-                        </>
+                            <span
+                              className="text-primary-blueText underline cursor-pointer"
+                              onClick={() => handleClick(items)}
+                            >
+                              Read More
+                            </span>
+                          </div>
+                        </div>
                       ) : (
                         <div
                           dangerouslySetInnerHTML={{
