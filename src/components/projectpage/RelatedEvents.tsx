@@ -10,7 +10,7 @@ import LoadingSpinner from "../../common/LoadingSpinner";
 import { IoLocationOutline } from "react-icons/io5";
 import { SlCalender } from "react-icons/sl";
 import { db } from "../../../firebase";
-import { DocumentData, collection, query } from "firebase/firestore";
+import { collection, query } from "firebase/firestore";
 import { useCollectionData } from "react-firebase-hooks/firestore";
 
 import ViewmoreBtn from "../../common/ViewmoreBtn";

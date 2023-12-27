@@ -81,7 +81,7 @@ const OurTeam: React.FC = () => {
         Our Teams
       </h1>
       <div className="flex flex-wrap items-center justify-center px-6 lg:px-12 relative">
-        {myTeams.map((items, index: number) => {
+        {myTeams.map((items) => {
           return (
             <div
               className="uppercase w-[100%] md:w-[45%] lg:w-[32%] mb-24 cursor-pointer flex justify-center items-center flex-col"
