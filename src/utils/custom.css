@@ -22,3 +22,13 @@
   bottom: -20px; 
   height: 40px;
 }
+
+.footer {
+  @media screen and (max-width: 1023px) {
+    min-height: 110vh;
+  }
+
+  @media screen and (max-width: 767px) {
+    min-height: 175vh;
+  }
+}

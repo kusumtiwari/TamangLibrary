@@ -4,6 +4,7 @@ import { RiFacebookCircleLine } from "react-icons/ri";
 import { FaInstagram } from "react-icons/fa";
 import { MdOutlineCopyright } from "react-icons/md";
 import { Link } from "react-router-dom";
+import "./../utils/custom.css";
 const Footer: React.FC = () => {
   const scrollToTop = () => {
     window.scrollTo({
@@ -13,7 +14,7 @@ const Footer: React.FC = () => {
   };
   return (
     <div className="flex flex-col mt-28">
-      <div className="relative flex-1 min-h-[75vh] md:min-h-screen sm:min-h-[180vh]">
+      <div className="relative flex-1 min-h-[75vh] footer">
         <div className="absolute top-0 left-0 z-0 bg-[url('/img/common/Footer.png')] bg-cover bg-no-repeat w-full h-[50vh] object-cover flex items-center justify-center"></div>
         <div className="absolute top-36 left-0 z-10 bg-secondary-detailsBackground w-full py-16 px-8 md:px-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 flex-grow">
           <div className="">
@@ -98,19 +99,19 @@ const Footer: React.FC = () => {
             </div>
           </div>
         </div>
-        <div className="absolute bottom-0 left-0 top-full w-full flex flex-col z-20 md:flex-row sm:items-center sm:pb-8 justify-between py-8 px-4 md:px-12">
-          <div className="flex items-center pb-6 md:pb-0">
-            <MdOutlineCopyright className="w-5 h-5 text-primary-blueText mr-2" />
-            <p className="text-base text-primary-blueText">
-              2023 Tamang Library. All right reserved
-            </p>
-          </div>
-          <div className="flex items-center ">
-            <p className="text-base text-primary-blueText mr-2">
-              Designed and developed by
-            </p>
-            <img src="/img/one-window-logo.png" alt="company-logo" />
-          </div>
+      </div>
+      <div className="w-full flex flex-col z-20 md:flex-row sm:items-center sm:pb-8 justify-between py-8 px-4 md:px-12">
+        <div className="flex items-center pb-6 md:pb-0">
+          <MdOutlineCopyright className="w-5 h-5 text-primary-blueText mr-2" />
+          <p className="text-base text-primary-blueText">
+            2023 Tamang Library. All right reserved
+          </p>
+        </div>
+        <div className="flex items-center ">
+          <p className="text-base text-primary-blueText mr-2">
+            Designed and developed by
+          </p>
+          <img src="/img/one-window-logo.png" alt="company-logo" />
         </div>
       </div>
     </div>
