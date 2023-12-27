@@ -2,6 +2,7 @@ import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
 import { MdArrowBackIos, MdArrowForwardIos } from "react-icons/md";
 import { useState } from "react";
+import "./../../utils/custom.css";
 
 interface Item {
   id: number;
