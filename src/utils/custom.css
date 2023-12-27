@@ -1,10 +1,10 @@
-.alice-carousel__wrapper {
+.custom-css .alice-carousel .alice-carousel__wrapper {
   position:relative;
   overflow:hidden;
 }
 
-.alice-carousel__wrapper:after, 
-.alice-carousel__wrapper:before {
+.custom-css .alice-carousel .alice-carousel__wrapper:after, 
+.custom-css .alice-carousel .alice-carousel__wrapper:before {
   content:'';
   background:white;
   position:absolute;
@@ -15,7 +15,8 @@
   border-radius:0 0 60% 60%;
   z-index: 1;
 }
-.alice-carousel__wrapper:after {
+
+.custom-css .alice-carousel .alice-carousel__wrapper:after {
   top:auto;
   border-radius:50% 50% 0 0 ;
   bottom: -20px; 
