@@ -48,6 +48,7 @@ const myTestimonials: Testimonials[] = [
 
 const Testimonials: React.FC = () => {
   const [selectedTestimonial, setSelectedTestimonial] = useState(2);
+
   const onTestimonialChange = (index: number) => {
     setSelectedTestimonial(index);
   };
@@ -58,7 +59,7 @@ const Testimonials: React.FC = () => {
         Testimonials
       </h1>
       <div className="px-8 md:px-16 lg:px-24 py-16 bg-secondary-detailsBackground">
-        <div className="h-[40vh]">
+        <div className="h-[70vh] md:h-[60vh] lg:h-[50vh]">
           <TestimonialsHeader
             description={myTestimonials[selectedTestimonial].description}
             name={myTestimonials[selectedTestimonial].name}

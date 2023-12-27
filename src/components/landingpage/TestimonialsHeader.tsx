@@ -15,7 +15,12 @@ const TestimonialsHeader: React.FC<TestimonialsHeaderProps> = ({
         <div className="text-center flex justify-center pb-12">
           <img src="/img/common/symbol.png" alt="symbol" className="w-8 h-6" />
         </div>
-        <h1 className="font-slabo text-center font-semibold">{description}</h1>
+        <h1
+          className="font-slabo text-center font-semibold"
+          style={{ lineHeight: "30px" }}
+        >
+          {description}
+        </h1>
         <p className="py-4 text-right">{name}</p>
       </div>
       <div className="h-0.5 bg-primary-blueText w-full mb-8"></div>
