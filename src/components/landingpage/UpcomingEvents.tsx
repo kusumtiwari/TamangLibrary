@@ -25,10 +25,11 @@ interface UpcomingEvents {
 const maxLength = 150;
 const UpcomingEvents: React.FC = () => {
   const contextValue = useContext(UserContext);
-  const handleEventPageNavigation = contextValue?.handleEventPageNavigation;
-  const handleClick = (obj: UpcomingEvents, event: string) => {
+  const handleEventPageNavigation =
+    contextValue?.handleUpcomingEventPageNavigation;
+  const handleClick = (obj: UpcomingEvents) => {
     if (handleEventPageNavigation) {
-      handleEventPageNavigation(obj, event);
+      handleEventPageNavigation(obj);
     } else {
       console.error("handleEventPageNavigation is undefined");
     }
@@ -61,9 +62,7 @@ const UpcomingEvents: React.FC = () => {
               <div className="w-[95%] md:w-[50%] md:pl-12 h-[55vh]">
                 <h1
                   className="text-2xl md:text-3xl mt-8 md:mt-0 cursor-pointer"
-                  onClick={() =>
-                    handleClick(item as UpcomingEvents, "Upcoming")
-                  }
+                  onClick={() => handleClick(item as UpcomingEvents)}
                 >
                   {item.title}
                 </h1>
@@ -77,9 +76,7 @@ const UpcomingEvents: React.FC = () => {
                       ></div>
                       <span
                         className="text-primary-blueText underline cursor-pointer"
-                        onClick={() =>
-                          handleClick(item as UpcomingEvents, "Upcoming")
-                        }
+                        onClick={() => handleClick(item as UpcomingEvents)}
                       >
                         Read More
                       </span>
@@ -113,9 +110,7 @@ const UpcomingEvents: React.FC = () => {
                   src={item.image}
                   alt="upcoming-event"
                   className="w-full h-full cursor-pointer object-cover"
-                  onClick={() =>
-                    handleClick(item as UpcomingEvents, "Upcoming")
-                  }
+                  onClick={() => handleClick(item as UpcomingEvents)}
                 />
               </div>
             </div>

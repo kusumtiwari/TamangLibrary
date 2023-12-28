@@ -19,7 +19,7 @@ const UpcomingEventDetails: React.FC = () => {
   return (
     <>
       {/* bug: cant make the child div absolute , while made absolute, the second child i.e the one below the child which is supposed to be absolute comes right before the top image  */}
-      <div className="h-fit">
+      <div className="h-fit relative">
         <div className="w-full h-[50vh]">
           <img
             src="/img/common/UpcomingEventsBg.png"
@@ -27,7 +27,7 @@ const UpcomingEventDetails: React.FC = () => {
             className="w-full h-full"
           />
         </div>
-        <div className="bg-gray-100 py-12 px-8 shadow-md mx-6 md:mx-12 my-16 z-20 h-fit">
+        <div className="bg-gray-100 py-12 px-8 shadow-md mx-6 md:mx-12 my-16 z-20 h-fit absolute top-9">
           <h1 className="text-2xl text-primary-blueText uppercase font-semibold pt-4 md:px-4">
             {title}
           </h1>

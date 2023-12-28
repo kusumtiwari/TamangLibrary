@@ -19,11 +19,11 @@ const UpcomingProjectDetailsPage = () => {
         <p className="text-black pb-8 pt-4" style={{ lineHeight: "32px" }}>
           {description}
         </p>
-        <div className="w-[100%] h-[55vh]">
+        <div className="w-[100%] h-[60vh]">
           <img
             src={image}
             alt="upcoming-project-image"
-            className="w-full h-full"
+            className="w-full h-full object-cover object-center"
           />
         </div>
         <p className="text-black pt-8" style={{ lineHeight: "32px" }}>
