@@ -1,5 +1,4 @@
 import EventIndex from "../components/eventpage/EventIndex";
-import EventDetails from "../components/eventpage/EventDetailsPage";
 import UpcomingEventDetails from "../components/eventpage/UpcomingEventsDetails";
 import { Routes, Route } from "react-router-dom";
 const EventPage: React.FC = () => {
