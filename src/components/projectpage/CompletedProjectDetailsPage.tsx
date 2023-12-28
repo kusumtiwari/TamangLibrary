@@ -16,7 +16,7 @@ const CompletedProjectDetailsPage: React.FC = () => {
     <>
       <div className="relative h-[90vh] w-[100%]">
         <div className="bg-[url('/img/common/ProjectDetailsBg.png')] bg-cover bg-no-repeat bg-center w-full h-[70vh] flex items-center justify-center">
-          <h1 className="w-[100%] text-center uppercase text-white text-3xl md:text-5xl font-kameron">
+          <h1 className="w-[100%] text-center uppercase text-white text-3xl md:text-5xl font-kameron text-with-shadow">
             {status} Projects
           </h1>
         </div>

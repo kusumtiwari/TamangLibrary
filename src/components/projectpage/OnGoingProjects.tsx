@@ -55,7 +55,7 @@ const OnGoingProjects: React.FC = () => {
   const maxLength: number = 800;
   return (
     <div className="text-primary-blueText my-12">
-      <h1 className="uppercase text-2xl md:text-4xl lg:text-5xl font-thin py-12 text-center">
+      <h1 className="uppercase text-2xl md:text-4xl lg:text-5xl font-thin py-12 text-center text-with-shadow">
         OnGoing Projects
       </h1>
       <div>

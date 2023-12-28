@@ -16,7 +16,7 @@ const responsive = {
 const mySponsers: Sponsers[] = [
   {
     id: 1,
-    image: "/img/Sponsers/Sponsers3.png",
+    image: "/img/Sponsers/Sponsers4.png",
   },
   {
     id: 2,
@@ -24,11 +24,11 @@ const mySponsers: Sponsers[] = [
   },
   {
     id: 3,
-    image: "/img/Sponsers/Sponsers1.png",
+    image: "/img/Sponsers/Sponsers3.png",
   },
   {
     id: 4,
-    image: "/img/Sponsers/Sponsers4.png",
+    image: "/img/Sponsers/Sponsers1.png",
   },
   {
     id: 5,
@@ -40,7 +40,7 @@ const mySponsers: Sponsers[] = [
   },
 ];
 
-const Sponsers: React.FC = () => {
+const Partners: React.FC = () => {
   const [isLeftbtnClicked, setIsLeftbtnClicked] = useState<Boolean>(false);
   const [isRightbtnClicked, setIsRightbtnClicked] = useState<Boolean>(false);
 
@@ -54,9 +54,9 @@ const Sponsers: React.FC = () => {
     setIsRightbtnClicked(true);
   };
   return (
-    <div className="mt-8 overflow-hidden w-full">
+    <div className="my-8 mb-20 overflow-hidden w-full">
       <h1 className="uppercase text-3xl md:text-4xl lg:text-5xl text-center py-12 text-primary-blueText text-with-shadow">
-        Sponsers
+        Partners
       </h1>
       <div className="bg-secondary-detailsBackground py-12 relative flex items-center justify-center px-auto w-[100vw] h-[40vh]">
         <AliceCarousel
@@ -112,4 +112,4 @@ const Sponsers: React.FC = () => {
     </div>
   );
 };
-export default Sponsers;
+export default Partners;

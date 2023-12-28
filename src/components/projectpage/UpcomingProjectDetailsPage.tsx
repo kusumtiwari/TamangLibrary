@@ -10,7 +10,7 @@ const UpcomingProjectDetailsPage = () => {
   return (
     <div>
       <div className="w-full h-[65vh] bg-[url('../../img/common/UpcomingProjectsBg.png')] flex items-center justify-center ">
-        <h1 className="text-center text-white text-4xl md:text-5xl font-semibold">
+        <h1 className="text-center text-white text-4xl md:text-5xl font-semibold text-with-shadow">
           Upcoming Projects
         </h1>
       </div>

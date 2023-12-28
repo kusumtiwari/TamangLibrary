@@ -62,7 +62,7 @@ const UpcomingProjects: React.FC = () => {
 
   return (
     <div className="py-12 px-4 md:px-8">
-      <h1 className="uppercase text-2xl md:text-4xl lg:text-5xl font-thin py-12 text-center">
+      <h1 className="uppercase text-2xl md:text-4xl lg:text-5xl font-thin py-12 text-center text-with-shadow">
         Upcoming Projects
       </h1>
       <div>

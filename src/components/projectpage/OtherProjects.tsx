@@ -62,7 +62,7 @@ const OtherProjects: React.FC = () => {
   return (
     <>
       <div className="bg-secondary-detailsBackground my-12 py-12">
-        <h1 className="uppercase text-primary-blueText font-bold text-center text-4xl md:text-5xl py-12">
+        <h1 className="uppercase text-primary-blueText font-bold text-center text-4xl md:text-5xl py-12 text-with-shadow">
           other projects
         </h1>
         <div>

@@ -52,7 +52,7 @@ const UpcomingEvents: React.FC = () => {
   const firstThreeProjects = projects ? projects.slice(0, 3) : [];
   return (
     <div className="my-12">
-      <h1 className="uppercase text-2xl md:text-4xl lg:text-5xl font-thin py-12 text-center text-primary-blueText font-playfair">
+      <h1 className="text-with-shadow uppercase text-2xl md:text-4xl lg:text-5xl font-thin py-12 text-center text-primary-blueText font-playfair">
         Upcoming Events
       </h1>
 

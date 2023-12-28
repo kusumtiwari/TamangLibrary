@@ -2,7 +2,7 @@ const RegistrationForm: React.FC = () => {
   return (
     <div className="flex flex-col lg:flex-row mx-6 md:mx-12 my-12 py-8">
       <div className="w-[100%] lg:w-[45%] h-[100%] bg-secondary-detailsBackground px-8 py-8">
-        <h1 className="text-primary-blueText font-semibold text-4xl text-center">
+        <h1 className="text-primary-blueText font-semibold text-4xl text-center text-with-shadow">
           Registration Form
         </h1>
         <div className="w-[100%]">
