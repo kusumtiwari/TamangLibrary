@@ -88,7 +88,7 @@ const NoticesPage: React.FC = () => {
                   ></div>
                 )}
                 <span
-                  className="text-primary-blueText underline cursor-pointer pl-2"
+                  className="text-primary-blueText underline cursor-pointer"
                   onClick={onLatestNoticeReadMoreClick}
                 >
                   {latestNoticeDescription ? "Show less" : "Read more"}
@@ -141,7 +141,7 @@ const NoticesPage: React.FC = () => {
                   ></div>
                 )}
                 <span
-                  className="text-primary-blueText underline cursor-pointer pl-2"
+                  className="text-primary-blueText underline cursor-pointer"
                   onClick={() => onPastNoticeReadMoreClick(index)}
                 >
                   {pastNoticeDescription[index] ? "Show less" : "Read more"}

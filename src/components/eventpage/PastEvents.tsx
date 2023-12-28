@@ -40,7 +40,7 @@ const PastEvents: React.FC = () => {
   };
   return (
     <div>
-      <h1 className="uppercase text-2xl md:text-4xl lg:text-5xl font-thin py-12 text-center text-primary-blueText font-playfair">
+      <h1 className="text-with-shadow uppercase text-2xl md:text-4xl lg:text-5xl font-thin py-12 text-center text-primary-blueText font-playfair">
         Past Events
       </h1>
       <div className="py-12 px-8 flex flex-wrap">
@@ -74,7 +74,7 @@ const PastEvents: React.FC = () => {
                     <h1 className="text-primary-blue text-2xl">
                       {dayjs
                         .unix(items.dateAndTime.seconds)
-                        .format("dddd | Do MMMM, YYYY | hh:mmA")}
+                        .format("dddd | D MMMM, YYYY | hh:mmA")}
                     </h1>
                     <div className="py-8 text-justify text-black font-semibold">
                       {items.description.length > maxLength ? (
