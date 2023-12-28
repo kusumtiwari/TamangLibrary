@@ -20,15 +20,15 @@ const mySponsers: Sponsers[] = [
   },
   {
     id: 2,
-    image: "/img/Sponsers/Sponsers2.png",
+    image: "/img/common/partners1.png",
   },
   {
     id: 3,
-    image: "/img/Sponsers/Sponsers3.png",
+    image: "/img/common/partners2.png",
   },
   {
     id: 4,
-    image: "/img/Sponsers/Sponsers1.png",
+    image: "/img/Sponsers/Sponsers3.png",
   },
   {
     id: 5,

@@ -6,6 +6,8 @@ import { MdOutlineLocationOn } from "react-icons/md";
 import Sponsers from "../../common/Sponsors";
 import Partners from "../../common/Partners";
 
+import { useState } from "react";
+
 const PastEventDetails: React.FC = () => {
   const location = useLocation();
   const { state } = location;
@@ -15,7 +17,10 @@ const PastEventDetails: React.FC = () => {
   const image = state.image;
   const address = state.location;
   const glimpse = state.glimpse;
-  console.log(glimpse, "glimpseimages");
+  const firstSixImages = glimpse.slice(0, 6);
+
+  const [isbtnClicked, setIsbtnClicked] = useState(false);
+  const onBtnClick = () => setIsbtnClicked(!isbtnClicked);
   return (
     <>
       <div className="w-full h-[50vh]">
@@ -62,22 +67,47 @@ const PastEventDetails: React.FC = () => {
           dangerouslySetInnerHTML={{ __html: description }}
         ></div>
       </div>
-      <div className="my-24">
-        <h1 className="text-with-shadow text-primary-blueText text-3xl md:text-5xl text-center">
+      <div className="my-24 px-12 h-fit">
+        <h1 className="text-with-shadow text-primary-blueText text-3xl md:text-5xl text-center py-8 ">
           GLIMPSE OF THE EVENT
         </h1>
-        <div className="flex justify-center items-center flex-wrap w-full">
-          {glimpse.map((item: string) => {
-            return (
-              <div className="w-[1/3]">
-                <img
-                  src={item}
-                  alt="glimpse-image"
-                  className="w-full h-[20vh]"
-                />
-              </div>
-            );
-          })}
+        <div className="bg-secondary-detailsBackground py-6">
+          <div className="flex justify-center items-center flex-wrap w-full py-8">
+            {!isbtnClicked
+              ? firstSixImages.map((item: string, index: number) => {
+                  return (
+                    <div
+                      className="w-[100%] md:w-[50%] lg:w-[30%] mx-4 my-6"
+                      key={index}
+                    >
+                      <img
+                        src={item}
+                        alt="glimpse-image"
+                        className="w-full h-[40vh]"
+                      />
+                    </div>
+                  );
+                })
+              : glimpse.map((item: string, index: number) => {
+                  return (
+                    <div className="w-[30%] mx-4 my-6" key={index}>
+                      <img
+                        src={item}
+                        alt="glimpse-image"
+                        className="w-full h-[40vh]"
+                      />
+                    </div>
+                  );
+                })}
+          </div>
+          <div
+            className="flex items-center justify-center"
+            onClick={onBtnClick}
+          >
+            <button className="text-primary-blueText border-2 border-primary-blueText px-3 py-2 rounded-lg hover:text-white hover:bg-primary-blueText ease-in-out duration-300 transform">
+              {isbtnClicked ? "View Less" : "View More"}
+            </button>
+          </div>
         </div>
       </div>
       <Sponsers />

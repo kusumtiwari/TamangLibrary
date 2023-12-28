@@ -92,7 +92,7 @@ const Herosection: React.FC = () => {
             {myItems.map((item) => {
               return (
                 <div
-                  className="md:ml-4 lg:ml-8 carousel-item w-[95vw] md:w-[70vw] lg:w-[40vw] h-[60vh] slanted-div rounded-full"
+                  className="carousel-item w-[95vw] md:w-[70vw] lg:w-[40vw] h-[60vh] slanted-div rounded-full"
                   key={item.id}
                 >
                   <img
