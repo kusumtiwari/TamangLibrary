@@ -11,12 +11,10 @@ interface UserContextValue {
     id: number
   ) => void;
   handleCompletedProjectNavigation: (myProjectContents: DocumentData) => void;
-  handleEventPageNavigation: (
-    myEventContents: DocumentData,
-    eventType: string
-  ) => void;
+  handleUpcomingEventPageNavigation: (myEventContents: DocumentData) => void;
   handleOnGoingProjectNavigation: (myProjectContents: DocumentData) => void;
   handleUpComingProjectNavigation: (myProjectContents: DocumentData) => void;
+  handlePastEventPageNavigation: (myProjectContents: DocumentData) => void;
 }
 
 export const UserContext = createContext<UserContextValue | undefined>(
@@ -69,23 +67,28 @@ export const UserProvider = ({ children }: { children: ReactNode }) => {
     window.scrollTo(0, 0);
   };
 
-  const handleEventPageNavigation = (
-    myEventContents: DocumentData,
-    eventType: string
-  ) => {
+  const handleUpcomingEventPageNavigation = (myEventContents: DocumentData) => {
     const itemName = myEventContents.title.replace(/ /g, "-").toLowerCase();
     navigate(`/events/upcoming-events/${itemName}`, {
-      state: { ...myEventContents, eventType },
+      state: { ...myEventContents },
     });
     window.scrollTo(0, 0);
   };
 
+  const handlePastEventPageNavigation = (myEventContents: DocumentData) => {
+    const itemName = myEventContents.title.replace(/ /g, "-").toLowerCase();
+    navigate(`/events/past-events/${itemName}`, {
+      state: { ...myEventContents },
+    });
+    window.scrollTo(0, 0);
+  };
   const contextValue: UserContextValue = {
     handleAboutPageNavigation,
     handleCompletedProjectNavigation,
-    handleEventPageNavigation,
+    handleUpcomingEventPageNavigation,
     handleOnGoingProjectNavigation,
     handleUpComingProjectNavigation,
+    handlePastEventPageNavigation,
   };
 
   return (

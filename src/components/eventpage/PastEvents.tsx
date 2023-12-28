@@ -12,7 +12,7 @@ import ViewlessBtn from "../../common/ViewlessBtn";
 import { UserContext } from "../../context/Context";
 const PastEvents: React.FC = () => {
   const contextValue = useContext(UserContext);
-  const handleEventPageNavigation = contextValue?.handleEventPageNavigation;
+  const handleEventPageNavigation = contextValue?.handlePastEventPageNavigation;
   const [isViewMoreBtnClicked, setIsViewMoreBtnClicked] =
     useState<Boolean>(false);
   const onViewBtnClick = () => {
@@ -31,9 +31,9 @@ const PastEvents: React.FC = () => {
   }
   const maxLength: number = 500;
   const firstSixProjects = projects ? projects.slice(0, 6) : [];
-  const handleClick = (obj: DocumentData, event: string) => {
+  const handleClick = (obj: DocumentData) => {
     if (handleEventPageNavigation) {
-      handleEventPageNavigation(obj, event);
+      handleEventPageNavigation(obj);
     } else {
       console.error("handleEventPageNavigation is undefined");
     }
@@ -61,13 +61,13 @@ const PastEvents: React.FC = () => {
                       src={items.image}
                       alt="completed-project"
                       className="w-full h-full absolute bottom-2 object-cover cursor-pointer"
-                      onClick={() => handleClick(items, "past")}
+                      onClick={() => handleClick(items)}
                     />
                   </div>
                   <div className="w-[100%] playfair-display pt-6 lg:pt-0 flex flex-col justify-center">
                     <h1
                       className="text-primary-blue text-2xl text-primary-blueText cursor-pointer"
-                      onClick={() => handleClick(items, "past")}
+                      onClick={() => handleClick(items)}
                     >
                       {items.title}
                     </h1>
@@ -86,7 +86,7 @@ const PastEvents: React.FC = () => {
                           ></div>
                           <span
                             className="text-primary-blueText underline cursor-pointer"
-                            onClick={() => handleClick(items, "past")}
+                            onClick={() => handleClick(items)}
                           >
                             Read More
                           </span>
@@ -114,13 +114,13 @@ const PastEvents: React.FC = () => {
                       src={items.image}
                       alt="completed-project"
                       className="w-full h-full object-cover"
-                      onClick={() => handleClick(items, "past")}
+                      onClick={() => handleClick(items)}
                     />
                   </div>
                   <div className="w-[95%] md:w-[75%] lg:w-[50%] playfair-display pt-6 lg:pt-0">
                     <h1
                       className="text-primary-blue text-2xl text-primary-blueText cursor-pointer"
-                      onClick={() => handleClick(items, "past")}
+                      onClick={() => handleClick(items)}
                     >
                       {items.title}
                     </h1>
@@ -139,7 +139,7 @@ const PastEvents: React.FC = () => {
                           ></div>
                           <span
                             className="text-primary-blueText underline cursor-pointer"
-                            onClick={() => handleClick(items, "past")}
+                            onClick={() => handleClick(items)}
                           >
                             Read More
                           </span>

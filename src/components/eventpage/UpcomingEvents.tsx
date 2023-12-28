@@ -22,10 +22,11 @@ import { UserContext } from "../../context/Context";
 
 const UpcomingEvents: React.FC = () => {
   const contextValue = useContext(UserContext);
-  const handleEventPageNavigation = contextValue?.handleEventPageNavigation;
-  const handleClick = (obj: DocumentData, event: string) => {
+  const handleEventPageNavigation =
+    contextValue?.handleUpcomingEventPageNavigation;
+  const handleClick = (obj: DocumentData) => {
     if (handleEventPageNavigation) {
-      handleEventPageNavigation(obj, event);
+      handleEventPageNavigation(obj);
     } else {
       console.error("handleEventPageNavigation is undefined");
     }
@@ -77,13 +78,13 @@ const UpcomingEvents: React.FC = () => {
                       src={items.image}
                       alt="completed-project"
                       className="w-full h-full absolute bottom-[6%] left-[3%] object-cover cursor-pointer"
-                      onClick={() => handleClick(items, "Upcoming")}
+                      onClick={() => handleClick(items)}
                     />
                   </div>
                   <div className="w-[95%] md:w-[75%] lg:w-[50%] playfair-display pt-6 lg:pt-0 flex flex-col justify-center">
                     <h1
                       className="text-primary-blue text-2xl text-primary-blueText cursor-pointer"
-                      onClick={() => handleClick(items, "Upcoming")}
+                      onClick={() => handleClick(items)}
                     >
                       {items.title}
                     </h1>
@@ -136,13 +137,13 @@ const UpcomingEvents: React.FC = () => {
                       src={items.image}
                       alt="completed-project"
                       className="w-full h-full absolute bottom-[5%] left-[3%] object-cover cursor-pointer"
-                      onClick={() => handleClick(items, "Upcoming")}
+                      onClick={() => handleClick(items)}
                     />
                   </div>
                   <div className="w-[95%] md:w-[75%] lg:w-[50%] playfair-display pt-6 lg:pt-0">
                     <h1
                       className="text-primary-blue text-2xl text-primary-blueText cursor-pointer"
-                      onClick={() => handleClick(items, "Upcoming")}
+                      onClick={() => handleClick(items)}
                     >
                       {items.title}
                     </h1>
