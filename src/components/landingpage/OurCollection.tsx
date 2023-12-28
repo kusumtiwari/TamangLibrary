@@ -104,12 +104,12 @@ const OurCollection: React.FC = () => {
             return (
               <div
                 key={items.id}
-                className="border border-b-4 border-blue-900 border-l-2 border-r-2 border-transparent relative"
+                className="border border-b-4 border-blue-900 border-l-2 border-r-2 border-transparent relative ml-3 md:ml-0"
               >
                 <img
                   src={items.image}
                   alt="collection-image"
-                  className="w-[94%] md:w-[75%] h-[50vh]"
+                  className="w-[100%] md:w-[75%] h-[50vh]"
                 />
                 <img
                   src="/img/Collection-images/Collection-image-blueline.png"
