@@ -11,7 +11,7 @@ const Welcome: React.FC = () => {
           className="w-[14%] h-[26%] md:w-[8%] md:h-[28vh] mt-12"
         />
         <p
-          className="font-kameron w-[100%] md:text-center px-8 md:px-12 py-10"
+          className="font-kameron w-[100%] mr-6 md:mr-0 md:text-center px-8 md:px-12 py-10"
           style={{ lineHeight: "32px" }}
         >
           The Tamang Library is committed to preserving, celebrating, and
