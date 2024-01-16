@@ -133,7 +133,8 @@ const CompletedProjects: React.FC = () => {
                 </div>
               );
             })
-          : projects?.map((items: any, index: number) => {
+          : projects &&
+            projects?.map((items: any, index: number) => {
               return (
                 <div
                   className={`flex items-center flex-col lg:flex-row justify-between px-4 md:px-12 py-12 ${
