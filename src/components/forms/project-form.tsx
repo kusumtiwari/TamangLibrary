@@ -7,8 +7,8 @@ import { useUploadFile } from "react-firebase-hooks/storage";
 import { useFieldArray, useForm } from "react-hook-form";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import ReactQuill from "react-quill";
-import { useNavigate } from "react-router-dom";
 import "react-quill/dist/quill.snow.css";
+import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 import * as z from "zod";
 import { db, storage } from "../../../firebase";
@@ -219,6 +219,7 @@ const ProjectForm = ({ initialData }: ProjectFormProps) => {
 				<FormField
 					control={form.control}
 					name="image"
+					// @ts-ignore
 					render={({ field }) => {
 						const [uploadFile, uploading] = useUploadFile();
 						return (
@@ -284,7 +285,9 @@ const ProjectForm = ({ initialData }: ProjectFormProps) => {
 									<div className="flex-1">
 										<FormField
 											control={form.control}
+											// @ts-ignore
 											name={`glimpses.${index}.url`}
+											// @ts-ignore
 											render={({ field }) => {
 												const [uploadFile, uploading] = useUploadFile();
 												return (

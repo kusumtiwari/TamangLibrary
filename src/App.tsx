@@ -1,15 +1,15 @@
-import "./App.css";
-import Navbar from "./common/Navbar";
-import Footer from "./common/Footer";
-import RoutesFile from "./RoutesFile";
-import { UserProvider } from "./context/Context";
-import { Navigate, useLocation, useNavigate } from "react-router-dom";
 import { Toaster } from "@/components/ui/sonner";
 import { useAuthState } from "react-firebase-hooks/auth";
+import { useLocation, useNavigate } from "react-router-dom";
 import { auth } from "../firebase";
+import "./App.css";
+import RoutesFile from "./RoutesFile";
+import Footer from "./common/Footer";
 import LoadingSpinner from "./common/LoadingSpinner";
+import Navbar from "./common/Navbar";
 import NavbarAdmin from "./components/layout/NavbarAdmin";
 import Sidebar from "./components/layout/Sidebar";
+import { UserProvider } from "./context/Context";
 function App() {
 	const location = useLocation();
 	const navigate = useNavigate();
@@ -30,7 +30,6 @@ function App() {
 			<>
 				<NavbarAdmin />
 				<RoutesFile />
-				{/* <Component {...pageProps} /> */}
 				<Toaster position="top-right" richColors />
 			</>
 		);

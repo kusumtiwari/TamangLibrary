@@ -1,15 +1,13 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import { doc } from "firebase/firestore";
-import { useDocumentData } from "react-firebase-hooks/firestore";
-// import { useRouter } from "next/router";
 import LoadingSpinner from "@/common/LoadingSpinner";
 import { type FormSchema } from "@/components/forms/project-form";
 import PublicationForm from "@/components/forms/publication-form";
-import { useLocation, useNavigate } from "react-router-dom";
+import { doc } from "firebase/firestore";
+import { useDocumentData } from "react-firebase-hooks/firestore";
+import { useLocation } from "react-router-dom";
 import { db } from "../../../../../firebase";
 
 const AdminPublicationEdit = () => {
-	const navigate = useNavigate();
 	const location = useLocation();
 	const { pathname } = location;
 

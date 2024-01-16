@@ -5,11 +5,10 @@ import { useDocumentData } from "react-firebase-hooks/firestore";
 import LoadingSpinner from "@/common/LoadingSpinner";
 import EventForm from "@/components/forms/event-form";
 import { type FormSchema } from "@/components/forms/project-form";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { db } from "../../../../../firebase";
 
 const AdminEventEdit = () => {
-	const navigate = useNavigate();
 	const location = useLocation();
 	const { pathname } = location;
 
@@ -28,6 +27,7 @@ const AdminEventEdit = () => {
 	console.log(data);
 	return (
 		<EventForm
+			// @ts-ignore
 			initialData={
 				{
 					...data,

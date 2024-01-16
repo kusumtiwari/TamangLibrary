@@ -1,15 +1,13 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import { useDocumentData } from "react-firebase-hooks/firestore";
 import { Timestamp, doc } from "firebase/firestore";
-// import { useRouter } from "next/router";
-import { useLocation, useNavigate } from "react-router-dom";
-import ProjectForm, { type FormSchema } from "@/components/forms/project-form";
-import { db } from "../../../../../firebase";
+import { useDocumentData } from "react-firebase-hooks/firestore";
 import LoadingSpinner from "@/common/LoadingSpinner";
 import NoticeForm from "@/components/forms/notice-form";
+import { type FormSchema } from "@/components/forms/project-form";
+import { useLocation } from "react-router-dom";
+import { db } from "../../../../../firebase";
 
 const AdminNoticeEdit = () => {
-	const navigate = useNavigate();
 	const location = useLocation();
 	const { pathname } = location;
 
@@ -28,6 +26,7 @@ const AdminNoticeEdit = () => {
 	console.log(data);
 	return (
 		<NoticeForm
+			// @ts-ignore
 			initialData={
 				{
 					...data,

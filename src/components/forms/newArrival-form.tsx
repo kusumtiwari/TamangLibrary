@@ -157,6 +157,7 @@ const NewArrivalForm = ({ initialData }: newArrivalFormProps) => {
 				<FormField
 					control={form.control}
 					name="image"
+					//@ts-ignore
 					render={({ field }) => {
 						const [uploadFile, uploading] = useUploadFile();
 						return (

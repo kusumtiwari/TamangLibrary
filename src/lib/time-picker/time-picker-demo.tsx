@@ -1,9 +1,10 @@
 "use client";
 
-import * as React from "react";
-import { Clock } from "lucide-react";
-import { Label } from "@/components/ui/label";
+// @ts-expect-error
 import { TimePickerInput } from "@/components/common/time-picker-input/time-picker-input";
+import { Label } from "@/components/ui/label";
+import { Clock } from "lucide-react";
+import * as React from "react";
 
 interface TimePickerDemoProps {
 	date: Date | undefined;

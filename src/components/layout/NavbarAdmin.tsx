@@ -1,9 +1,6 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 
 const NavbarAdmin: React.FC = () => {
-	const [isOpen, setIsOpen] = useState<boolean>(false);
-
 	const scrollToTop = () => {
 		window.scrollTo({
 			top: 0,
