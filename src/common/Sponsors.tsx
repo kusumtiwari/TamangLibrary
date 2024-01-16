@@ -59,9 +59,9 @@ const Sponsers: React.FC = () => {
         className="uppercase text-4xl lg:text-5xl text-center py-12 text-primary-blueText text-with-shadow font-perpetua font-bold"
         style={{ letterSpacing: "2px" }}
       >
-        Sponsers
+        Sponsors
       </h1>
-      <div className="bg-secondary-detailsBackground py-12 flex items-center justify-center px-auto w-[100vw] h-[40vh]">
+      <div className="bg-secondary-detailsBackground py-12 flex items-center justify-center px-auto w-[100vw] h-56 mb-24">
         <AliceCarousel
           mouseTracking
           responsive={responsive}
@@ -74,7 +74,7 @@ const Sponsers: React.FC = () => {
                   isLeftbtnClicked
                     ? "border border-primary-blueText"
                     : "bg-gray-300"
-                }  mt-6 absolute right-[13%] top-[130%]`}
+                } absolute right-[13%] top-48`}
                 onClick={onLeftbtnClick}
               >
                 <MdArrowBackIos className="w-5 h-5 text-primary-blueText ml-1" />
@@ -88,7 +88,7 @@ const Sponsers: React.FC = () => {
                   isRightbtnClicked
                     ? "border border-primary-blueText"
                     : "bg-gray-300"
-                } mt-6 absolute right-[10%] top-[100%]`}
+                } absolute right-[10%] top-48`}
                 onClick={onRightbtnClick}
               >
                 <MdArrowForwardIos className="w-5 h-5 text-primary-blueText" />
