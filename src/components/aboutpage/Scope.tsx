@@ -49,7 +49,10 @@ const Scope: React.FC = () => {
 
   return (
     <div className="bg-secondary-detailsBackground py-8 text-primary-blueText my-20">
-      <h1 className="uppercase text-2xl md:text-4xl lg:text-5xl font-thin py-4 text-center">
+      <h1
+        className="uppercase text-4xl lg:text-5xl font-extrabold font-perpetua text-with-shadow text-center"
+        style={{ letterSpacing: "4px" }}
+      >
         Scope
       </h1>
       <div

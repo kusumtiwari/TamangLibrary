@@ -39,9 +39,16 @@ const UpcomingEvents: React.FC = () => {
     useCollectionData(data, {
       snapshotListenOptions: { includeMetadataChanges: true },
     });
+  const upcomingEventsFirstTwo = upcomingEvents
+    ? upcomingEvents.slice(0, 2)
+    : [];
+
   return (
-    <div className="my-16 px-4 md:px-8 overflow-hidden">
-      <h1 className="uppercase text-with-shadow text-primary-blueText text-2xl md:text-4xl lg:text-5xl text-center bg-secondary-detailsBackground py-16 my-8">
+    <div className="my-16">
+      <h1
+        className="uppercase text-with-shadow text-primary-blueText text-4xl lg:text-5xl text-center bg-secondary-detailsBackground py-16 my-8 font-perpetua font-thin w-full"
+        style={{ letterSpacing: "4px" }}
+      >
         Upcoming Events
       </h1>
 
@@ -49,9 +56,10 @@ const UpcomingEvents: React.FC = () => {
         <LoadingSpinner />
       ) : (
         !upcomingEventsError &&
-        upcomingEvents?.map((item, index) => {
+        upcomingEvents &&
+        upcomingEvents.length <= 2 &&
+        upcomingEvents.map((item, index) => {
           const jsDate = item.dateAndTime.toDate();
-
           return (
             <div
               className={`flex items-center text-primary-blueText my-24 overflow-hidden flex-col-reverse md:flex-row ${
@@ -61,7 +69,7 @@ const UpcomingEvents: React.FC = () => {
             >
               <div className="w-[95%] md:w-[50%] md:pl-12 h-[55vh]">
                 <h1
-                  className="text-2xl md:text-3xl mt-8 md:mt-0 cursor-pointer"
+                  className="text-3xl mt-8 md:mt-0 cursor-pointer font-perpetua"
                   onClick={() => handleClick(item as UpcomingEvents)}
                 >
                   {item.title}
@@ -71,14 +79,14 @@ const UpcomingEvents: React.FC = () => {
                     <>
                       <div
                         dangerouslySetInnerHTML={{
-                          __html: item.description.slice(0, maxLength),
+                          __html: item.description.slice(0, maxLength) + "...",
                         }}
                       ></div>
                       <span
                         className="text-primary-blueText underline cursor-pointer"
                         onClick={() => handleClick(item as UpcomingEvents)}
                       >
-                        Read More
+                        Learn More
                       </span>
                     </>
                   ) : (
@@ -90,16 +98,18 @@ const UpcomingEvents: React.FC = () => {
                   )}
                 </div>
                 <div className="flex items-center">
-                  <MdOutlineLocationOn className="mr-2 " />
-                  <p>{item.location}</p>
+                  <MdOutlineLocationOn className="mr-2 w-6 h-6" />
+                  <p className="text-base">{item.location}</p>
                 </div>
                 <div className="flex items-center py-6">
-                  <SlCalender className="mr-2" />
-                  <p>{dayjs(jsDate).format("MMMM D, YYYY")}</p>
+                  <SlCalender className="mr-2 w-6 h-6" />
+                  <p className="text-base">
+                    {dayjs(jsDate).format("MMMM D, YYYY")}
+                  </p>
                 </div>
                 <div className="flex items-center">
-                  <LuClock className="mr-2" />
-                  <p>
+                  <LuClock className="mr-2 w-6 h-6" />
+                  <p className="text-base">
                     {dayjs(jsDate).format("h:mm A")} ||{" "}
                     {dayjs(jsDate).format("dddd")}
                   </p>

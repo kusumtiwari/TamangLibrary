@@ -66,11 +66,11 @@ const Herosection: React.FC = () => {
                   className={`px-1 py-1 mr-10 md:mr-6 lg:mr-0 rounded-md ${
                     isLeftbtnClicked
                       ? "border border-primary-blueText"
-                      : "bg-gray-300"
+                      : "bg-secondary-detailsBackground"
                   }  mt-6 absolute right-[13%] `}
                   onClick={onLeftbtnClick}
                 >
-                  <MdArrowBackIos className="w-6 h-6 text-primary-blueText ml-1" />
+                  <MdArrowBackIos className="w-5 h-5 text-primary-blueText ml-1" />
                 </button>
               );
             }}
@@ -80,11 +80,11 @@ const Herosection: React.FC = () => {
                   className={`px-1 py-1 rounded-md ${
                     isRightbtnClicked
                       ? "border border-primary-blueText"
-                      : "bg-gray-300"
+                      : "bg-secondary-detailsBackground"
                   } mt-6 absolute right-[9%]`}
                   onClick={onRightbtnClick}
                 >
-                  <MdArrowForwardIos className="w-6 h-6 text-primary-blueText" />
+                  <MdArrowForwardIos className="w-5 h-5  text-primary-blueText" />
                 </button>
               );
             }}

@@ -53,11 +53,14 @@ const RelatedEvents: React.FC = () => {
   const maxLength: number = 800;
   const firstThreeProjects = projects ? projects.slice(0, 3) : [];
   return (
-    <div className="">
-      <h1 className=" text-primary-blueText font-semibold text-3xl md:text-5xl text-center pb-24">
+    <div className="mt-24">
+      <h1
+        className=" text-primary-blueText font-extrabold text-4xl md:text-5xl text-center pb-24 text-with-shadow font-perpetua"
+        style={{ letterSpacing: "2px" }}
+      >
         Related Events
       </h1>
-      <div className="w-[100%]">
+      <div className="w-[100%] z-10">
         {!isViewMoreBtnClicked ? (
           <AliceCarousel
             disableDotsControls
@@ -96,33 +99,43 @@ const RelatedEvents: React.FC = () => {
               return (
                 <div
                   key={index}
-                  className="flex flex-col text-primary-blueText cursor-pointer"
+                  className="flex flex-col text-primary-blueText cursor-pointer relative"
                 >
-                  <div className="w-[100vw] h-[60vh]">
+                  <div className="bg-primary-blueText rounded-full border-2 border-white h-16 w-16 md:h-24 md:w-24 absolute top-0 left-8 z-20 flex items-center justify-center">
+                    <h1 className="text-white font-bold font-perpetua">
+                      {dayjs.unix(item.dateAndTime.seconds).format("D MMM")}
+                    </h1>
+                  </div>
+                  <div className="w-[100vw] h-[75vh] relative">
                     <img
                       src={item.image}
                       alt="ongoing-project"
-                      className="w-[100%] h-full object-cover object-center"
+                      className="w-[100%] h-[90%] object-fit object-center absolute top-10"
                     />
                   </div>
                   <div className="w-[100%] font-kameron px-6 md:px-16 pt-6">
-                    <h1 className="text-black font-bold text-2xl md:text-4xl cursor-pointer py-6">
+                    <h1 className="text-black font-bold text-2xl  cursor-pointer py-6 font-kameron">
                       {item.title}
                     </h1>
 
                     <div className="flex text-xl">
-                      <IoLocationOutline />
-                      <h1 className="ml-1 text-black">{item.location}</h1>
+                      <IoLocationOutline className="text-primary-blueText" />
+                      <h1 className="ml-2 text-black text-xl font-kameron">
+                        {item.location}
+                      </h1>
                     </div>
                     <div className="flex my-6 text-xl">
                       <SlCalender />
-                      <h1 className="ml-1 text-black">
+                      <h1 className="ml-2 text-black font-kameron">
                         {dayjs
                           .unix(item.dateAndTime.seconds)
                           .format("dddd | D MMMM |")}
                       </h1>
                     </div>
-                    <div className="w-[95%] text-justify text-xl md:text-2xl text-black">
+                    <div
+                      className="w-[95%] text-justify text-2xl text-black"
+                      style={{ lineHeight: "34px" }}
+                    >
                       {item.description.length > maxLength ? (
                         <>
                           <div
@@ -135,7 +148,7 @@ const RelatedEvents: React.FC = () => {
                             className="text-primary-blueText underline cursor-pointer"
                             onClick={onReadMoreClick}
                           >
-                            Read More
+                            ....Read More
                           </span>
                         </>
                       ) : (

@@ -62,8 +62,11 @@ const OurCollection: React.FC = () => {
   };
   return (
     <div className="my-16 relative h-[90vh]">
-      <h1 className="uppercase text-primary-blueText text-2xl md:text-4xl lg:text-5xl text-center h-[60%] text-with-shadow pt-12 bg-secondary-detailsBackground">
-        Collection
+      <h1
+        className="font-thin uppercase text-primary-blueText text-4xl lg:text-5xl text-center h-[60%] text-with-shadow pt-12 bg-secondary-detailsBackground font-perpetua"
+        style={{ letterSpacing: "4px" }}
+      >
+        Our Collection
       </h1>
       <div className="bg-transparent lg:mx-6 absolute top-[30%] w-[98%]">
         <AliceCarousel
@@ -104,19 +107,19 @@ const OurCollection: React.FC = () => {
             return (
               <div
                 key={items.id}
-                className="border border-b-4 border-blue-900 border-l-2 border-r-2 border-transparent relative ml-3 md:ml-0"
+                className="border border-b-4 border-blue-900 border-l-2 border-r-2 border-transparent relative ml-3 md:ml-0 flex items-center justify-center h-[60vh]"
               >
                 <img
                   src={items.image}
                   alt="collection-image"
-                  className="w-[100%] md:w-[75%] h-[50vh]"
+                  className="w-[90%] md:w-[75%] h-[50vh] object-center object-fit rounded absolute bottom-4"
                 />
                 <img
                   src="/img/Collection-images/Collection-image-blueline.png"
                   alt="blue-line"
-                  className="absolute bottom-0  h-[30vh] w-[94%] md:w-[75%]"
+                  className="absolute bottom-0 h-[38vh] w-[94%] md:w-[84%]"
                 />
-                <div className="border-2 border-black text-black text-base text-center font-semibold uppercase py-3 w-[40%] absolute top-[50%] left-[15%] bg-white">
+                <div className="rounded border border-primary-blueText text-black text-base text-center font-semibold uppercase py-3 w-[40%] absolute top-[50%] left-[28%] bg-white flex justify-center items-center">
                   {items.category} ({items.pages})
                 </div>
               </div>

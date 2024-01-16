@@ -55,8 +55,11 @@ const OnGoingProjects: React.FC = () => {
   const maxLength: number = 800;
   return (
     <div className="text-primary-blueText my-12">
-      <h1 className="uppercase text-2xl md:text-4xl lg:text-5xl font-thin py-12 text-center text-with-shadow">
-        OnGoing Projects
+      <h1
+        className="uppercase text-4xl lg:text-5xl font-extrabold font-perpetua text-with-shadow py-12 text-center"
+        style={{ letterSpacing: "4px" }}
+      >
+        OnGoing Projects ({projects?.length})
       </h1>
       <div>
         {!isViewMoreBtnClicked ? (
@@ -69,12 +72,12 @@ const OnGoingProjects: React.FC = () => {
                 <button
                   className={`px-1 py-1 mr-10 md:mr-6 lg:mr-0 rounded-md ${
                     isLeftbtnClicked
-                      ? "border border-primary-blueText"
-                      : "bg-gray-300"
+                      ? "border border-primary-blueText bg-white"
+                      : "bg-white text-white border border-primary-blueText"
                   }  mt-6 absolute top-[95%] right-[16%]`}
                   onClick={onLeftbtnClick}
                 >
-                  <MdArrowBackIos className="w-5 h-5 text-primary-blueText ml-1" />
+                  <MdArrowBackIos className="w-4 h-4 text-white ml-1" />
                 </button>
               );
             }}
@@ -83,12 +86,12 @@ const OnGoingProjects: React.FC = () => {
                 <button
                   className={`px-1 py-1 rounded-md ${
                     isRightbtnClicked
-                      ? "border border-primary-blueText"
-                      : "bg-gray-300"
+                      ? "border border-primary-blueText bg-white"
+                      : "bg-white text-white border border-primary-blueText"
                   } mt-6 absolute top-[95%] right-[13%]`}
                   onClick={onRightbtnClick}
                 >
-                  <MdArrowForwardIos className="w-5 h-5 text-primary-blueText" />
+                  <MdArrowForwardIos className="w-4 h-4 text-primary-blueText" />
                 </button>
               );
             }}

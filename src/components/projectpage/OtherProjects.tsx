@@ -61,8 +61,11 @@ const OtherProjects: React.FC = () => {
   const maxLength: number = 200;
   return (
     <>
-      <div className="bg-secondary-detailsBackground my-12 py-12">
-        <h1 className="uppercase text-primary-blueText font-bold text-center text-4xl md:text-5xl py-12 text-with-shadow">
+      <div className="bg-secondary-detailsBackground mt-12 py-8">
+        <h1
+          className="uppercase text-primary-blueText font-extrabold text-center text-4xl md:text-5xl py-16 text-with-shadow font-perpetua"
+          style={{ letterSpacing: "2px" }}
+        >
           other projects
         </h1>
         <div>
@@ -107,7 +110,7 @@ const OtherProjects: React.FC = () => {
                     key={index}
                     className="flex flex-col justify-between items-center text-primary-blueText w-[95vw] md:w-[50vw]"
                   >
-                    <div className="w-[90%] md:w-[75%] h-[50vh] cursor-pointer flex relative">
+                    <div className="w-[90%] md:w-[60%] h-[50vh] cursor-pointer flex relative">
                       <img
                         src="/img/common/Union.png"
                         alt="blue-text"
@@ -119,8 +122,8 @@ const OtherProjects: React.FC = () => {
                         className="w-full h-full absolute left-[3%] bottom-[5%] object-cover object-center"
                       />
                     </div>
-                    <div className="w-[95%] md:w-[75%] pt-12">
-                      <p className="w-[100%] font-playfair text-2xl md:text-3xl font-semibold text-black text-center cursor-pointer py-4">
+                    <div className="w-[95%] md:w-[75%] pt-4">
+                      <p className="w-[100%] font-playfair font-semibold text-2xl md:text-3xl text-black text-center cursor-pointer py-4 min-h-[14vh]">
                         {item.title}
                       </p>
                       <p className="text-black text-xl py-4 text-justify">
@@ -167,7 +170,7 @@ const OtherProjects: React.FC = () => {
                       <p className="w-[100%] font-playfair text-2xl md:text-3xl font-semibold text-black cursor-pointer text-center py-4">
                         {item.title}
                       </p>
-                      <p className="text-black text-xl py-4ctext-justify">
+                      <p className="text-black text-xl py-4 text-justify">
                         {item.description.length < maxLength ? (
                           <>{item.description}</>
                         ) : (
@@ -190,7 +193,7 @@ const OtherProjects: React.FC = () => {
           )}
         </div>
       </div>
-      <div onClick={onViewBtnClick} className="py-12">
+      <div onClick={onViewBtnClick} className="pt-12">
         {isViewMoreBtnClicked ? <ViewlessBtn /> : <ViewmoreBtn />}
       </div>
     </>

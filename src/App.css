@@ -1,53 +1,37 @@
 @import url('https://fonts.googleapis.com/css2?family=Kameron&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display+SC&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Slabo+27px&display=swap');
+
+@font-face {
+  font-family: 'Perpetua Titling MT';
+  src: url('/fonts/PerpetuaTitlingMTLight2.ttf') format('opentype');
+}
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-/* 
 
-.carousel-item {
-  width: 20rem;
-  height: 20rem;
-  object-fit: cover;
-}
-
-.carousel-container {
-  max-width: 1080px;
-  position: relative;
-  display: flex;
-  gap: 20px;
-}
-
-.carousel-container::after,
-.carousel-container::before {
-  content: "";
-  position: absolute;
-  background-color: white;
-  width: calc(100% + 30px);
-  height: 3rem;
-}
-
-.carousel-container::before {
-  top: 0;
-  left: -10px;
-  right: -10px;
-  border-radius: 0 0 100% 100%;
-}
-
-.carousel-container::after {
-  bottom: 0;
-  left: -10px;
-  right: -10px;
-  border-radius: 100% 100% 0 0;
-} */
 .text-with-shadow {
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Modify the values as needed */
+  text-shadow: 4px 2px 1px rgba(76, 69, 69, 0.2);
 }
 .thin-font {
-  font-weight: 100; /* Adjust the value to make it thinner */
+  font-weight: 100;
 }
 .bold-font{
   font-weight: 900;
+}
+.shadow-container {
+  position: relative;
+}
+
+.shadow-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+  z-index: -1;
 }

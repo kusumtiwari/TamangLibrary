@@ -77,10 +77,13 @@ const OurTeam: React.FC = () => {
   };
   return (
     <div className="text-primary-blueText flex flex-col justify-center items-center w-full">
-      <h1 className="uppercase text-2xl md:text-4xl lg:text-5xl font-thin py-12 text-center mb-8">
+      <h1
+        className="uppercase text-4xl lg:text-5xl font-extrabold font-perpetua text-with-shadow py-12 text-center"
+        style={{ letterSpacing: "4px" }}
+      >
         Our Teams
       </h1>
-      <div className="flex flex-wrap items-center justify-center px-6 lg:px-12 relative">
+      <div className="flex flex-wrap items-center justify-center px-6 lg:px-20 relative">
         {myTeams.map((items) => {
           return (
             <div

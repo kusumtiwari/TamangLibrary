@@ -58,6 +58,9 @@ const RegistrationForm: React.FC = () => {
             className=" px-4 py-3 border border-gray-400 w-[95%] rounded-md focus:border-primary-blueText focus:outline-none h-[20vh]"
           />
         </div>
+        <button className="px-4 py-2 text-primary-blueText border rounded-lg  border-primary-blueText text-base hover:text-white hover:bg-primary-blueText my-6 rase-in-out duration-300 transform">
+          Submit
+        </button>
       </div>
       <div className="w-[100%] lg:w-[55%] flex flex-grow h-[60vh] lg:h-auto">
         <iframe

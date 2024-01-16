@@ -7,8 +7,11 @@ const Intro: React.FC = () => {
         className="w-18 h-20 absolute right-0 top-0"
       />
       <div className="py-12">
-        <h1 className="uppercase text-primary-blueText text-2xl md:text-4xl lg:text-5xl xl-text-6xl font-bold text-center h-[60%] pb-8 leading-10 ml-4 md:ml-0">
-          who we are ?
+        <h1
+          className="uppercase text-4xl lg:text-5xl text-center py-6 text-with-shadow font-perpetua text-primary-blueTextuppercase text-primary-blueText font-extrabold h-[60%] pb-8 ml-4 md:ml-0"
+          style={{ letterSpacing: "2px" }}
+        >
+          who we are?
         </h1>
         <div className="flex justify-between relative">
           <img

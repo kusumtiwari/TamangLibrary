@@ -17,17 +17,17 @@ const OnGoingProjectDetails = () => {
   const description = state.description;
   const image = state.image;
   return (
-    <div className="pt-12">
+    <div className="pt-8">
       <div
-        className="flex items-center justify-start text-lg cursor-pointer mb-6 px-12"
+        className="flex items-center justify-start text-lg cursor-pointer mb-6 px-12 text-primary-blueText"
         onClick={onBackClick}
       >
         <IoMdArrowBack className="w-4 h-4 mr-1" />
         <h1>Back</h1>
       </div>
 
-      <div className="h-fit font-playfair px-12">
-        <h1 className="text-3xl text-primary-blueText font-semibold">
+      <div className="h-fit font-playfair px-12 md:px-16 mb-24">
+        <h1 className="text-3xl text-primary-blueText font-semibold font-playfair">
           {title}
         </h1>
         <div className="text-gray-400 text-2xl my-4">
@@ -50,7 +50,7 @@ const OnGoingProjectDetails = () => {
             One Window International
           </li>
         </div>
-        <div className="w-full md:w-1/2 float-right">
+        <div className="w-full md:w-1/2 lg:w-[45%] float-right md:ml-6 lg:ml-8">
           <img
             src={image}
             alt="project-image"
@@ -58,7 +58,7 @@ const OnGoingProjectDetails = () => {
           />
         </div>
         <div
-          className="text-justify text-xl font-kameron my-12"
+          className="text-justify text-xl font-kameron"
           style={{ lineHeight: "32px" }}
           dangerouslySetInnerHTML={{ __html: description }}
         ></div>

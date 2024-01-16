@@ -48,8 +48,11 @@ const CompletedProjects: React.FC = () => {
   const firstTwoProjects = projects ? projects.slice(0, 2) : [];
   return (
     <div className="text-primary-blueText my-12 bg-secondary-detailsBackground w-full font-playfair">
-      <h1 className="uppercase text-2xl md:text-4xl lg:text-5xl font-thin py-12 text-center">
-        Completed Projects
+      <h1
+        className="uppercase text-4xl lg:text-5xl font-bold py-12 text-center text-with-shadow font-perpetua"
+        style={{ letterSpacing: "2px" }}
+      >
+        Completed Projects ({projects?.length})
       </h1>
       <div className="py-12">
         {!isViewMoreBtnClicked

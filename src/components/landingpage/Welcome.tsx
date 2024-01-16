@@ -1,8 +1,11 @@
 const Welcome: React.FC = () => {
   return (
-    <div className="text-center ">
-      <h1 className="uppercase text-primary-blueText text-2xl md:text-4xl lg:text-5xl thin-font relative px-8 w-full text-with-shadow">
-        Welcome to <span className="bold-font">Tamang library</span>
+    <div className="text-center">
+      <h1
+        className="uppercase text-primary-blueText text-4xl lg:text-5xl px-8 w-full font-thin text-with-shadow font-perpetua opacity-100"
+        style={{ letterSpacing: "2px" }}
+      >
+        Welcome to <span className="opacity-100 font-bold">Tamang library</span>
       </h1>
       <div className="flex justify-between">
         <img
@@ -11,7 +14,7 @@ const Welcome: React.FC = () => {
           className="w-[14%] h-[26%] md:w-[8%] md:h-[28vh] mt-12"
         />
         <p
-          className="font-kameron w-[100%] mr-6 md:mr-0 md:text-center px-8 md:px-12 py-10"
+          className="font-kameron w-[100%] mr-6 md:mr-0 md:text-center py-14 px-6 md:px-24 lg:px-36 text-base"
           style={{ lineHeight: "32px" }}
         >
           The Tamang Library is committed to preserving, celebrating, and

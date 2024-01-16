@@ -37,7 +37,10 @@ const myFoundersNoteContent: FoundersNoteContent[] = [
 const FoundersNote: React.FC = () => {
   return (
     <div>
-      <h1 className="uppercase text-2xl md:text-4xl lg:text-5xl font-thin py-16 text-center text-primary-blueText">
+      <h1
+        className="uppercase text-4xl lg:text-5xl font-extrabold font-perpetua text-with-shadow py-12 text-center text-primary-blueText"
+        style={{ letterSpacing: "4px" }}
+      >
         Founder's Note
       </h1>
       <div className="bg-secondary-detailsBackground border-t-2 border-b-2 border-primary-blueText py-6 md:py-12 px-4 md:px-12">

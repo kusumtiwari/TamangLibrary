@@ -54,7 +54,10 @@ const LegacyLandmarks: React.FC = () => {
   }, []);
   return (
     <div className="my-16 text-primary-blueText px-8 md:px-12 w-full">
-      <h1 className="uppercase text-2xl md:text-4xl lg:text-5xl font-thin py-12 text-center">
+      <h1
+        className="uppercase text-4xl lg:text-5xl font-extrabold font-perpetua text-with-shadow py-12 text-center"
+        style={{ letterSpacing: "4px" }}
+      >
         Legacy Landmarks
       </h1>
       <AliceCarousel

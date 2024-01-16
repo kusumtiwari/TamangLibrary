@@ -69,8 +69,11 @@ const PublicationPage: React.FC = () => {
         <LoadingSpinner />
       ) : (
         <div>
-          <h1 className="uppercase text-primary-blueText mt-24 text-xl md:text-3xl lg:text-4xl text-center">
-            Publications
+          <h1
+            className="uppercase text-primary-blueText text-3xl lg:text-4xl text-center text-with-shadow font-perpetua pt-20 font-extrabold"
+            style={{ letterSpacing: "4px" }}
+          >
+            Publication
           </h1>
           <div className="flex flex-wrap gap-6 py-12 px-8 justify-center">
             {currentItems?.map((publication, index) => (

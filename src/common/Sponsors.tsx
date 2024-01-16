@@ -24,7 +24,7 @@ const mySponsers: Sponsers[] = [
   },
   {
     id: 3,
-    image: "/img/Sponsers/Sponsers1.png",
+    image: "/img/Sponsers/Sponsers3.png",
   },
   {
     id: 4,
@@ -32,7 +32,7 @@ const mySponsers: Sponsers[] = [
   },
   {
     id: 5,
-    image: "/img/Sponsers/Sponsers1.png",
+    image: "/img/Sponsers/Sponsers3.png",
   },
   {
     id: 6,
@@ -54,11 +54,14 @@ const Sponsers: React.FC = () => {
     setIsRightbtnClicked(true);
   };
   return (
-    <div className="mt-8 overflow-hidden w-full">
-      <h1 className="uppercase text-3xl md:text-4xl lg:text-5xl text-center py-12 text-primary-blueText text-with-shadow">
+    <div className="mt-8 overflow-hidden w-full relative mb-10">
+      <h1
+        className="uppercase text-4xl lg:text-5xl text-center py-12 text-primary-blueText text-with-shadow font-perpetua font-bold"
+        style={{ letterSpacing: "2px" }}
+      >
         Sponsers
       </h1>
-      <div className="bg-secondary-detailsBackground py-12 relative flex items-center justify-center px-auto w-[100vw] h-[40vh]">
+      <div className="bg-secondary-detailsBackground py-12 flex items-center justify-center px-auto w-[100vw] h-[40vh]">
         <AliceCarousel
           mouseTracking
           responsive={responsive}
@@ -85,7 +88,7 @@ const Sponsers: React.FC = () => {
                   isRightbtnClicked
                     ? "border border-primary-blueText"
                     : "bg-gray-300"
-                } mt-6 absolute right-[10%] top-[130%]`}
+                } mt-6 absolute right-[10%] top-[100%]`}
                 onClick={onRightbtnClick}
               >
                 <MdArrowForwardIos className="w-5 h-5 text-primary-blueText" />
@@ -102,7 +105,7 @@ const Sponsers: React.FC = () => {
                 <img
                   src={items.image}
                   alt="collection-image"
-                  className="w-1/2"
+                  className="w-1/2 h-32"
                 />
               </div>
             );

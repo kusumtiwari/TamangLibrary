@@ -45,7 +45,6 @@ const EventDetailsPage: React.FC = () => {
           dangerouslySetInnerHTML={{ __html: description }}
         ></div>
       </div>
-
       <Sponsers />
     </>
   );

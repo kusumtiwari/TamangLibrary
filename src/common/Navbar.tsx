@@ -16,7 +16,7 @@ const Navbar: React.FC = () => {
     setIsOpen(false);
   };
   return (
-    <div className="bg-primary-navbarBackground py-3 flex flex-wrap justify-between px-6 md:px-24 lg:px-36 sticky top-0 z-20 items-center">
+    <div className="bg-primary-navbarBackground py-3 flex flex-wrap justify-between px-6 md:px-24 lg:px-36 sticky top-0 z-20 items-center shadow-lg">
       <div className="md:hidden">
         <Logo />
       </div>
