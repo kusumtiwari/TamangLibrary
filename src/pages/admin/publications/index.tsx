@@ -66,7 +66,7 @@ const AdminPublication = () => {
 					<TableBody>
 						{data?.map((publication) => (
 							<TableRow className="border-2" key={nanoid()}>
-								<TableCell className="border-2 p-2">
+								<TableCell className="border-2 p-2 w-3/4">
 									{publication.title}
 								</TableCell>
 								<TableCell className="flex flex-row gap-2 justify-center items-center align-middle">

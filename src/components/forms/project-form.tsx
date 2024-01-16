@@ -3,14 +3,11 @@ import { zodResolver } from "@hookform/resolvers/zod/dist/zod.js";
 import { doc, serverTimestamp, setDoc, updateDoc } from "firebase/firestore";
 import { getDownloadURL, ref } from "firebase/storage";
 import { nanoid } from "nanoid";
-// import { useRouter } from "next/router";
-import { Navigate, useNavigate } from "react-router-dom";
 import { useUploadFile } from "react-firebase-hooks/storage";
 import { useFieldArray, useForm } from "react-hook-form";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import ReactQuill from "react-quill";
-// import dynamic from "next/dynamic";
-import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import "react-quill/dist/quill.snow.css";
 import { toast } from "sonner";
 import * as z from "zod";
@@ -33,14 +30,13 @@ import {
 	SelectTrigger,
 	SelectValue,
 } from "../ui/select";
-import { url } from "inspector";
 
 const formSchema = z.object({
 	title: z.string().optional(),
 	startDate: z.date().optional(),
 	endDate: z.date().optional(),
 	status: z.enum(["ONGOING", "UPCOMING", "COMPLETED"]).optional(),
-	budget: z.number().optional(),
+	budget: z.coerce.number().optional(),
 	description: z.string().optional(),
 	image: z.string().optional(),
 	glimpses: z.array(
@@ -70,7 +66,6 @@ const emptyData: FormSchema = {
 };
 
 const ProjectForm = ({ initialData }: ProjectFormProps) => {
-	// const router = useRouter();
 	const navigate = useNavigate();
 
 	const form = useForm<z.infer<typeof formSchema>>({
@@ -112,7 +107,6 @@ const ProjectForm = ({ initialData }: ProjectFormProps) => {
 		<Form {...form}>
 			<form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 p-8">
 				<h1 className="text-3xl font-bold">Project</h1>
-				{/* Text Example */}
 				<FormField
 					control={form.control}
 					name="title"
@@ -127,7 +121,6 @@ const ProjectForm = ({ initialData }: ProjectFormProps) => {
 					)}
 				/>
 
-				{/* Enum example */}
 				<FormField
 					control={form.control}
 					name="status"
@@ -177,7 +170,6 @@ const ProjectForm = ({ initialData }: ProjectFormProps) => {
 					/>
 				)}
 
-				{/* Date Example */}
 				{form.watch("status") !== "UPCOMING" && (
 					<FormField
 						control={form.control}

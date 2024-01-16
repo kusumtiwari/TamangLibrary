@@ -3,20 +3,16 @@ import { zodResolver } from "@hookform/resolvers/zod/dist/zod.js";
 import { doc, serverTimestamp, setDoc, updateDoc } from "firebase/firestore";
 import { getDownloadURL, ref } from "firebase/storage";
 import { nanoid } from "nanoid";
-// import { useRouter } from "next/router";
-import { Navigate, useNavigate } from "react-router-dom";
 import { useUploadFile } from "react-firebase-hooks/storage";
-import { useFieldArray, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import ReactQuill from "react-quill";
-// import dynamic from "next/dynamic";
-import { useEffect } from "react";
 import "react-quill/dist/quill.snow.css";
+import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 import * as z from "zod";
 import { db, storage } from "../../../firebase";
 import { Button } from "../ui/button";
-import { DatePicker } from "../ui/date-picker";
 import {
 	Form,
 	FormControl,
@@ -26,22 +22,13 @@ import {
 	FormMessage,
 } from "../ui/form";
 import { Input } from "../ui/input";
-import {
-	Select,
-	SelectContent,
-	SelectItem,
-	SelectTrigger,
-	SelectValue,
-} from "../ui/select";
-import { url } from "inspector";
-import { writer } from "repl";
 
 const formSchema = z.object({
 	title: z.string().optional(),
 	description: z.string().optional(),
 	image: z.string().optional(),
-	price: z.number().optional(),
-	rating: z.number().optional(),
+	price: z.coerce.number().optional(),
+	rating: z.coerce.number().optional(),
 	writer: z.string().optional(),
 });
 
