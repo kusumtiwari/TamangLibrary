@@ -37,9 +37,6 @@ const UpcomingProjectDetailsPage = () => {
 								className="w-full h-full object-cover object-center"
 							/>
 						</div>
-						{/* <p className="text-black pt-8" style={{ lineHeight: "32px" }}>
-							{description}
-						</p> */}
 					</div>
 					<h1 className="py-16 text-primary-blueText font-bold text-2xl md:text-3xl uppercase text-center w-[100%]">
 						Projects Awaiting Your Support

@@ -78,7 +78,7 @@ const CompletedProjects: React.FC = () => {
 										<img
 											src={items.image}
 											alt="completed-project"
-											className="w-full h-full absolute bottom-[6%] left-[3%] cursor-pointer object-cover"
+											className="w-full h-full absolute bottom-[4%] md:bottom-[6%] left-[3%] cursor-pointer object-cover"
 										/>
 									</div>
 									<div className="w-[95%] md:w-[75%] lg:w-[50%] playfair-display pt-6 lg:pt-0 flex flex-col">
@@ -159,7 +159,7 @@ const CompletedProjects: React.FC = () => {
 										<img
 											src={items.image}
 											alt="completed-project"
-											className="w-full h-full absolute bottom-[5%] left-[3%] object-cover"
+											className="w-full h-full absolute  bottom-[4%] md:bottom-[6%] left-[3%] object-cover"
 										/>
 									</div>
 									<div className="w-[95%] md:w-[75%] lg:w-[50%] playfair-display pt-6 lg:pt-0">

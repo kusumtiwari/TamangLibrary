@@ -111,7 +111,7 @@ const UpcomingProjects: React.FC = () => {
 									className="flex flex-col justify-between items-center text-primary-blueText w-[95vw] md:w-[50vw]"
 								>
 									<div
-										className="w-[90%] md:w-[60%] h-[50vh] cursor-pointer flex relative"
+										className="w-[90%] md:w-[80%] lg:w-[65%] h-[50vh] cursor-pointer flex relative"
 										onClick={() => handleClick(item)}
 									>
 										<img
@@ -122,7 +122,7 @@ const UpcomingProjects: React.FC = () => {
 										<img
 											src={item.image}
 											alt="ongoing-project"
-											className="w-full h-full absolute left-[5%] bottom-[5%] object-cover"
+											className="w-full h-full absolute left-[5%] bottom-[5%] object-fill"
 										/>
 									</div>
 									<div className="w-[95%] md:w-[60%] pt-12">
@@ -143,10 +143,10 @@ const UpcomingProjects: React.FC = () => {
 							return (
 								<div
 									key={index}
-									className="flex flex-col items-center justify-center text-primary-blueText w-full md:w-[50%] lg:w-[50%]"
+									className="flex flex-col items-center justify-center text-primary-blueText w-full md:w-[90%] lg:w-[50%]"
 								>
 									<div
-										className="w-[100%] md:w-[80%] lg:w-[70%] h-[50vh] lg:h-[55vh] cursor-pointer relative"
+										className="w-[100%] md:w-[90%] lg:w-[70%] h-[50vh] lg:h-[55vh] cursor-pointer relative"
 										onClick={() => handleClick(item)}
 									>
 										<img
@@ -157,7 +157,7 @@ const UpcomingProjects: React.FC = () => {
 										<img
 											src={item.image}
 											alt="ongoing-project"
-											className="w-full h-[90%] absolute left-[4%] bottom-[4%] object-cover"
+											className="w-full h-[90%] absolute left-[4%] bottom-[4%] object-fit"
 										/>
 									</div>
 									<div className="pb-12 py-6">

@@ -103,7 +103,7 @@ const OnGoingProjects: React.FC = () => {
 									className="flex flex-col justify-between items-center text-primary-blueText cursor-pointer"
 								>
 									<div
-										className="w-[95%] md:w-[60%] lg:w-[60%] h-[65vh] my-auto relative object-cover"
+										className="w-[98%] md:w-[60%] lg:w-[60%] h-[65vh] my-auto relative object-cover"
 										onClick={() => handleClick(item)}
 									>
 										<img
@@ -114,7 +114,7 @@ const OnGoingProjects: React.FC = () => {
 										<img
 											src={item.image}
 											alt="completed-project"
-											className="w-full h-full absolute bottom-[6%] left-[3%] cursor-pointer"
+											className="w-full h-[80%] md:h-full absolute bottom-[2%] md:bottom-[6%] left-[3%] cursor-pointer"
 										/>
 									</div>
 									<div className="w-[90%] md:w-[60%] pt-8">
@@ -155,16 +155,21 @@ const OnGoingProjects: React.FC = () => {
 							return (
 								<div
 									key={index}
-									className="flex flex-col justify-between items-center text-primary-blueText my-16"
+									className="flex flex-col justify-between items-center text-primary-blueText my-2 md:my-16 px-4"
 								>
 									<div
-										className="w-[60%] h-[50vh]"
+										className="w-[95%] md:w-[60%] lg:w-[60%] h-[65vh] my-auto relative object-cover"
 										onClick={() => handleClick(item)}
 									>
 										<img
+											src="/img/common/Union.png"
+											alt="blue-line"
+											className="absolute bottom-0 "
+										/>
+										<img
 											src={item.image}
-											alt="ongoing-project"
-											className="w-full h-full"
+											alt="completed-project"
+											className="w-full h-[80%] md:h-full absolute bottom-[2%] md:bottom-[6%] left-[3%] cursor-pointer object-fill"
 										/>
 									</div>
 									<div className="w-[100%] md:w-[60%] pt-12">
