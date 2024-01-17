@@ -1,10 +1,10 @@
 const ViewmoreBtn: React.FC = () => {
-  return (
-    <div className="flex justify-center">
-      <button className="border text-base transition duration-300 ease-in-out hover:text-white hover:bg-primary-blueText hover:shadow-lg border-primary-blueText text-primary-blueText px-3 py-1 rounded-lg">
-        View All
-      </button>
-    </div>
-  );
+	return (
+		<div className="flex justify-center">
+			<button className="border text-base transition duration-300 ease-in-out hover:text-white hover:bg-primary-blueText hover:shadow-lg border-primary-blueText text-primary-blueText px-3 py-1 rounded">
+				View More
+			</button>
+		</div>
+	);
 };
 export default ViewmoreBtn;

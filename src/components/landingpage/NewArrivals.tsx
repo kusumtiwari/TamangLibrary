@@ -1,73 +1,16 @@
-import { useState } from "react";
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
-import { IoBookOutline } from "react-icons/io5";
-import { LiaStarSolid } from "react-icons/lia";
 import { MdArrowBackIos, MdArrowForwardIos } from "react-icons/md";
 import { TiPen } from "react-icons/ti";
+import { useState } from "react";
+import { IoBookOutline } from "react-icons/io5";
+import { LiaStarSolid } from "react-icons/lia";
 
-interface NewArrivals {
-	id: number;
-	image: string;
-	title: string;
-	author: string;
-	price: number;
-	description: string;
-	rating: number;
-}
+import LoadingSpinner from "../../common/LoadingSpinner";
 
-const myNewArrivals: NewArrivals[] = [
-	{
-		id: 1,
-		image: "/img/Newarrivals/book1.png",
-		title: "raniban",
-		author: "Krishna Murari gautam",
-		price: 500,
-		description:
-			"Krishna Murari Gautam or popularly known as the Chatyang Master is a writer, poet, comedian and social activist of Nepal. He founded a NGO called Ageing Nepal dedicated to the betterment of the ageing population which was awarded in 2020.",
-		rating: 4,
-	},
-	{
-		id: 2,
-		image: "/img/Newarrivals/book2.png",
-		title: "Palpasa Cafe",
-		author: "Narayan Wagle, Shyam Kumar Rai",
-		price: 800,
-		description:
-			"A novel by Nepali author Narayan Wagle. It tells te story of an artist, Drishya, during the height of the Nepalese Civil War.",
-		rating: 2,
-	},
-	{
-		id: 3,
-		image: "/img/Newarrivals/book3.png",
-		title: "Ritu bichar",
-		author: "lekhnath paudyal",
-		price: 1500,
-		description:
-			"Lekhnath Paudyal is regarded as the founding father of modern Nepali poetry litrerature (Kabi Shiromani) in the twentieth. The best of Lekhnath's poems adhered to the old-fashioned conventions of Sanskrit poetics (kavya).",
-		rating: 3,
-	},
-	{
-		id: 4,
-		image: "/img/Newarrivals/book1.png",
-		title: "raniban",
-		author: "Krishna Murari gautam",
-		price: 500,
-		description:
-			"Krishna Murari Gautam or popularly known as the Chatyang Master is a writer, poet, comedian and social activist of Nepal. He founded a NGO called Ageing Nepal dedicated to the betterment of the ageing population which was awarded in 2020.",
-		rating: 4,
-	},
-	{
-		id: 5,
-		image: "/img/Newarrivals/book2.png",
-		title: "Palpasa Cafe",
-		author: "Narayan Wagle, Shyam Kumar Rai",
-		price: 800,
-		description:
-			"A novel by Nepali author Narayan Wagle. It tells te story of an artist, Drishya, during the height of the Nepalese Civil War.",
-		rating: 5,
-	},
-];
+import { db } from "../../../firebase";
+import { DocumentData, collection } from "firebase/firestore";
+import { useCollectionData } from "react-firebase-hooks/firestore";
 
 const responsive = {
 	0: { items: 1 },
@@ -78,6 +21,18 @@ const responsive = {
 const NewArrivals: React.FC = () => {
 	const [isLeftbtnClicked, setIsLeftbtnClicked] = useState<Boolean>(false);
 	const [isRightbtnClicked, setIsRightbtnClicked] = useState<Boolean>(false);
+
+	const newArrivalsData = collection(db, "newArrivals");
+	const [myNewArrivals, loading, error] = useCollectionData(newArrivalsData, {
+		snapshotListenOptions: { includeMetadataChanges: true },
+	});
+	if (loading) {
+		return <LoadingSpinner />;
+	}
+
+	if (!loading && error) {
+		return <p>{JSON.stringify(error, null, 2)}</p>;
+	}
 
 	const onLeftbtnClick = () => {
 		setIsLeftbtnClicked(true);
@@ -91,7 +46,7 @@ const NewArrivals: React.FC = () => {
 	return (
 		<div className="bg-secondary-detailsBackground text-primary-blueText px-16 py-8">
 			<h1
-				className="uppercase text-4xl lg:text-5xl text-center py-12 text-with-shadow font-perpetua font-thin"
+				className="uppercase text-4xl lg:text-5xl text-center py-16 text-with-shadow font-perpetua font-thin"
 				style={{ letterSpacing: "4px" }}
 			>
 				New Arrivals
@@ -130,28 +85,31 @@ const NewArrivals: React.FC = () => {
 					);
 				}}
 			>
-				{myNewArrivals.map((items) => {
+				{myNewArrivals?.map((items) => {
 					return (
 						<div key={items.id} className="lg:ml-10">
-							<div className="w-[80%] md:w-[65%] lg:w-[55%] h-[50vh]">
+							<div className="w-[90%] md:w-[70%] xl:w-[58%] h-[45vh] mb-6 flex items-center justify-center bg-gray-300 rounded md:ml-4 lg:ml-8">
 								<img
 									src={items.image}
 									alt="newarrival-book"
-									className="my-8 w-full"
+									className="my-8 w-[85%] h-[90%] object-center rounded"
 								/>
 							</div>
 							<div className="flex items-center text-xl uppercase">
 								<IoBookOutline className="w-8 h-8" />
-								<h1 className="ml-2">{items.title}</h1>
+								<h1 className="ml-2 font-perpetua">{items.title}</h1>
 							</div>
 							<div className="flex items-center py-5 text-xl uppercase">
 								<TiPen className="w-8 h-8" />
-								<h1 className="ml-2">{items.author}</h1>
+								<h1 className="ml-2 font-perpetua">{items.writer}</h1>
 							</div>
-							<h1 className="text-xl font-bold">NPR {items.price}</h1>
-							<h1 className="w-[95%] md:w-[90%] py-5 text-justify">
-								{items.description}
+							<h1 className="text-xl font-extrabold font-perpetua">
+								NPR {items.price}
 							</h1>
+							<div
+								className="w-[95%] md:w-[90%] py-5 text-justify"
+								dangerouslySetInnerHTML={{ __html: items.description }}
+							></div>
 							<div className="flex mb-8">
 								<div className="flex">
 									{Array.from({ length: Number(items.rating) }).map(

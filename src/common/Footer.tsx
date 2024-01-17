@@ -13,7 +13,7 @@ const Footer: React.FC = () => {
 		});
 	};
 	return (
-		<div className="flex flex-col mt-28">
+		<div className="flex flex-col mt-24">
 			<div className="relative flex-1 min-h-[75vh] footer">
 				<div className="absolute top-0 left-0 z-0 bg-[url('/img/common/Footer.png')] bg-cover bg-no-repeat w-full h-[50vh] object-cover flex items-center justify-center"></div>
 				<div className="absolute top-36 left-0 z-10 bg-secondary-detailsBackground w-full py-16 px-8 md:px-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 flex-grow">
@@ -111,7 +111,7 @@ const Footer: React.FC = () => {
 						2023 Tamang Library. All right reserved
 					</p>
 				</div>
-				<div className="flex items-center ">
+				<div className="flex items-center">
 					<p className="text-base text-primary-blueText mr-2">
 						Designed and developed by
 					</p>

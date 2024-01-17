@@ -1,114 +1,143 @@
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
 import { MdArrowBackIos, MdArrowForwardIos } from "react-icons/md";
-import { useState } from "react";
+import { useState, useContext } from "react";
 
-interface Ongoingprojects {
-  id: number;
-  image: string;
-  title: string;
-  description: string;
-}
+import { db } from "../../../firebase";
+import { DocumentData, collection, query, where } from "firebase/firestore";
+import { useCollectionData } from "react-firebase-hooks/firestore";
+import LoadingSpinner from "../../common/LoadingSpinner";
 
-const myOngoingprojects: Ongoingprojects[] = [
-  {
-    id: 1,
-    image: "/img//Ongoingproject-img1.png",
-    title:
-      "Lost And Found - The Struggle to preserve Nepal Linguistic Heritage",
-    description:
-      "At last count, in 2019, Nepal had 129 spoken languages, but even as new ones are identified, others are becoming extinct. At least 24 of the languages and dialects in Nepal have become “endangered,” and the next three ones on the verge of disappearing are Dura, Kusunda, and Tillung, each of which has only one speaker left. Learn more",
-  },
+import { UserContext } from "../../context/Context";
 
-  {
-    id: 2,
-    image: "/img/LibraryDetailsImage/LibraryDetailsimg1.png",
-    title: "Language preservation practices in nepal",
-    description:
-      "The study focused on language preservation practices of Nepal in term of legal and constitutional provisions and its implication. Policy formulation is not only sufficient for preserving endangered languages because implementation mechanisms cannot effectively function in developing and under developed nation like Nepal.",
-  },
-];
 const OngoingProjects: React.FC = () => {
-  const [isLeftbtnClicked, setIsLeftbtnClicked] = useState<Boolean>(false);
-  const [isRightbtnClicked, setIsRightbtnClicked] = useState<Boolean>(false);
+	const [isLeftbtnClicked, setIsLeftbtnClicked] = useState<Boolean>(false);
+	const [isRightbtnClicked, setIsRightbtnClicked] = useState<Boolean>(false);
 
-  const onLeftbtnClick = () => {
-    setIsLeftbtnClicked(true);
-    setIsRightbtnClicked(false);
-  };
+	const contextValue = useContext(UserContext);
+	const handleOnGoingProjectNavigation =
+		contextValue?.handleOnGoingProjectNavigation;
+	const handleClick = (obj: DocumentData) => {
+		if (handleOnGoingProjectNavigation) {
+			handleOnGoingProjectNavigation(obj);
+		} else {
+			console.error("handleProjectPageNavigation is undefined");
+		}
+	};
 
-  const onRightbtnClick = () => {
-    setIsLeftbtnClicked(false);
-    setIsRightbtnClicked(true);
-  };
-  return (
-    <div className="py-12 text-primary-blueText px-4 md:px-12 lg:px-16 bg-[url('../../img/common/MapOfNepalBg.png')]">
-      <h1
-        className="uppercase text-4xl lg:text-5xl text-center py-16 text-with-shadow font-perpetua font-thin"
-        style={{ letterSpacing: "4px" }}
-      >
-        ongoing projects
-      </h1>
+	const projectsQuery = query(
+		collection(db, "projects"),
+		where("status", "==", "ONGOING")
+	);
+	const [projects, loading, error] = useCollectionData(projectsQuery, {
+		snapshotListenOptions: { includeMetadataChanges: true },
+	});
+	if (loading) {
+		return <LoadingSpinner />;
+	}
 
-      <AliceCarousel
-        infinite
-        mouseTracking
-        disableDotsControls
-        renderPrevButton={() => {
-          return (
-            <button
-              className={`px-1 py-1 mr-10 md:mr-6 lg:mr-0 rounded-md ${
-                isLeftbtnClicked
-                  ? "border border-primary-blueText"
-                  : "bg-gray-300"
-              }  mt-6 absolute top-[95%] right-[16%]`}
-              onClick={onLeftbtnClick}
-            >
-              <MdArrowBackIos className="w-5 h-5 text-primary-blueText ml-1" />
-            </button>
-          );
-        }}
-        renderNextButton={() => {
-          return (
-            <button
-              className={`px-1 py-1 rounded-md ${
-                isRightbtnClicked
-                  ? "border border-primary-blueText"
-                  : "bg-gray-300"
-              } mt-6 absolute top-[95%] right-[13%]`}
-              onClick={onRightbtnClick}
-            >
-              <MdArrowForwardIos className="w-5 h-5 text-primary-blueText" />
-            </button>
-          );
-        }}
-      >
-        {myOngoingprojects.map((item) => {
-          return (
-            <div
-              key={item.id}
-              className="flex items-center justify-between flex-col md:flex-row"
-            >
-              <div className="w-[82%] md:w-[40%] h-[50vh] mb-12 md:mb-0">
-                <img
-                  src={item.image}
-                  alt="ongoing-project"
-                  className="w-full h-full"
-                />
-              </div>
+	if (!loading && error) {
+		return <p>{JSON.stringify(error, null, 2)}</p>;
+	}
 
-              <div className="bg-secondary-detailsBackground py-12 px-4 md:px-8 text-black w-[82%] md:w-[50%]">
-                <h1 className="text-2xl md:text-3xl font-playfair pb-4 ">
-                  {item.title}
-                </h1>
-                <p className="font-kameron text-base">{item.description}</p>
-              </div>
-            </div>
-          );
-        })}
-      </AliceCarousel>
-    </div>
-  );
+	const onLeftbtnClick = () => {
+		setIsLeftbtnClicked(true);
+		setIsRightbtnClicked(false);
+	};
+
+	const onRightbtnClick = () => {
+		setIsLeftbtnClicked(false);
+		setIsRightbtnClicked(true);
+	};
+	return (
+		<div className=" text-primary-blueText px-4 md:px-12 lg:px-16 bg-[url('../../img/common/MapOfNepalBg.png')]">
+			<h1
+				className="uppercase text-4xl lg:text-5xl text-center py-16 text-with-shadow font-perpetua font-thin"
+				style={{ letterSpacing: "4px" }}
+			>
+				ongoing projects
+			</h1>
+
+			<AliceCarousel
+				infinite
+				mouseTracking
+				disableDotsControls
+				renderPrevButton={() => {
+					return (
+						<button
+							className={`px-1 py-1 mr-10 md:mr-6 lg:mr-0 rounded-md ${
+								isLeftbtnClicked
+									? "border border-primary-blueText"
+									: "bg-gray-300"
+							}  mt-6 absolute top-[95%] right-[16%]`}
+							onClick={onLeftbtnClick}
+						>
+							<MdArrowBackIos className="w-5 h-5 text-primary-blueText ml-1" />
+						</button>
+					);
+				}}
+				renderNextButton={() => {
+					return (
+						<button
+							className={`px-1 py-1 rounded-md ${
+								isRightbtnClicked
+									? "border border-primary-blueText"
+									: "bg-gray-300"
+							} mt-6 absolute top-[95%] right-[13%]`}
+							onClick={onRightbtnClick}
+						>
+							<MdArrowForwardIos className="w-5 h-5 text-primary-blueText" />
+						</button>
+					);
+				}}
+			>
+				{projects?.map((item) => {
+					return (
+						<div
+							key={item.id}
+							className="flex items-center justify-between flex-col md:flex-row"
+						>
+							<div
+								className="w-[90%] md:w-[60%] lg:w-[42%] h-[55vh] my-auto relative object-cover"
+								onClick={() => handleClick(item)}
+							>
+								<img
+									src="/img/common/Union.png"
+									alt="blue-line"
+									className="absolute bottom-0"
+								/>
+								<img
+									src={item.image}
+									alt="completed-project"
+									className="w-full h-full absolute bottom-[6%] left-[3%] cursor-pointer"
+								/>
+							</div>
+							<div className="bg-secondary-detailsBackground py-6 px-4 md:px-8 text-black w-[82%] md:w-[52%] rounded">
+								<h1
+									className="text-2xl md:text-3xl font-playfair pb-4 "
+									onClick={() => handleClick(item)}
+								>
+									{item.title}
+								</h1>
+								<p
+									className="font-kameron text-base"
+									style={{ lineHeight: "31px", letterSpacing: "1px" }}
+								>
+									{item.description.slice(0, 400)}
+									<span
+										className="text-primary-blueText underline ml-2 cursor-pointer"
+										onClick={() => handleClick(item)}
+									>
+										Learn more
+									</span>
+								</p>
+							</div>
+						</div>
+					);
+				})}
+			</AliceCarousel>
+		</div>
+	);
 };
 
 export default OngoingProjects;
