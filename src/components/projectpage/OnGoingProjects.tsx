@@ -52,7 +52,7 @@ const OnGoingProjects: React.FC = () => {
 	if (!loading && error) {
 		return <p>{JSON.stringify(error, null, 2)}</p>;
 	}
-	const maxLength: number = 800;
+	const maxLength: number = 600;
 	return (
 		<div className="text-primary-blueText my-12">
 			<h1
@@ -103,13 +103,18 @@ const OnGoingProjects: React.FC = () => {
 									className="flex flex-col justify-between items-center text-primary-blueText cursor-pointer"
 								>
 									<div
-										className="w-[95%] md:w-[60%] h-[60vh] mt-8"
+										className="w-[95%] md:w-[60%] lg:w-[60%] h-[65vh] my-auto relative object-cover"
 										onClick={() => handleClick(item)}
 									>
 										<img
+											src="/img/common/Union.png"
+											alt="blue-line"
+											className="absolute bottom-0"
+										/>
+										<img
 											src={item.image}
-											alt="ongoing-project"
-											className="w-full h-[90%]"
+											alt="completed-project"
+											className="w-full h-full absolute bottom-[6%] left-[3%] cursor-pointer"
 										/>
 									</div>
 									<div className="w-[90%] md:w-[60%] pt-8">
@@ -121,7 +126,7 @@ const OnGoingProjects: React.FC = () => {
 										</h1>
 										<p
 											className="w-[100%] text-justify font-playfair text-xl font-semibold text-black"
-											style={{ lineHeight: "30px" }}
+											style={{ lineHeight: "32px" }}
 										>
 											{item.description.length > maxLength ? (
 												<>

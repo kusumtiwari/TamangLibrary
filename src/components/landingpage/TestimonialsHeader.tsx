@@ -16,7 +16,7 @@ const TestimonialsHeader: React.FC<TestimonialsHeaderProps> = ({
 					<img
 						src="/img/common/symbol.png"
 						alt="symbol"
-						className="w-12 h-10 md:w-[22px] md:h-[33px]"
+						className="w-12 h-10 md:w-[36px] md:h-[32px]"
 					/>
 				</div>
 				<h1

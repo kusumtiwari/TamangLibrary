@@ -20,7 +20,7 @@ const Intro: React.FC = () => {
 						className="w-20 h-20 md:w-32 md:h-[25vh] mt-10 md:mt-0"
 					/>
 					<p
-						className="text-center font-kameron text-base px-4 md:px-12 py-8"
+						className="text-center font-kameron text-base md:px-4 md:px-12 py-8"
 						style={{ lineHeight: "34px" }}
 					>
 						The Tamang Library is committed to preserving, celebrating, and
