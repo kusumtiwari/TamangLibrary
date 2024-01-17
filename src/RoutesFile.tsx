@@ -28,7 +28,6 @@ const RoutesFile: React.FC = () => {
 	return (
 		<Routes>
 			<Route path="/" element={<LandingPage />}></Route>
-			<Route path="*" element={<ErrorPage />}></Route>
 			<Route path="/about/*" element={<AboutPage />}></Route>
 			<Route path="/notices" element={<NoticesPage />}></Route>
 			<Route path="/projects/*" element={<ProjectPage />}></Route>
@@ -64,6 +63,7 @@ const RoutesFile: React.FC = () => {
 				path="/admin/publications/create"
 				element={<PublicationCreate />}
 			></Route>
+			<Route path="*" element={<ErrorPage />}></Route>
 		</Routes>
 	);
 };
