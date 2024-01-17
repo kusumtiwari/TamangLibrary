@@ -23,10 +23,19 @@ import {
 	FormMessage,
 } from "../ui/form";
 import { Input } from "../ui/input";
+import {
+	Select,
+	SelectContent,
+	SelectItem,
+	SelectTrigger,
+	SelectValue,
+} from "../ui/select";
 
 const formSchema = z.object({
 	title: z.string().optional(),
 	image: z.string().optional(),
+	type: z.string().optional(),
+	year: z.coerce.number().optional(),
 });
 
 export type FormSchema = typeof formSchema._type;
@@ -40,6 +49,8 @@ interface PublicationFormProps {
 const emptyData: FormSchema = {
 	title: "",
 	image: "",
+	type: "",
+	year: 2024,
 };
 
 const PublicationForm = ({ initialData }: PublicationFormProps) => {
@@ -100,7 +111,7 @@ const PublicationForm = ({ initialData }: PublicationFormProps) => {
 						return (
 							<FormItem>
 								<FormLabel>
-									Overview Image{" "}
+									Book Image{" "}
 									{uploading
 										? "Uploading..."
 										: form.watch("image") && (
@@ -144,6 +155,50 @@ const PublicationForm = ({ initialData }: PublicationFormProps) => {
 							</FormItem>
 						);
 					}}
+				/>
+
+				<FormField
+					control={form.control}
+					name="type"
+					render={({ field }) => (
+						<FormItem>
+							<FormLabel>Type</FormLabel>
+							<FormControl>
+								<Select
+									onValueChange={field.onChange}
+									defaultValue={field.value}
+								>
+									<SelectTrigger>
+										<SelectValue className="w-full" placeholder="Select a type">
+											{field.value ?? "Select an option"}
+										</SelectValue>
+									</SelectTrigger>
+									<SelectContent>
+										{["BOOK", "JOURNAL", "NEWS", "MAGAZINE"].map((type) => (
+											<SelectItem value={type} key={type}>
+												{type}
+											</SelectItem>
+										))}
+									</SelectContent>
+								</Select>
+							</FormControl>
+							<FormMessage />
+						</FormItem>
+					)}
+				/>
+
+				<FormField
+					control={form.control}
+					name="year"
+					render={({ field }) => (
+						<FormItem>
+							<FormLabel>Year</FormLabel>
+							<FormControl>
+								<Input type="number" {...field} />
+							</FormControl>
+							<FormMessage />
+						</FormItem>
+					)}
 				/>
 
 				<div className="flex justify-end">
