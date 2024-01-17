@@ -95,7 +95,7 @@ const OngoingProjects: React.FC = () => {
 					return (
 						<div
 							key={item.id}
-							className="flex items-center justify-between flex-col md:flex-row"
+							className="flex items-center justify-between flex-col lg:flex-row"
 						>
 							<div
 								className="w-[90%] md:w-[60%] lg:w-[42%] h-[55vh] my-auto relative object-cover"
@@ -104,12 +104,12 @@ const OngoingProjects: React.FC = () => {
 								<img
 									src="/img/common/Union.png"
 									alt="blue-line"
-									className="absolute bottom-0"
+									className="absolute bottom-2 lg:bottom-0"
 								/>
 								<img
 									src={item.image}
 									alt="completed-project"
-									className="w-full h-full absolute bottom-[6%] left-[3%] cursor-pointer"
+									className="w-full h-full absolute bottom-[6%] left-[4%] lg:left-[3%] cursor-pointer"
 								/>
 							</div>
 							<div className="bg-secondary-detailsBackground py-6 px-4 md:px-8 text-black w-[82%] md:w-[52%] rounded">

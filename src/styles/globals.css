@@ -22,7 +22,29 @@
   color: transparent;
   display: inline-block; /* Ensures the gradient only applies to the text content */
 }
- 
+
+.alice-carousel__dots {
+  position: absolute;
+  left: 25%;
+  bottom: -28px;
+  width: 39%;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.alice-carousel__dots-item.__active {
+  background: linear-gradient(to bottom, #6d6d73, #b6b6b6) !important;
+  width: 14px !important;
+  height: 14px !important;
+}
+
+.alice-carousel__dots-item {
+  background: linear-gradient(to bottom, #00022a, #b3b6eb) !important;
+  width: 14px !important;
+  height: 14px !important;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
