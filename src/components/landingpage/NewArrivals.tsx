@@ -1,16 +1,16 @@
+import { useState } from "react";
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
-import { MdArrowBackIos, MdArrowForwardIos } from "react-icons/md";
-import { TiPen } from "react-icons/ti";
-import { useState } from "react";
 import { IoBookOutline } from "react-icons/io5";
 import { LiaStarSolid } from "react-icons/lia";
+import { MdArrowBackIos, MdArrowForwardIos } from "react-icons/md";
+import { TiPen } from "react-icons/ti";
 
 import LoadingSpinner from "../../common/LoadingSpinner";
 
-import { db } from "../../../firebase";
-import { DocumentData, collection } from "firebase/firestore";
+import { collection } from "firebase/firestore";
 import { useCollectionData } from "react-firebase-hooks/firestore";
+import { db } from "../../../firebase";
 
 const responsive = {
 	0: { items: 1 },
